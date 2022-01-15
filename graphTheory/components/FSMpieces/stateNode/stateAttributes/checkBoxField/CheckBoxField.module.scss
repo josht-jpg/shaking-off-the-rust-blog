@@ -1,0 +1,12 @@
+@import "../StateAttributes.module.scss";
+
+.button {
+  border: none;
+  background: transparent;
+}
+
+.check {
+  color: $primary-color;
+  font-size: 1.15rem;
+  margin-top: 8px;
+}

@@ -1,0 +1,25 @@
+@import "../../../styles/variables.scss";
+
+.option {
+  height: 60px;
+  text-align: center;
+}
+
+.title {
+  max-height: 8vh;
+  border: 1px solid $primary-color;
+  padding: 5px;
+  background-color: transparent;
+  overflow: auto;
+  text-align: center;
+  resize: none;
+  border-radius: 3px;
+  margin-top: 10px;
+  cursor: default;
+  box-shadow: 0 0 4px #10a1f2;
+  font-size: 13.25px;
+  height: 30px;
+  word-wrap: break-word;
+  margin-bottom: 20px;
+  width: 90%;
+}

@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap");
+@import "./variables.scss";
+
+* {
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.content a {
+  color: $main-blue;
+  text-decoration: underline;
+}
+
+.content p {
+  font-size: 1.11rem;
+  font-weight: bold;
+}
+
+.code,
+code {
+  font-family: "Source Code Pro", monospace;
+  font-weight: bold;
+  opacity: 0.95;
+  background: rgba(135, 131, 120, 0.15);
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.975rem;
+  tab-size: 2;
+}
+
+.code {
+  padding: 1.5em 1em;
+  overflow: auto;
+  text-align: start;
+}
+
+.code > code {
+  background: none;
+  padding: 0;
+  font-size: 100%;
+  color: inherit;
+}
+
+figure img {
+  margin: auto;
+  display: block;
+  max-width: min(80vw, 75ch);
+}
+
+/* ============
+    Scroll-bar
+   ============ */
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 12px;
+  background-color: white;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d3d1cb;
+}
+
+/* ==========================
+    React Select Shenanigans
+   ========================== */
+
+.css-2b097c-container {
+  width: 300px;
+  margin: auto;
+}
+
+.css-12jo7m5 {
+  overflow: visible !important;
+}
+
+.css-1u0sikk {
+  overflow: visible !important;
+}
+
+.css-g1d714-ValueContainer .book-option {
+  display: flex;
+  justify-content: center;
+  margin-left: 25px;
+}
+
+.css-yk16xz-control {
+  box-shadow: 0.5px 0.5px 3px 0.5px gray;
+  width: 300px;
+  margin: auto;
+}
+
+.css-1u0sikk .book-title {
+  width: 14vw !important;
+  margin-left: 8px;
+}

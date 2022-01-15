@@ -1,0 +1,26 @@
+@import "../../styles/fadeIn.scss";
+
+.editorPanel {
+  // @extend .fadeIn;
+  margin-left: 1.75rem;
+  box-shadow: rgb(15 15 15 / 5%) 0px 0px 0px 1px,
+    rgb(15 15 15 / 10%) 0px 3px 6px, rgb(15 15 15 / 20%) 0px 9px 24px;
+  height: 200px;
+  width: 25%;
+  max-width: 350px;
+  border-radius: 4px;
+  overflow-y: auto;
+  background-color: white;
+  margin-top: 1.75rem;
+  box-sizing: border-box;
+  padding: 8px;
+  z-index: 0;
+}
+
+.selectLabel {
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}

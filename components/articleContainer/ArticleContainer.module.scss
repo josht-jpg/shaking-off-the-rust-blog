@@ -1,0 +1,47 @@
+.articleWidth {
+  width: 75ch;
+  max-width: 80vw;
+}
+
+.container {
+  @extend .articleWidth;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 7px;
+  flex-basis: 100%;
+}
+
+.description {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  opacity: 0.65;
+}
+
+.thumbnail {
+  @extend .articleWidth;
+  box-shadow: gray 0 0 5px;
+}
+
+.readTime {
+  text-align: center;
+  opacity: 0.75;
+  font-size: 1rem;
+}
+
+.readTimeIcon {
+  font-size: 1.3rem;
+  padding-top: 8px;
+}
+
+.articleContent {
+  @extend .articleWidth;
+  line-height: 1.6rem;
+}

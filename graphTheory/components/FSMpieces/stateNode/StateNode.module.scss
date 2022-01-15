@@ -1,0 +1,36 @@
+@import "../../../styles/fadeIn.scss";
+@import "../../../styles/variables.scss";
+
+.stateNode {
+  box-shadow: gray 0 0 6px;
+  border-radius: 50%;
+  text-align: center;
+  box-sizing: border-box;
+  height: 70px;
+  width: 70px;
+  // margin: auto;
+  cursor: grab;
+  background-color: white;
+  position: absolute;
+  filter: brightness(1.2);
+}
+
+.stateNode:hover {
+  //transition: $transition-time;
+  box-shadow: $primary-color 0 0 6px;
+}
+
+.finalState {
+  box-shadow: black 0 0 8px;
+  border-radius: 50%;
+  text-align: center;
+  box-sizing: border-box;
+  height: 60px;
+  width: 60px;
+  cursor: grab;
+  //background-color: red;
+  position: absolute;
+  filter: brightness(1.2);
+  margin-left: -30px;
+  margin-top: 5px;
+}

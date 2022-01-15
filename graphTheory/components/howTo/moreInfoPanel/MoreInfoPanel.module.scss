@@ -1,0 +1,24 @@
+@import "../../../styles/fadeIn.scss";
+
+.moreInfoPanel {
+  // @extend .fadeIn;
+  position: absolute;
+  z-index: 8;
+  top: calc(200px + 4vh);
+  left: calc(20vw + 20px);
+  box-shadow: rgb(15 15 15 / 5%) 0px 0px 0px 1px,
+    rgb(15 15 15 / 10%) 0px 3px 6px, rgb(15 15 15 / 20%) 0px 9px 24px;
+  width: 0;
+  max-width: 350px;
+  max-height: 70vh;
+  border-radius: 4px;
+  overflow-y: auto;
+  background-color: white;
+  margin-top: 2vh;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  height: 500px;
+  transition: 600ms;
+}

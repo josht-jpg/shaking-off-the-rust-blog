@@ -1,0 +1,58 @@
+@import "../../styles/clickable.scss";
+
+.footer {
+  height: 4.5rem;
+  padding-bottom: 0.5rem;
+  width: calc(100vw - 10px);
+  left: 0;
+  align-self: flex-end;
+  background-color: #e81207;
+  box-shadow: grey 0 0 4px;
+  color: white;
+  text-align: left;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  width: 75%;
+  margin: auto;
+  height: 100%;
+}
+
+.sourceCodeLink {
+  @extend .clickableLightBlue;
+  text-align: center;
+  font-size: 1.05rem;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.email {
+  @extend .clickableLightBlue;
+  text-align: center;
+  font-weight: bold;
+}
+
+.emailIcon {
+  font-size: 1rem;
+  margin-right: 1ch;
+}
+
+.iconsContainer {
+  text-align: center;
+}
+
+.socialMediaLink {
+  @extend .clickableLightBlue;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  margin-top: 6px;
+}
+
+.socialMediaLink + .socialMediaLink {
+  margin-left: 0.85rem;
+}

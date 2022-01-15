@@ -1,0 +1,21 @@
+.dropDown {
+  position: absolute;
+  z-index: 8;
+  right: 15px;
+  top: 15px;
+  border: 0;
+  background: 0;
+  box-shadow: rgb(15 15 15 / 5%) 0px 0px 0px 1px,
+    rgb(15 15 15 / 10%) 0px 3px 6px, rgb(15 15 15 / 20%) 0px 9px 24px;
+  border-radius: 4px;
+  height: 36px;
+  width: 210px;
+  padding: 0 8px;
+  transition: height 325ms ease-in;
+  overflow: hidden;
+}
+
+.animateDropDown {
+  height: min(600px, 85vh);
+  overflow-y: auto;
+}

@@ -1,0 +1,76 @@
+@import "../../styles/variables.scss";
+
+.container {
+  height: 255px;
+  width: 300px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3), 0 7px 20px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 8px;
+  background-color: white;
+  overflow: auto;
+  box-sizing: border-box;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.subscribe {
+  margin: auto;
+  width: 90%;
+  margin-top: 2rem;
+}
+
+.thankYouMessage {
+  margin-top: 0;
+}
+
+.success {
+  margin-bottom: 3px;
+  color: $main_blue;
+}
+
+.subscribeHeader {
+  margin-bottom: 4px;
+}
+
+.subscribeForm {
+  border: 1px solid $main-blue;
+  width: auto;
+  border-radius: 5px;
+  overflow: visible;
+  position: relative;
+}
+
+.subscribeInput {
+  border: none;
+  background-color: transparent;
+  height: 35px;
+  width: 65%;
+  padding: 5px;
+  outline: none;
+  overflow: visible;
+  display: inline-block;
+}
+
+.subscribeSubmit {
+  background-color: $main-blue;
+  border: none;
+  border-radius: 0 0 3px;
+  color: white;
+  float: right;
+  height: 35px;
+  width: 25%;
+  min-width: 62px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: 300ms;
+}
+
+.subscribeSubmit:hover {
+  cursor: pointer;
+  background-color: #4c99fd;
+  transition: 300ms;
+}
+
+.error {
+  margin-bottom: 3px;
+}

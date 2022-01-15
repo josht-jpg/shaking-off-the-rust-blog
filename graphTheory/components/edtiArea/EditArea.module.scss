@@ -1,0 +1,13 @@
+.editArea {
+  z-index: 1;
+  height: 98vh;
+  width: calc(97vw - 350px);
+}
+
+.mainSVG {
+  z-index: -2;
+  position: absolute;
+  width: 78%;
+  height: 95%;
+  background-color: transparent;
+}

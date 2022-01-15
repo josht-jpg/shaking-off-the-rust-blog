@@ -1,0 +1,49 @@
+@import "../../styles/variables.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 203px;
+
+  padding: 5px;
+  margin: 2rem auto;
+
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+
+  text-align: center;
+
+  border: 1px solid gray;
+  box-shadow: $primary-color 0 0 3px;
+
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 1.03rem;
+  cursor: pointer;
+}
+
+.container:hover {
+  color: $primary-color;
+  box-shadow: $primary-color 0 0 5px;
+}
+
+.iconContainer {
+  margin-left: 2px;
+  float: left;
+  font-size: 0.76rem;
+}
+
+.messageContainer {
+  margin: auto;
+  width: 100%;
+  display: inline-block;
+  padding-right: 0.76rem;
+}
+
+.message {
+  text-decoration: none;
+  margin: auto;
+  text-align: center;
+}

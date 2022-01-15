@@ -1,0 +1,1 @@
+export const INITIAL_ANIMATION_SPEED = 400;
