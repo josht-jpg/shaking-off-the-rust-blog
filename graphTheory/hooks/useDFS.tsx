@@ -28,7 +28,6 @@ const useDFS = () => {
         d3.selectAll("path").attr("opacity", "0.4");
         setIsRunning(false);
         setIsStepInProgress(false);
-        console.log(animationSpeed);
         return;
       }
 

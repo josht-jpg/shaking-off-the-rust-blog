@@ -386,7 +386,7 @@ const StateNode: React.FC<StateNodeProps> = ({
               opacity: "0.5",
               marginLeft: showCircleAnimation ? -STATE_NODE_RADIUS : 0,
               marginTop: showCircleAnimation ? 0 : STATE_NODE_RADIUS,
-              transition: `${animationSpeed}ms`,
+              transition: `${800 - animationSpeed}ms`,
             }}
           />
 
@@ -400,7 +400,7 @@ const StateNode: React.FC<StateNodeProps> = ({
             />
           )}
           {!!stateName && (
-            <p>
+            <p style={{ opacity: 0.75 }}>
               <strong>
                 <Latex>{stateName}</Latex>
               </strong>

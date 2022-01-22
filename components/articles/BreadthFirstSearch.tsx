@@ -1,5 +1,18 @@
+import dynamic from "next/dynamic";
 import GraphTheoryIndex from "../../graphTheory";
-import Layout from "../../graphTheory/components/Layout";
+
+const WasmComponent = dynamic({
+  loader: async () => {
+    const wasmModule = await import("../../main.wasm");
+    return () => (
+      <div>{`bfs: ${wasmModule.bfs(
+        [[1, 2], [0, 3, 4], [0, 4], [1, 4, 5], [1, 2, 3, 5], [3, 4], [7], [6]],
+        0,
+        5
+      )}`}</div>
+    );
+  },
+});
 
 const BreadthFirstSearch = () => {
   return (
@@ -16,6 +29,7 @@ const BreadthFirstSearch = () => {
           position: "relative",
         }}
       >
+        {/* <WasmComponent /> */}
         <GraphTheoryIndex />
       </div>
     </div>

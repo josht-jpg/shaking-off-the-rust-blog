@@ -1,12 +1,10 @@
-import { FaHourglassHalf } from "react-icons/fa";
-import DnaSearch from "../articles/DnaSearch";
 import SubscribeForm from "../subscribeForm/SubscribeForm";
 import styles from "./ArticleContainer.module.scss";
 
 const ArticleContainer = ({ article }) => {
   return (
     <div className={styles.container}>
-      {article && (
+      {!!article && (
         <>
           <h3 className={styles.title}>{article.title}</h3>
           {/* <h3 className={styles.description}>{article.description}</h3> */}

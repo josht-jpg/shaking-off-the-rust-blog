@@ -1,0 +1,67 @@
+@import "../../styles/clickable.scss";
+@import "../../styles/variables.scss";
+
+.header {
+  position: fixed;
+  top: 0;
+  height: 40px;
+  width: 100%;
+  right: 0;
+  background-color: white;
+  z-index: 1050;
+  transition: height 300ms;
+  box-shadow: $main-blue 0 0 7px;
+}
+
+.name {
+  text-align: start;
+  margin-left: 3rem;
+  font-size: 1.3rem;
+  margin-top: 5px;
+  transition: all 300ms ease 0s;
+  cursor: pointer;
+}
+
+.firstName {
+  color: $main-blue;
+  font-style: normal;
+}
+
+.rustMascot {
+  position: absolute;
+}
+
+.optionsContainer {
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  display: flex;
+}
+
+@media only screen and (max-width: 510px) {
+  .name {
+    display: none;
+  }
+
+  .optionsContainer {
+    right: auto;
+    left: 5px;
+  }
+}
+
+.headerItem {
+  @extend .clickable;
+  text-align: center;
+  margin: 5px 10px auto;
+  font-size: 0.975rem;
+  transition: all 300ms ease 0s;
+}
+
+.shareTranscript {
+  @extend .headerItem;
+  margin-left: 16px;
+}
+
+.icon {
+  font-size: 1.2rem;
+}

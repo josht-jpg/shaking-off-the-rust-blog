@@ -9,26 +9,19 @@ import styles from "./AnalysisPanel.module.scss";
 import CSSColors from "../../utils/CSSColors";
 import { PRIMARY_COLOR } from "../../constants/styleConstants";
 import Queue from "../../dataStructures.ts/queue";
-import { BsArrowRight } from "react-icons/bs";
 import MoreInfoPanel from "./moreInfoPanel/MoreInfoPanel";
-import Select from "react-select";
-import StateMahcineOption from "../editorPanel/stateMachineOption/StateMachineOption";
 import useDFS from "../../hooks/useDFS";
 import { Heap } from "../../dataStructures.ts/heap";
 import ShortestPathPanel from "./shortestPathsPanel/ShortestPathsPanel";
-
-const analysisOptions = {
-  SIMPLE: "Is my graph simple?",
-  REGULAR: "Is my graph regular?",
-  DFS: "Run Depth First Search on my Graph",
-  BFS: "Run Breadth First Search on my Graph",
-  NUMBER_OF_COMPONENTS: "Find the number of components on my graph",
-  TREE: "Is my graph a tree?",
-  SSSP: "Single Source Shortest Path",
-};
+import dynamic from "next/dynamic";
+import {
+  GraphAnalysisTypeContext,
+  GraphAnalysisTypes,
+} from "../../../context/GraphAnalysisTypeProvider";
 
 const AnalysisPanel = () => {
   const isLightMode = useContext(IsLightModeContext);
+  const { graphAnalysisType } = useContext(GraphAnalysisTypeContext);
 
   const {
     animateVertices,
@@ -52,20 +45,11 @@ const AnalysisPanel = () => {
   const [shortestPaths, setShortestPaths] = useState<number[]>([]);
   const [showShortestPaths, setShowShortestPaths] = useState(false);
 
-  const [analysisType, setAnalysisType] = useState(analysisOptions.SSSP);
-
   const dfs = useDFS();
 
   const runAlgorithm = () => {
-    switch (analysisType) {
-      case analysisOptions.REGULAR:
-        animations.isRegular(
-          setStopAnimationVertex,
-          setAnimateVertices,
-          animationSpeed
-        );
-        break;
-      case analysisOptions.BFS:
+    switch (graphAnalysisType) {
+      case GraphAnalysisTypes.BFS:
         animations.bfs(
           startNode,
           endNode,
@@ -74,21 +58,10 @@ const AnalysisPanel = () => {
           animationSpeed
         );
         break;
-      case analysisOptions.NUMBER_OF_COMPONENTS:
-        animations.numComponentsWithColor(
-          setAnimationColors,
-          setAnimateVertices,
-          animationSpeed
-        );
-        break;
-      case analysisOptions.DFS:
+      case GraphAnalysisTypes.DFS:
         dfs();
-        //animations.dfs(setAnimateVertices, animationSpeed);
         break;
-      case analysisOptions.TREE:
-        animations.isTree(setAnimateVertices, animationSpeed);
-        break;
-      case analysisOptions.SSSP:
+      case GraphAnalysisTypes.SSSP:
         animations.SSSP(
           startNode,
           setAnimateVertices,
@@ -121,54 +94,19 @@ const AnalysisPanel = () => {
         className={styles.howToContainer}
         style={{ boxShadow: !isLightMode && "white 0 0 9px" }}
       >
-        <h2 style={{ marginBottom: "0" }}>Graph Analysis</h2>
-        <hr style={{ marginTop: "4", marginBottom: "25px", width: "78%" }} />
-        {/* 
-        <strong style={{ fontSize: "1.18rem" }}>
-          Is graph regular? {G.isRegular() ? " Yes" : " No"}
-        </strong>
-        <br />
-        <br />
-        <strong style={{ fontSize: "1.18rem" }}>
-          Is graph simple? {G.isSimple() ? " Yes" : " No"}
-        </strong>
-        <br />
-        <br />
-        <strong style={{ fontSize: "1.18rem" }}>
-          Is graph a Tree? {G.isTree() ? " Yes" : " No"}
-        </strong>
-        <br />
-        <br />
+        <h2 style={{ marginBottom: "0" }}>{panelTitle(graphAnalysisType)}</h2>
+        <hr style={{ marginTop: "4", marginBottom: "25px", width: "95%" }} />
 
-        <strong style={{ fontSize: "1.18rem" }}>
-          Number of components: {G.numberOfComponents()}
-        </strong>
-        <br />
-        <br />
-      <br />*/}
-        <label className={styles.selectLabel}>Select Analysis Type</label>
-        <Select
-          style={{ width: "203px" }}
-          className="basic-single"
-          classNamePrefix="select"
-          name="State Machine"
-          defaultValue={{
-            label: analysisType,
-            value: analysisType,
-          }}
-          options={Object.values(analysisOptions).map((option) => ({
-            label: (
-              <StateMahcineOption stateMachine={option} isSelected={false} />
-            ),
-            value: option,
-          }))}
-          onChange={(e) => setAnalysisType(e.value)}
-        />
-        {(analysisType === analysisOptions.BFS ||
-          analysisType === analysisOptions.SSSP) && (
+        {(graphAnalysisType === GraphAnalysisTypes.BFS ||
+          graphAnalysisType === GraphAnalysisTypes.SSSP) && (
           <div>
-            <label>Start Node:</label>
+            <label>Start Node: </label>
             <input
+              style={{
+                marginBottom: "0.75rem",
+
+                width: `${Math.ceil((startNode + 1) / 10) + 4}ch`,
+              }}
               type="number"
               name="startNode"
               value={startNode}
@@ -176,7 +114,8 @@ const AnalysisPanel = () => {
               min="0"
               max={G.vertices().length - 1}
             />
-            <label>End Node:</label>
+            <br />
+            <label>End Node: </label>
             <input
               type="number"
               name="endNode"
@@ -190,15 +129,6 @@ const AnalysisPanel = () => {
 
         <Button type={"Run Algorithm"} action={() => runAlgorithm()}></Button>
 
-        <CheckBoxField
-          buttonTitle={"Show Psuedo Code"}
-          buttonText={"Show Psuedo Code"}
-          isDisabled={false}
-          isChecked={showPseudoCode}
-          handleClick={() => setShowPseudoCode((prev) => !prev)}
-        />
-        <br />
-        <br />
         <label>
           <strong>Speed</strong>
         </label>
@@ -212,17 +142,6 @@ const AnalysisPanel = () => {
           onChange={(e) => setAnimationSpeed(e.target.valueAsNumber)}
           step="10"
         />
-
-        <br />
-        <br />
-        <button
-          className={styles.moreInfoButton}
-          onClick={() => setShowMoreInfo(true)}
-        >
-          <strong style={{ fontSize: "1.15rem" }}>
-            {`More About ${analysisType}`} <BsArrowRight />
-          </strong>
-        </button>
       </div>
     </>
   );
@@ -353,8 +272,6 @@ const animations = {
   ) {
     const queue = new Queue();
 
-    console.log(startNode, "startnode");
-
     queue.enqueue(startNode);
     setAnimateVertices([startNode]);
     const animationColorsInit = new Array(G.vertices().length).fill(
@@ -409,11 +326,11 @@ const animations = {
           }
         });
         layers++;
-        setTimeout(search, animationSpeed);
+        setTimeout(search, 800 - animationSpeed);
       }
     };
 
-    setTimeout(search, animationSpeed);
+    setTimeout(search, 800 - animationSpeed);
 
     // const prev = search();
     let path = [];
@@ -591,4 +508,17 @@ const animations = {
 
     setTimeout(search, animationSpeed);
   },
+};
+
+const panelTitle = (graphAnalysisType: GraphAnalysisTypes) => {
+  switch (graphAnalysisType) {
+    case GraphAnalysisTypes.BFS:
+      return "Breadth First Search";
+    case GraphAnalysisTypes.DFS:
+      return "Depth First Search";
+    case GraphAnalysisTypes.SSSP:
+      return "Single Source Shortest Path";
+    default:
+      return "";
+  }
 };
