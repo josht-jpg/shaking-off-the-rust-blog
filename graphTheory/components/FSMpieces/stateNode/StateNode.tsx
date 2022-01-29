@@ -54,6 +54,7 @@ interface StateNodeProps {
   isCreated: boolean;
   styleProps: any;
   index?: number;
+  example?: string;
 }
 
 const StateNode: React.FC<StateNodeProps> = ({
@@ -63,6 +64,7 @@ const StateNode: React.FC<StateNodeProps> = ({
   isCreated,
   styleProps,
   index,
+  example,
 }) => {
   const isShiftPressed = useContext(IsShiftKeyPressedContext);
   const setCreateInput = useContext(CreateInputContext);
@@ -91,10 +93,12 @@ const StateNode: React.FC<StateNodeProps> = ({
   });
 
   useEffect(() => {
-    const group = JSON.parse(localStorage.getItem("groups"))?.find(
-      (g) => g.index === index
-    );
-    setGroupTransform(getTransformCoordinates(group?.transform));
+    if (!example) {
+      const group = JSON.parse(localStorage.getItem("groups"))?.find(
+        (g) => g.index === index
+      );
+      setGroupTransform(getTransformCoordinates(group?.transform));
+    }
   }, [setGroupTransform]);
 
   const stateNodeInit = !!savedAttributes?.stateName
@@ -148,31 +152,35 @@ const StateNode: React.FC<StateNodeProps> = ({
   ];
 
   useEffect(() => {
-    changeNodeInLocalStorage(STATE_ATTRIBUTES.stateName, stateName, index);
+    !example &&
+      changeNodeInLocalStorage(STATE_ATTRIBUTES.stateName, stateName, index);
   }, [stateName]);
 
   useEffect(() => {
-    changeNodeInLocalStorage(STATE_ATTRIBUTES.color, color, index);
+    !example && changeNodeInLocalStorage(STATE_ATTRIBUTES.color, color, index);
   }, [color]);
 
   useEffect(() => {
-    changeNodeInLocalStorage(
-      STATE_ATTRIBUTES.isFinalState,
-      isFinalState,
-      index
-    );
+    !example &&
+      changeNodeInLocalStorage(
+        STATE_ATTRIBUTES.isFinalState,
+        isFinalState,
+        index
+      );
   }, [isFinalState]);
 
   useEffect(() => {
-    changeNodeInLocalStorage(STATE_ATTRIBUTES.textColor, textColor, index);
+    !example &&
+      changeNodeInLocalStorage(STATE_ATTRIBUTES.textColor, textColor, index);
   }, [textColor]);
 
   useEffect(() => {
-    changeNodeInLocalStorage(
-      STATE_ATTRIBUTES.outlineColor,
-      outlineColor,
-      index
-    );
+    !example &&
+      changeNodeInLocalStorage(
+        STATE_ATTRIBUTES.outlineColor,
+        outlineColor,
+        index
+      );
   }, [outlineColor]);
 
   const [_, setStartNodeIndex] = useContext(StartStateContext);
@@ -200,6 +208,7 @@ const StateNode: React.FC<StateNodeProps> = ({
                 y={/*vertexPositions[index + 1].y*/ 0}
                 index={i}
                 savedAttributes={vertex.props?.savedAttributes}
+                // example={example}
               />
             );
           } else {
@@ -212,17 +221,19 @@ const StateNode: React.FC<StateNodeProps> = ({
   const [isGroupCreated, setIsGroupCreated] = useState(false);
 
   useEffect(() => {
-    const group = JSON.parse(localStorage.getItem("groups"))?.find(
-      (g) => g.index === index
-    );
+    if (!example) {
+      const group = JSON.parse(localStorage.getItem("groups"))?.find(
+        (g) => g.index === index
+      );
 
-    if (!group?.length) {
-      addGroupToStorage(index);
-    }
+      if (!group?.length) {
+        addGroupToStorage(index);
+      }
 
-    if (!!index || index === 0) {
-      createGroup(index, group?.transform);
-      setIsGroupCreated(true);
+      if (!!index || index === 0) {
+        createGroup(index, group?.transform);
+        setIsGroupCreated(true);
+      }
     }
   }, [index, setIsGroupCreated]);
 

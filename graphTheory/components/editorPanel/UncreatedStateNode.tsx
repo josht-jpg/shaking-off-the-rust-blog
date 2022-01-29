@@ -6,7 +6,6 @@ import StateNodeContext from "../../contexts/StateNodeContext";
 import CreatedStateNode from "../FSMpieces/stateNode/CreatedStateNode";
 import StateNode from "../FSMpieces/stateNode/StateNode";
 import { saveNewStateNodeInStorage } from "../../utils/stateNodeUtils";
-//import { AdjacencyListContext } from "../../contexts/AdjacencyListProvider";
 import G from "../../adjacencyList";
 
 interface UncreatedStateNodeProps {

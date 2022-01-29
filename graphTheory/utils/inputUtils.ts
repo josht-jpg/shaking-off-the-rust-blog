@@ -46,10 +46,7 @@ export const changeInputColor = (inputId: string, color: string) => {
     "fill",
     removeWhiteSpace(color)
   );
-  d3.select(inputId.replace("Number", "Arrow")).attr(
-    "fill",
-    removeWhiteSpace(color)
-  );
+
   d3.select(inputId.replace("Number", "Circle")).attr(
     "fill",
     removeWhiteSpace(color)

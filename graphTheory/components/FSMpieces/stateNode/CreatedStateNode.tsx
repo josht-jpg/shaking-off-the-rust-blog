@@ -9,7 +9,6 @@ import {
   moveGroupConnectedToState,
   moveInputsConnectedToStateNode,
 } from "../../../utils/stateNodeUtils";
-import { saveStartPointPositionAfterMovingState } from "../../../utils/startPointUtils";
 import { TRANSITION_TIME } from "../../../constants/styleConstants";
 
 interface CreatedStateNodeProps {
@@ -17,6 +16,7 @@ interface CreatedStateNodeProps {
   y: number;
   index: number;
   savedAttributes: any;
+  example?: string;
 }
 
 const CreatedStateNode: React.FC<CreatedStateNodeProps> = ({
@@ -24,6 +24,7 @@ const CreatedStateNode: React.FC<CreatedStateNodeProps> = ({
   y,
   index,
   savedAttributes,
+  example,
 }) => {
   const { initialX: initialXFromStorage, initialY: initialYFromStorage } =
     getPositionFromStorage(index);
@@ -85,14 +86,8 @@ const CreatedStateNode: React.FC<CreatedStateNodeProps> = ({
 
   const handleStopDragging = (top: number, left: number) => {
     setIsDragging(false);
-    changeNodeInLocalStorage("x", left, index);
-    changeNodeInLocalStorage("y", top, index);
-
-    const isStartPointConnectedToState =
-      index === JSON.parse(localStorage.getItem("startPoint"))?.startNodeIndex;
-    if (isStartPointConnectedToState) {
-      saveStartPointPositionAfterMovingState(index);
-    }
+    !example && changeNodeInLocalStorage("x", left, index);
+    !example && changeNodeInLocalStorage("y", top, index);
   };
 
   return (

@@ -33,6 +33,7 @@ import { AnimateVerticesProvider } from "../contexts/AnimateVerticesContext";
 import DropDown from "./dropDown/DropDown";
 import { LastDeletedVertexContext } from "../contexts/LastDeletedVertex";
 import { VertexPositionsProvider } from "../contexts/VertexPositionsProvider";
+import CreatedStateNode from "./FSMpieces/stateNode/CreatedStateNode";
 
 type createInput = {
   x: number;
@@ -42,9 +43,10 @@ type createInput = {
 
 interface LayoutProps {
   title?: string;
+  example?: string;
 }
 
-const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder" }) => {
+const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
   const [isMouseInEditArea, setIsMouseInEditArea] = useState(false);
 
   const stateNodesState = useState([]);
@@ -107,17 +109,29 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder" }) => {
   const [startIndex, setStartIndex] = startIndexState;
 
   useEffect(() => {
-    setStateNodes(useCreateStatesFromLocalStorage());
-  }, [setStateNodes]);
+    // example === ALPACA
 
-  useEffect(() => {
-    const startPoint = JSON.parse(
-      localStorage.getItem(START_POINT_STORAGE_KEY)
-    );
-    if (!!startPoint) {
-      setStartIndex(startPoint.startNodeIndex);
+    console.log(example, "example");
+
+    if (!!example) {
+      //TODO: extract examples to a hashmap
+      setStateNodes(
+        JSON.parse(
+          `[{"x":719.75,"y":157.46875,"stateName":"You","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":829.75,"initialY":182.46875},{"x":891.75,"y":420.46875,"stateName":"Greg","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":855.75,"initialY":482.46875},{"x":1144.75,"y":171.46875,"stateName":"Ruth","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":1163.75,"initialY":269.46875},{"x":1189.75,"y":382.46875,"stateName":"Santiago","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":1260.75,"initialY":461.46875},{"x":1194.75,"y":654.46875,"stateName":"Jim","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":1298.75,"initialY":697.46875},{"x":750.75,"y":775.46875,"stateName":"Diya","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":908.75,"initialY":737.46875},{"x":1487.75,"y":156.46875,"stateName":"Jessica","color":"","isFinalState":false,"textColor":"","outlineColor":""}]`
+        ).map((node, index) => (
+          <CreatedStateNode
+            x={node.x}
+            y={node.y}
+            index={index}
+            savedAttributes={node}
+            example={example}
+          />
+        ))
+      );
+    } else {
+      setStateNodes(useCreateStatesFromLocalStorage());
     }
-  }, [setStartIndex]);
+  }, [setStateNodes]);
 
   const { lastDeletedVertex } = useContext(LastDeletedVertexContext);
   useEffect(() => {
@@ -128,7 +142,6 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder" }) => {
       const v1 = parseInt(vertices[0]);
       const v2 = parseInt(vertices[1]);
       if (v1 === lastDeletedVertex || v2 === lastDeletedVertex) {
-        d3.select(id.replace("Number", "Arrow")).remove();
         d3.select(id.replace("Number", "Marker")).remove();
         d3.select(id).remove();
       }
@@ -159,10 +172,7 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder" }) => {
           }
 
           d3.select(oldId).attr("id", id.replace("#", ""));
-          d3.select(oldId.replace("Number", "Arrow")).attr(
-            "id",
-            id.replace("#", "").replace("Number", "Arrow")
-          );
+
           d3.select(id.replace("Number", "Marker")).attr(
             "id",
             id.replace("#", "").replace("Number", "Marker")
@@ -275,7 +285,7 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder" }) => {
                                     setIsLightMode={setIsLightMode}
                                   />
                                   <DropDown />
-                                  <EditorPanel />
+                                  {!example && <EditorPanel />}
                                   <HowTo />
                                   <EditArea
                                     setIsMouseInEditArea={setIsMouseInEditArea}
@@ -290,6 +300,7 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder" }) => {
                                           createInput &&
                                           "crosshair"
                                     }
+                                    example={example}
                                   />
                                 </StartStateContext.Provider>
                               </MainSvgOffSetContext.Provider>

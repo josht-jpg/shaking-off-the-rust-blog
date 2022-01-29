@@ -22,23 +22,6 @@ const createNewStartInput = (startNodeIndex: number) => {
   const id = `lineStartTo${startNodeIndex}Number`;
 
   d3.select("#mainSVG")
-    .append("marker")
-    .attr("id", id.replace("Number", "Marker"))
-    .attr("refY", "3")
-    .attr("refX", "5.8")
-    .attr("markerUnits", "strokeWidth")
-    .attr("markerHeight", "6")
-    .attr("markerWidth", "6")
-    .attr("orient", "auto")
-    .append("path")
-    .attr("id", id.replace("Number", "Arrow"))
-    .attr("class", "arrow")
-    .attr("d", "M 0 0 L 6 3 L 0 6 z")
-    .attr("fill", "gray")
-    .attr("opacity", "0.9")
-    .attr("z-index", "20");
-
-  d3.select("#mainSVG")
     .append("path")
     .attr("id", id)
     .attr("class", "input")

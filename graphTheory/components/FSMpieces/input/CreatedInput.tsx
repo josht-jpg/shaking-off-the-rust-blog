@@ -27,6 +27,7 @@ import G from "../../../adjacencyList";
 
 interface CreatedInputProps {
   id: string;
+  example?: string;
 }
 
 interface coordinates {
@@ -34,7 +35,7 @@ interface coordinates {
   y: number;
 }
 
-const CreatedInput: React.FC<CreatedInputProps> = ({ id }) => {
+const CreatedInput: React.FC<CreatedInputProps> = ({ id, example }) => {
   const isLightMode = useContext(IsLightModeContext);
 
   const [isSelected, setIsSelected] = useState(false);
@@ -107,7 +108,8 @@ const CreatedInput: React.FC<CreatedInputProps> = ({ id }) => {
 
   const handleMouseUp = () => {
     setIsMouseDown(false);
-    changeInputInLocalStorage("d", line.attr("d"), id.replace("#", ""));
+    !example &&
+      changeInputInLocalStorage("d", line.attr("d"), id.replace("#", ""));
   };
 
   const handleInputClick = (mouseEvent: MouseEvent) => {

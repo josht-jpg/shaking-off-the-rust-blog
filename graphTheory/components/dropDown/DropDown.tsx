@@ -48,10 +48,10 @@ const DropDown = () => {
               fontSize: "1.18rem",
             }}
           >
-            To Add a State:
+            To Add a Node:
           </i>
           <br />
-          Drag in a state from the panel above.
+          Drag in a Node from the panel above.
         </strong>
         <br />
         <br />
@@ -63,11 +63,11 @@ const DropDown = () => {
               fontSize: "1.18rem",
             }}
           >
-            To Add an input:
+            To Add an Edge:
           </i>
           <br />
-          Hover over a created state, hold down shift, then hold down the left
-          click and drag your mouse to another state.
+          Hover over a created node, hold down shift, then hold down the left
+          click and drag your mouse to another node.
         </strong>
         <br />
         <br />
@@ -82,7 +82,7 @@ const DropDown = () => {
             To Move Something:
           </i>
           <br />
-          Hold down the left click on an input or state and start dragging it
+          Hold down the left click on an edge or node and start dragging it
           around.
         </strong>
         <br />
@@ -95,10 +95,10 @@ const DropDown = () => {
               fontSize: "1.18rem",
             }}
           >
-            To Edit State Details and Colors:
+            To Edit Node Details and Colors:
           </i>
           <br />
-          Right click on the state.
+          Right click on the node.
         </strong>
         <br />
         <br />
@@ -110,10 +110,10 @@ const DropDown = () => {
               fontSize: "1.18rem",
             }}
           >
-            To Edit Input Details and Colors:
+            To Edit Edge Details and Colors:
           </i>
           <br />
-          Left click on the Input.
+          Left click on the Edge.
         </strong>
       </div>
     </div>

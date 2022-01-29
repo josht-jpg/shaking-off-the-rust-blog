@@ -12,11 +12,9 @@ const EditArea = ({
   constructionInput,
   createdInputIds,
   stateNodes,
+  example,
 }) => {
   const [startIndex, _] = useContext(StartStateContext);
-
-  const startPointPosition = () =>
-    JSON.parse(localStorage.getItem("startPoint"))?.position;
 
   return (
     <div
@@ -28,14 +26,12 @@ const EditArea = ({
         cursor,
       }}
     >
-      <svg ref={mainSvgRef} id={`mainSVG`} className={styles.mainSVG}>
-        {startIndex !== undefined && (
-          <StartPoint position={startPointPosition()} />
-        )}
-      </svg>
+      <svg ref={mainSvgRef} id={`mainSVG`} className={styles.mainSVG} />
+
       {constructionInput}
       {createdInputIds.map(
-        (id) => !d3.select(id).empty() && <CreatedInput id={id} />
+        (id) =>
+          !d3.select(id).empty() && <CreatedInput id={id} example={example} />
       )}
       {stateNodes.filter((n) => !!n)}
     </div>

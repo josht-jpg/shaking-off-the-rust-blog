@@ -81,14 +81,8 @@ const InputAttributes: React.FC<InputAttributesProps> = ({
     if (CSSColors.includes(removeWhiteSpace(color.toLowerCase()))) {
       d3.select(line.id).attr("stroke", removeWhiteSpace(color));
 
-      if (line.id.startsWith("#selfLoop")) {
-        d3.select(line.id + "Arrow").attr("fill", removeWhiteSpace(color));
-      } else {
+      if (!line.id.startsWith("#selfLoop")) {
         d3.select(line.id.replace("line", "path")).attr(
-          "fill",
-          removeWhiteSpace(color)
-        );
-        d3.select(line.id.replace("Number", "Arrow")).attr(
           "fill",
           removeWhiteSpace(color)
         );
@@ -124,16 +118,6 @@ const InputAttributes: React.FC<InputAttributesProps> = ({
 
     if (isSelfLoop) {
       line.handleDelete();
-
-      /*  localStorage.setItem(
-        "selfLoops",
-        JSON.stringify({
-          ...(JSON.parse(localStorage.getItem("selfLoops")) ?? {}),
-          [line.stateIndex]: JSON.parse(localStorage.getItem("selfLoops"))[
-            line.stateIndex
-          ]?.filter((loop) => l),
-        })
-      );*/
     }
   };
 

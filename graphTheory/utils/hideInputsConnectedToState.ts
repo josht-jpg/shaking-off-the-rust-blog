@@ -5,7 +5,6 @@ import deleteInputFromStorage from "./localStorage/deleteInput";
 const isPathConnectedToState = (index: number, lineId: string) =>
   lineId.startsWith(`selfLoopOnNode${index}`) ||
   (lineId.split("Number")[0].includes(index.toString()) &&
-    lineId.split("Arrow")[0].includes(index.toString()) &&
     !lineId.includes("selfLoop"));
 
 const hidePaths = (index: number) =>

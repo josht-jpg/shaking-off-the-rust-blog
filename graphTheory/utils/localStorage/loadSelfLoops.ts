@@ -1,24 +1,5 @@
 import * as d3 from "d3";
 
-const createMarker = (stateIndex: number, loop: any) =>
-  d3
-    .select(`#container${stateIndex}`)
-    .append("marker")
-    .attr("id", `selfLoopOnNode${stateIndex}-${loop.index}` + "marker")
-    .attr("refY", "3")
-    .attr("refX", "5.8")
-    .attr("markerUnits", "strokeWidth")
-    .attr("markerHeight", "6")
-    .attr("markerWidth", "6")
-    .attr("orient", "auto")
-    .append("path")
-    .attr("id", `selfLoopOnNode${stateIndex}-${loop.index}Arrow`)
-    .attr("class", "arrow")
-    .attr("d", "M 0 0 L 6 3 L 0 6 z")
-    .attr("fill", loop.color ?? "gray")
-    .attr("opacity", "0.9")
-    .attr("z-index", "20");
-
 const createPath = (stateIndex: number, loop: any) =>
   d3
     .select(`#container${stateIndex}`)
@@ -48,7 +29,6 @@ const loadSelfLoops = (
 
   if (savedSelfLoopsExist && isContainerCreated) {
     savedSelfLoops[stateIndex].map((loop) => {
-      createMarker(stateIndex, loop);
       createPath(stateIndex, loop);
 
       d3.select(`#selfLoopOnNode${stateIndex}-${loop.index}`).on(

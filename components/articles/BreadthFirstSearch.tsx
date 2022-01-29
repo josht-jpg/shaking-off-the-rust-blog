@@ -27,11 +27,25 @@ const BreadthFirstSearch = () => {
           boxShadow:
             "0px 1px 8px -1px rgb(0 0 0 / 20%), 0px 3px 24px -2px rgb(0 0 0 / 5%)",
           position: "relative",
+          marginBottom: "4rem",
         }}
       >
-        {/* <WasmComponent /> */}
-        <GraphTheoryIndex />
+        <GraphTheoryIndex example={"ALPACA"} />
       </div>
+
+      {/* <div
+        id={"graph-container"}
+        style={{
+          width: "75vw",
+          height: "85vh",
+          boxShadow:
+            "0px 1px 8px -1px rgb(0 0 0 / 20%), 0px 3px 24px -2px rgb(0 0 0 / 5%)",
+          position: "relative",
+        }}
+      >
+    
+        <GraphTheoryIndex />
+      </div>*/}
     </div>
   );
 };
