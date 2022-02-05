@@ -349,6 +349,7 @@ const StateNode: React.FC<StateNodeProps> = ({
         group={{ isCreated: isGroupCreated, transform: groupTransform }}
         isCreatingSelfLoopState={isCreatingSelfLoopState}
         currentSelfLoopIndexState={currentSelfLoopIndexState}
+        example={example}
       />
 
       <Draggable

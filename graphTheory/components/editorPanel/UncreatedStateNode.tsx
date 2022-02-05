@@ -7,6 +7,7 @@ import CreatedStateNode from "../FSMpieces/stateNode/CreatedStateNode";
 import StateNode from "../FSMpieces/stateNode/StateNode";
 import { saveNewStateNodeInStorage } from "../../utils/stateNodeUtils";
 import G from "../../adjacencyList";
+import MainSvgOffSetContext from "../../contexts/MainSvgOffSet";
 
 interface UncreatedStateNodeProps {
   addStateNode: () => void;
@@ -29,6 +30,8 @@ const UncreatedStateNode: React.FC<UncreatedStateNodeProps> = ({
 
   const [closeNode, setCloseNode] = useState(false);
 
+  const mainSvgOffSet = useContext(MainSvgOffSetContext);
+
   const saveNode = (top: number, left: number) => {
     G.addVertex();
 
@@ -42,7 +45,7 @@ const UncreatedStateNode: React.FC<UncreatedStateNodeProps> = ({
       />,
     ]);
 
-    saveNewStateNodeInStorage(top, left);
+    saveNewStateNodeInStorage(top - mainSvgOffSet.y, left - mainSvgOffSet.x);
 
     setCloseNode(true);
   };

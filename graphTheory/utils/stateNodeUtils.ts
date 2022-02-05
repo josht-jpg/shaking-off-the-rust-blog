@@ -49,6 +49,7 @@ export const moveGroupConnectedToState = (
   changeInX,
   changeInY
 ) => {
+  //TODO: check this - may mess up moving nodes
   getAllElementsByType("g").map((group: any) => {
     const isGroupConntectedToState =
       group.getAttribute("id") === `container${stateIndex}`;
@@ -267,6 +268,7 @@ const getAllTextInGroup = (stateIndex: number) =>
     document.querySelectorAll(`*[id^=textselfLoopOnNode${stateIndex}]`)
   ) as HTMLElement[];
 
+//TODO: should be a hook with mainSvgOffSetContext
 export const saveNewStateNodeInStorage = (top: number, left: number) =>
   localStorage.setItem(
     STATE_NODE_LOCAL_STORAGE_KEY,

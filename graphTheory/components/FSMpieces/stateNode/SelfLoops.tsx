@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import * as d3 from "d3";
 import InputAttributes from "../input/InputAttributes";
 import loadSelfLoops from "../../../utils/localStorage/loadSelfLoops";
-import getCurrentSelfLoopIndex from "../../../utils/localStorage/getCurrentSelfLoopIndex";
 import createSelfLoop from "../../../utils/createSelfLoop";
 import drawCircleOutline from "../../../utils/drawCircleOutline";
 import saveStateSelfLoops from "../../../utils/localStorage/saveStateSelfLoops";
@@ -37,6 +36,7 @@ interface SelfLoopsProps {
     number,
     (newState: number | ((previousState: number) => void)) => void
   ];
+  example?: string;
 }
 
 const SelfLoops: React.FC<SelfLoopsProps> = ({
@@ -44,6 +44,7 @@ const SelfLoops: React.FC<SelfLoopsProps> = ({
   group,
   isCreatingSelfLoopState,
   currentSelfLoopIndexState,
+  example,
 }) => {
   const [selfLoops, setSelfLoops] = useState([]);
   const [isCreatingSelfLoop, setIsCreatingSelfLoop] = isCreatingSelfLoopState;
@@ -138,7 +139,7 @@ const SelfLoops: React.FC<SelfLoopsProps> = ({
       stateNode.index !== undefined &&
       (selfLoops.length || isDeletingSelfLoop)
     ) {
-      saveStateSelfLoops(stateNode.index, selfLoops);
+      !example && saveStateSelfLoops(stateNode.index, selfLoops);
     }
     setIsDeletingSelfLoop(false);
   }, [selfLoops, isDeletingSelfLoop]);

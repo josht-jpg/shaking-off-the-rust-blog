@@ -8,21 +8,21 @@ const getArticleData = (articleExtension: string) => {
       return {
         title: "DNA Analysis",
         thumbnail:
-          "https://static.scientificamerican.com/sciam/cache/file/AC11C426-00F4-49B4-B68D2871D0F1BD65_source.jpg?w=590&h=800&394D501B-A280-4491-AF19797B0E4675FC",
+          "https://images.pexels.com/photos/5721679/pexels-photo-5721679.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         jsx: <DnaSearch />,
       };
     case "naive-bayes":
       return {
         title: "Naive Bayes Classifier",
         thumbnail:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Bayes%27_Theorem_MMB_01.jpg/220px-Bayes%27_Theorem_MMB_01.jpg",
+          "https://images.pexels.com/photos/878167/pexels-photo-878167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         jsx: <NaiveBayes />,
       };
     case "breadth-first-search":
       return {
         title: "Breadth First Search",
         thumbnail:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Breadth-first-tree.svg/300px-Breadth-first-tree.svg.png",
+          "https://cdn-images-1.medium.com/max/800/1*nyziGfeh2hk2cOa3FEl5xQ.png",
         jsx: <BreadthFirstSearch />,
       };
     default:

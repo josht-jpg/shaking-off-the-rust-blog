@@ -17,13 +17,11 @@ import {
   changeInputTextColorInStorage,
   getInputNameFronStorage,
   getInputTextColorFromStorage,
-  getVerticesFromEdgeId,
   inputTextPosition,
   removeInputFromStorage,
 } from "../../../utils/inputUtils";
 import LatexLabel from "../../LatexLabel";
 import { TRANSITION_TIME } from "../../../constants/styleConstants";
-import G from "../../../adjacencyList";
 
 interface CreatedInputProps {
   id: string;

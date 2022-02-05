@@ -10,6 +10,7 @@ import {
   moveInputsConnectedToStateNode,
 } from "../../../utils/stateNodeUtils";
 import { TRANSITION_TIME } from "../../../constants/styleConstants";
+import MainSvgOffSetContext from "../../../contexts/MainSvgOffSet";
 
 interface CreatedStateNodeProps {
   x: number;
@@ -84,10 +85,14 @@ const CreatedStateNode: React.FC<CreatedStateNodeProps> = ({
 
   const isShiftPressed = useContext(IsShiftKeyPressedContext);
 
+  const mainSvgOffSet = useContext(MainSvgOffSetContext);
+
   const handleStopDragging = (top: number, left: number) => {
     setIsDragging(false);
-    !example && changeNodeInLocalStorage("x", left, index);
-    !example && changeNodeInLocalStorage("y", top, index);
+    if (!example) {
+      changeNodeInLocalStorage("x", left - mainSvgOffSet.x, index);
+      changeNodeInLocalStorage("y", top - mainSvgOffSet.y, index);
+    }
   };
 
   return (

@@ -34,6 +34,7 @@ import DropDown from "./dropDown/DropDown";
 import { LastDeletedVertexContext } from "../contexts/LastDeletedVertex";
 import { VertexPositionsProvider } from "../contexts/VertexPositionsProvider";
 import CreatedStateNode from "./FSMpieces/stateNode/CreatedStateNode";
+import removeWhiteSpace from "../utils/removeWhiteSpace";
 
 type createInput = {
   x: number;
@@ -111,8 +112,6 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
   useEffect(() => {
     // example === ALPACA
 
-    console.log(example, "example");
-
     if (!!example) {
       //TODO: extract examples to a hashmap
       setStateNodes(
@@ -120,8 +119,8 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
           `[{"x":719.75,"y":157.46875,"stateName":"You","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":829.75,"initialY":182.46875},{"x":891.75,"y":420.46875,"stateName":"Greg","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":855.75,"initialY":482.46875},{"x":1144.75,"y":171.46875,"stateName":"Ruth","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":1163.75,"initialY":269.46875},{"x":1189.75,"y":382.46875,"stateName":"Santiago","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":1260.75,"initialY":461.46875},{"x":1194.75,"y":654.46875,"stateName":"Jim","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":1298.75,"initialY":697.46875},{"x":750.75,"y":775.46875,"stateName":"Diya","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":908.75,"initialY":737.46875},{"x":1487.75,"y":156.46875,"stateName":"Jessica","color":"","isFinalState":false,"textColor":"","outlineColor":""}]`
         ).map((node, index) => (
           <CreatedStateNode
-            x={node.x}
-            y={node.y}
+            x={node.x + mainSvgRef?.current?.getBoundingClientRect().left}
+            y={node.y + mainSvgRef?.current?.getBoundingClientRect().top}
             index={index}
             savedAttributes={node}
             example={example}
@@ -129,9 +128,21 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
         ))
       );
     } else {
-      setStateNodes(useCreateStatesFromLocalStorage());
+      setStateNodes(
+        (JSON.parse(localStorage.getItem("stateNodes")) ?? []).map(
+          (node, index) =>
+            !node.hidden && (
+              <CreatedStateNode
+                x={node.x + mainSvgRef?.current?.getBoundingClientRect().left}
+                y={node.y + mainSvgRef?.current?.getBoundingClientRect().top}
+                index={index}
+                savedAttributes={node}
+              />
+            )
+        )
+      );
     }
-  }, [setStateNodes]);
+  }, [setStateNodes, mainSvgRef]);
 
   const { lastDeletedVertex } = useContext(LastDeletedVertexContext);
   useEffect(() => {
@@ -184,8 +195,36 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
   }, [lastDeletedVertex]);
 
   useEffect(() => {
-    createInputsFromLocalStorage();
-    setCreatedInputIds(getInputIdsFromStorage().map((id) => "#" + id));
+    if (!!example) {
+      const createPath = (input) =>
+        d3
+          .select("#mainSVG")
+          .append("path")
+          .attr("id", input.id)
+          .attr("class", "input")
+          .attr("d", input.d)
+          .attr("marker-end", `url(#${input.id}marker)`)
+          .attr("stroke", removeWhiteSpace(input.color) ?? "gray")
+          .attr("opacity", "0.4")
+          .attr("filter", "drop-shadow(2px 2px 2px rgb(0 0 0 / 0.2))")
+          .attr("stroke-width", "3px")
+          .attr("width", "3px")
+          .attr("fill", "none")
+          .attr("cursor", "pointer");
+
+      JSON.parse(
+        `[{"id":"line0to1Number1","d":"M 190.65625 126.03125 Q 240.59375 191 335.90625 351.5625","name":""},{"id":"line0to2Number1","d":"M 190.65625 126.03125 Q 451.90625 183.5625 577.90625 130.5625","name":""},{"id":"line0to5Number1","d":"M 190.65625 126.03125 Q 247.90625 636.5625 211.90625 693.5625","name":""},{"id":"line5to4Number1","d":"M 221.65625 743.03125 Q 500.59375 597 628.90625 609.5625","name":""},{"id":"line1to4Number1","d":"M 362.65625 389.03125 Q 522.59375 574 634.90625 590.5625","name":""},{"id":"line4to3Number1","d":"M 665.65625 623.03125 Q 591.59375 505 652.90625 377.5625","name":""},{"id":"line3to6Number1","d":"M 660.65625 352.03125 Q 930.90625 139.5625 930.90625 139.5625","name":""}]`
+      ).map((input) => createPath(input));
+
+      const inputIds = JSON.parse(
+        `[{"id":"line0to1Number1","d":"M 190.65625 126.03125 Q 240.59375 191 335.90625 351.5625","name":""},{"id":"line0to2Number1","d":"M 190.65625 126.03125 Q 451.90625 183.5625 577.90625 130.5625","name":""},{"id":"line0to5Number1","d":"M 190.65625 126.03125 Q 247.90625 636.5625 211.90625 693.5625","name":""},{"id":"line5to4Number1","d":"M 221.65625 743.03125 Q 500.59375 597 628.90625 609.5625","name":""},{"id":"line1to4Number1","d":"M 362.65625 389.03125 Q 522.59375 574 634.90625 590.5625","name":""},{"id":"line4to3Number1","d":"M 665.65625 623.03125 Q 591.59375 505 652.90625 377.5625","name":""},{"id":"line3to6Number1","d":"M 660.65625 352.03125 Q 930.90625 139.5625 930.90625 139.5625","name":""}]`
+      ).map((input) => "#" + input.id);
+
+      setCreatedInputIds(inputIds);
+    } else {
+      createInputsFromLocalStorage();
+      setCreatedInputIds(getInputIdsFromStorage().map((id) => "#" + id));
+    }
   }, [mainSvgRef, setCreatedInputIds]);
 
   useEffect(() => {

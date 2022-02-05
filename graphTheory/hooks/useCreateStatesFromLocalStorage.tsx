@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import CreatedStateNode from "../components/FSMpieces/stateNode/CreatedStateNode";
+import MainSvgOffSetContext from "../contexts/MainSvgOffSet";
 
-const useCreateStatesFromLocalStorage = () =>
+//TODO: no longer needs use in name
+const useCreateStatesFromLocalStorage = () => {
   (JSON.parse(localStorage.getItem("stateNodes")) ?? []).map(
     (node, index) =>
       !node.hidden && (
@@ -12,5 +15,6 @@ const useCreateStatesFromLocalStorage = () =>
         />
       )
   );
+};
 
 export default useCreateStatesFromLocalStorage;
