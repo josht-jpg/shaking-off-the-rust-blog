@@ -1,5 +1,6 @@
 import Layout from "./components/Layout";
 import { LastDeletedVertexProvider } from "./contexts/LastDeletedVertex";
+import NodeLabelsProvider from "./contexts/NodeLabelsProvider";
 
 interface IProps {
   example?: string;
@@ -7,9 +8,11 @@ interface IProps {
 
 const GraphTheoryIndex: React.FC<IProps> = ({ example }) => {
   return (
-    <LastDeletedVertexProvider>
-      <Layout example={example}> </Layout>
-    </LastDeletedVertexProvider>
+    <NodeLabelsProvider>
+      <LastDeletedVertexProvider>
+        <Layout example={example}> </Layout>
+      </LastDeletedVertexProvider>
+    </NodeLabelsProvider>
   );
 };
 

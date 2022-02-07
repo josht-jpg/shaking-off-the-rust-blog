@@ -2,7 +2,6 @@ import * as d3 from "d3";
 import { MouseEvent, useContext } from "react";
 import { useEffect, useState } from "react";
 import Latex from "react-latex-next";
-import IsLightModeContext from "../../../contexts/IsLightModeContext";
 import StartStateContext from "../../../contexts/StartStateContext";
 import changeInputInLocalStorage from "../../../utils/changeInputInLocalStorage";
 import { isValidCSSColor } from "../../../utils/CSSColors";
@@ -22,6 +21,7 @@ import {
 } from "../../../utils/inputUtils";
 import LatexLabel from "../../LatexLabel";
 import { TRANSITION_TIME } from "../../../constants/styleConstants";
+import { IsLightModeContext } from "../../../../context/IsLightModeProvider";
 
 interface CreatedInputProps {
   id: string;
@@ -34,7 +34,7 @@ interface coordinates {
 }
 
 const CreatedInput: React.FC<CreatedInputProps> = ({ id, example }) => {
-  const isLightMode = useContext(IsLightModeContext);
+  const { isLightMode } = useContext(IsLightModeContext);
 
   const [isSelected, setIsSelected] = useState(false);
   const [isMouseDown, setIsMouseDown] = useState(false);

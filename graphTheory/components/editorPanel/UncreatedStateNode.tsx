@@ -8,6 +8,7 @@ import StateNode from "../FSMpieces/stateNode/StateNode";
 import { saveNewStateNodeInStorage } from "../../utils/stateNodeUtils";
 import G from "../../adjacencyList";
 import MainSvgOffSetContext from "../../contexts/MainSvgOffSet";
+import { NodeLabelsContext } from "../../contexts/NodeLabelsProvider";
 
 interface UncreatedStateNodeProps {
   addStateNode: () => void;
@@ -21,6 +22,7 @@ const UncreatedStateNode: React.FC<UncreatedStateNodeProps> = ({
   const isNodeCreated = useContext(StateNodeContext);
   const [stateNodes, setStateNodes] = useContext(StateNodesContext);
   const setIsDraggingGlobalState = useContext(IsDraggingContext);
+  const { setNodeLabels } = useContext(NodeLabelsContext);
 
   const handleStartDragging = () => {
     setIsDragging(true);
@@ -44,6 +46,8 @@ const UncreatedStateNode: React.FC<UncreatedStateNodeProps> = ({
         savedAttributes={undefined}
       />,
     ]);
+
+    setNodeLabels((prev) => [...prev, stateNodes.length]);
 
     saveNewStateNodeInStorage(top - mainSvgOffSet.y, left - mainSvgOffSet.x);
 

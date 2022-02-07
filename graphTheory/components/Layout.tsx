@@ -8,7 +8,6 @@ import IsShiftKeyPressedContext from "../contexts/IsShiftKeyPressed";
 import { useEffect } from "react";
 import Input from "./FSMpieces/input/Input";
 import CreateInputContext from "../contexts/CreateInputContext";
-import IsLightModeContext from "../contexts/IsLightModeContext";
 import MouseOverNodeContext from "../contexts/MouseOverNodeContenxt";
 import indexOfStateMouseIsOverContext from "../contexts/indexOfStateMouseIsOver";
 import { useRef } from "react";
@@ -17,9 +16,7 @@ import MainSvgOffSetContext from "../contexts/MainSvgOffSet";
 import StartStateContext from "../contexts/StartStateContext";
 import startInputId from "../utils/startInputId";
 import HowTo from "./howTo/AnalysisPanel";
-import useCreateStatesFromLocalStorage from "../hooks/useCreateStatesFromLocalStorage";
 import createInputsFromLocalStorage from "../utils/createInputsFromLocalStorage";
-import DarkModeToggle from "./darkModeToggle/DarkModeToggle";
 import EditArea from "./edtiArea/EditArea";
 import {
   DARK_MODE_BACKGROUND,
@@ -27,7 +24,6 @@ import {
   TRANSITION_TIME,
 } from "../constants/styleConstants";
 import { getInputIdsFromStorage } from "../utils/inputUtils";
-import { START_POINT_STORAGE_KEY } from "../constants/startPointConstants";
 import { AdjacencyListProvider } from "../contexts/AdjacencyListProvider";
 import { AnimateVerticesProvider } from "../contexts/AnimateVerticesContext";
 import DropDown from "./dropDown/DropDown";
@@ -35,6 +31,8 @@ import { LastDeletedVertexContext } from "../contexts/LastDeletedVertex";
 import { VertexPositionsProvider } from "../contexts/VertexPositionsProvider";
 import CreatedStateNode from "./FSMpieces/stateNode/CreatedStateNode";
 import removeWhiteSpace from "../utils/removeWhiteSpace";
+import { NodeLabelsContext } from "../contexts/NodeLabelsProvider";
+import { IsLightModeContext } from "../../context/IsLightModeProvider";
 
 type createInput = {
   x: number;
@@ -109,6 +107,8 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
   const startIndexState = useState<number | undefined>();
   const [startIndex, setStartIndex] = startIndexState;
 
+  const { setNodeLabels } = useContext(NodeLabelsContext);
+
   useEffect(() => {
     // example === ALPACA
 
@@ -127,6 +127,18 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
           />
         ))
       );
+
+      //TODO: I think I got the wrong names
+      setNodeLabels([
+        "You",
+        "Greg",
+        "Ruth",
+        "Santiago",
+        "Jim",
+        "Diya",
+        "Jessica",
+        "Megan",
+      ]);
     } else {
       setStateNodes(
         (JSON.parse(localStorage.getItem("stateNodes")) ?? []).map(
@@ -140,6 +152,12 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
               />
             )
         )
+      );
+
+      setNodeLabels(
+        (JSON.parse(localStorage.getItem("stateNodes")) ?? [])
+          .filter((node) => !node.hidden)
+          .map((node) => node.stateName)
       );
     }
   }, [setStateNodes, mainSvgRef]);
@@ -261,7 +279,9 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
     createInput?.y,
   ]);
 
-  const [isLightMode, setIsLightMode] = useState(true);
+  //  const [isLightMode, setIsLightMode] = useState(true);
+
+  const { isLightMode } = useContext(IsLightModeContext);
 
   useEffect(() => {
     document.body.style.backgroundColor = isLightMode
@@ -306,46 +326,40 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
                   <IsDraggingContext.Provider value={setIsStateNodeDragging}>
                     <IsShiftKeyPressedContext.Provider value={isShiftPressed}>
                       <CreateInputContext.Provider value={setCreateInput}>
-                        <IsLightModeContext.Provider value={isLightMode}>
-                          <MouseOverNodeContext.Provider
-                            value={setMouseOverNodePosition}
+                        <MouseOverNodeContext.Provider
+                          value={setMouseOverNodePosition}
+                        >
+                          <indexOfStateMouseIsOverContext.Provider
+                            value={mouseOverNodePosition}
                           >
-                            <indexOfStateMouseIsOverContext.Provider
-                              value={mouseOverNodePosition}
+                            <MainSvgOffSetContext.Provider
+                              value={mainSvgOffSet}
                             >
-                              <MainSvgOffSetContext.Provider
-                                value={mainSvgOffSet}
+                              <StartStateContext.Provider
+                                value={startIndexState}
                               >
-                                <StartStateContext.Provider
-                                  value={startIndexState}
-                                >
-                                  <DarkModeToggle
-                                    isLightMode={isLightMode}
-                                    setIsLightMode={setIsLightMode}
-                                  />
-                                  <DropDown />
-                                  {!example && <EditorPanel />}
-                                  <HowTo />
-                                  <EditArea
-                                    setIsMouseInEditArea={setIsMouseInEditArea}
-                                    mainSvgRef={mainSvgRef}
-                                    constructionInput={constructionInput}
-                                    createdInputIds={createdInputIds}
-                                    stateNodes={stateNodes}
-                                    cursor={
-                                      isStateNodeDragging
-                                        ? "grabbing"
-                                        : isShiftPressed &&
-                                          createInput &&
-                                          "crosshair"
-                                    }
-                                    example={example}
-                                  />
-                                </StartStateContext.Provider>
-                              </MainSvgOffSetContext.Provider>
-                            </indexOfStateMouseIsOverContext.Provider>
-                          </MouseOverNodeContext.Provider>
-                        </IsLightModeContext.Provider>
+                                {!example && <DropDown />}
+                                {!example && <EditorPanel />}
+                                {!example && <HowTo />}
+                                <EditArea
+                                  setIsMouseInEditArea={setIsMouseInEditArea}
+                                  mainSvgRef={mainSvgRef}
+                                  constructionInput={constructionInput}
+                                  createdInputIds={createdInputIds}
+                                  stateNodes={stateNodes}
+                                  cursor={
+                                    isStateNodeDragging
+                                      ? "grabbing"
+                                      : isShiftPressed &&
+                                        createInput &&
+                                        "crosshair"
+                                  }
+                                  example={example}
+                                />
+                              </StartStateContext.Provider>
+                            </MainSvgOffSetContext.Provider>
+                          </indexOfStateMouseIsOverContext.Provider>
+                        </MouseOverNodeContext.Provider>
                       </CreateInputContext.Provider>
                     </IsShiftKeyPressedContext.Provider>
                   </IsDraggingContext.Provider>

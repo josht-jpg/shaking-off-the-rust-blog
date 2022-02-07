@@ -38,7 +38,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener"
         >
-          This blog's source vode
+          This blog's source code
         </a>
 
         <a href={`mailto: ${EMAIL_ADDRESS}`} className={styles.email}>

@@ -3,15 +3,13 @@ import InputDetails from "./inputDetails/InputDetails";
 import * as d3 from "d3";
 import Latex from "react-latex-next";
 import CSSColors from "../../../utils/CSSColors";
-import IsLightModeContext from "../../../contexts/IsLightModeContext";
 import shiftText from "../../../utils/shiftText";
 import removeWhiteSpace from "../../../utils/removeWhiteSpace";
 import changeSelfLoopAttribute from "../../../utils/changeSelfLoopAttribute";
 import attributeInterface from "../../../interfaces/attributeInterface";
 import LatexLabel from "../../LatexLabel";
 import { TRANSITION_TIME } from "../../../constants/styleConstants";
-import { getVerticesFromEdgeId } from "../../../utils/inputUtils";
-import G from "../../../adjacencyList";
+import { IsLightModeContext } from "../../../../context/IsLightModeProvider";
 
 interface line {
   id: string;
@@ -33,7 +31,7 @@ const InputAttributes: React.FC<InputAttributesProps> = ({
   setSelfLoops,
   isOnClickSet,
 }) => {
-  const isLightMode = useContext(IsLightModeContext);
+  const { isLightMode } = useContext(IsLightModeContext);
 
   const isSelfLoop = line.id.startsWith("#selfLoop");
 

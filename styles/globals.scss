@@ -36,6 +36,15 @@ a {
   font-weight: bold;
 }
 
+.content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 2px;
+}
+
+.content hr {
+  margin-top: 0;
+}
+
 .code,
 code {
   font-family: "Source Code Pro", monospace;
@@ -97,7 +106,6 @@ body::-webkit-scrollbar {
    ========================== */
 
 .css-2b097c-container {
-  width: 300px;
   margin: auto;
 }
 
@@ -117,7 +125,7 @@ body::-webkit-scrollbar {
 
 .css-yk16xz-control {
   box-shadow: 0.5px 0.5px 3px 0.5px gray;
-  width: 300px;
+  width: 90%;
   margin: auto;
 }
 

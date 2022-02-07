@@ -1,14 +1,14 @@
 import { useContext, useState } from "react";
-import IsLightModeContext from "../../contexts/IsLightModeContext";
 import styles from "./DropDown.module.scss";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import {
   DARK_MODE_BACKGROUND,
   LIGHT_MODE_BACKGROUND,
 } from "../../constants/styleConstants";
+import { IsLightModeContext } from "../../../context/IsLightModeProvider";
 
 const DropDown = () => {
-  const isLightMode = useContext(IsLightModeContext);
+  const { isLightMode } = useContext(IsLightModeContext);
   const [isSelected, setIsSelected] = useState(false);
 
   return (

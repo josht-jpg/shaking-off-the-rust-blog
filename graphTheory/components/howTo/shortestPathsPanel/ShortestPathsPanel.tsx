@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import Draggable from "react-draggable";
-import IsLightModeContext from "../../../contexts/IsLightModeContext";
+import { IsLightModeContext } from "../../../../context/IsLightModeProvider";
+import { DARK_MODE_BACKGROUND } from "../../../constants/styleConstants";
 import useOutsideAlerter from "../../../hooks/useOutsideAlerter";
 import styles from "./ShortestPathsPanel.module.scss";
 
@@ -24,7 +25,7 @@ const ShortestPathPanel: React.FC<ShortestPathPanelProps> = ({
 
   const [isDragging, setIsDragging] = useState(false);
 
-  const isLightMode = useContext(IsLightModeContext);
+  const { isLightMode } = useContext(IsLightModeContext);
 
   return (
     <Draggable
@@ -38,10 +39,11 @@ const ShortestPathPanel: React.FC<ShortestPathPanelProps> = ({
           width,
           cursor: isDragging ? "grabbing" : "grab",
           boxShadow: !isLightMode && "white 0 0 5px",
+          background: !isLightMode && DARK_MODE_BACKGROUND,
         }}
         //  onMouseUp={() => setIsDragging(false)}
       >
-        <h3>{`Shortest Paths from vertex ${shortestPaths.findIndex(
+        <h3>{`Shortest Paths from node ${shortestPaths.findIndex(
           (p) => p === 0
         )}`}</h3>
         {shortestPaths.map((pathLength, vertex) => (

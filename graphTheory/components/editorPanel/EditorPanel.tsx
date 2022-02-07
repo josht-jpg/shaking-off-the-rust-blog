@@ -1,12 +1,12 @@
 import Select from "react-select";
-import { MultiValueContainer, MultiValueRemove } from "../select/MultiValue";
 import styles from "./EditorPanel.module.scss";
 import AddButton from "../button/AddButton";
 import { useContext, useEffect, useState } from "react";
 import UncreatedStateNode from "./UncreatedStateNode";
-import IsLightModeContext from "../../contexts/IsLightModeContext";
 import StateMahcineOption from "./stateMachineOption/StateMachineOption";
 import AddStateMachine from "./addStateMachine/AddStateMachine";
+import { IsLightModeContext } from "../../../context/IsLightModeProvider";
+import { DARK_MODE_BACKGROUND } from "../../constants/styleConstants";
 
 const EditorPanel = () => {
   const addStateNode = () =>
@@ -19,7 +19,7 @@ const EditorPanel = () => {
     <UncreatedStateNode addStateNode={addStateNode} />,
   ]);
 
-  const isLightMode = useContext(IsLightModeContext);
+  const { isLightMode } = useContext(IsLightModeContext);
 
   const [currentStateMachine, setCurrentStateMachine] = useState("");
   const [stateMachines, setStateMachines] = useState([]);
@@ -45,6 +45,8 @@ const EditorPanel = () => {
     setShowAddStateMachine(false);
   };
 
+  console.log(isLightMode);
+
   return (
     <>
       {showAddStateMachine && (
@@ -55,7 +57,10 @@ const EditorPanel = () => {
       )}
       <div
         className={styles.editorPanel}
-        style={{ boxShadow: !isLightMode && "white 0 0 9px" }}
+        style={{
+          boxShadow: !isLightMode && "white 0 0 9px",
+          background: !isLightMode && DARK_MODE_BACKGROUND,
+        }}
       >
         <div
           style={{
@@ -89,7 +94,9 @@ const EditorPanel = () => {
         </div>
 
         <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
-          <h3>Add a Vertex</h3>
+          <h3 style={{ fontSize: "1.2rem", marginBottom: "1rem" }}>
+            Add a Node
+          </h3>
           {nodes}
         </div>
       </div>

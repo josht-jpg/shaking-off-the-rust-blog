@@ -5,7 +5,7 @@ import React, { useContext } from "react";
 import { FiSun } from "react-icons/fi";
 import { HiOutlineMoon } from "react-icons/hi";
 import { MAIN_ORANGE } from "../../constants/styleConstants";
-import { IsDarkModeContext } from "../../context/IsDarkModeProvider";
+import { IsLightModeContext } from "../../context/IsLightModeProvider";
 import {
   DARK_MODE_BACKGROUND,
   LIGHT_MODE_BACKGROUND,
@@ -14,7 +14,7 @@ import {
 import styles from "./Header.module.scss";
 
 const Header = () => {
-  const { isDarkMode, setIsDarkMode } = useContext(IsDarkModeContext);
+  const { isLightMode, setIsLightMode } = useContext(IsLightModeContext);
 
   const pages = [
     { button: "Latest", href: "/" },
@@ -30,9 +30,9 @@ const Header = () => {
     <div
       className={styles.header}
       style={{
-        backgroundColor: isDarkMode
-          ? DARK_MODE_BACKGROUND
-          : LIGHT_MODE_BACKGROUND,
+        backgroundColor: isLightMode
+          ? LIGHT_MODE_BACKGROUND
+          : DARK_MODE_BACKGROUND,
       }}
     >
       <div style={{ justifySelf: "start", width: "370px" }}>
@@ -82,12 +82,12 @@ const Header = () => {
             marginTop: "4px",
             cursor: "pointer",
           }}
-          onClick={() => setIsDarkMode((prev) => !prev)}
+          onClick={() => setIsLightMode((prev) => !prev)}
         >
-          {isDarkMode ? (
-            <HiOutlineMoon className={styles.icon} color={"white"} />
-          ) : (
+          {isLightMode ? (
             <FiSun className={styles.icon} />
+          ) : (
+            <HiOutlineMoon className={styles.icon} color={"white"} />
           )}
         </button>
       </div>

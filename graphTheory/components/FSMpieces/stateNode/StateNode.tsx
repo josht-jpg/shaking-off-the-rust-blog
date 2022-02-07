@@ -35,6 +35,8 @@ import G from "../../../adjacencyList";
 import StateNodesContext from "../../../contexts/StateNodesContext";
 import CreatedStateNode from "./CreatedStateNode";
 import { LastDeletedVertexContext } from "../../../contexts/LastDeletedVertex";
+import { NodeLabelsContext } from "../../../contexts/NodeLabelsProvider";
+import { IsLightModeContext } from "../../../../context/IsLightModeProvider";
 
 const STATE_ATTRIBUTES = {
   stateName: "stateName",
@@ -68,6 +70,7 @@ const StateNode: React.FC<StateNodeProps> = ({
 }) => {
   const isShiftPressed = useContext(IsShiftKeyPressedContext);
   const setCreateInput = useContext(CreateInputContext);
+  const { isLightMode } = useContext(IsLightModeContext);
 
   const [showDetails, setShowDetails] = useState(false);
   const handleRightClick = (e) => {
@@ -152,8 +155,18 @@ const StateNode: React.FC<StateNodeProps> = ({
   ];
 
   useEffect(() => {
-    !example &&
+    if (!example) {
       changeNodeInLocalStorage(STATE_ATTRIBUTES.stateName, stateName, index);
+      setNodeLabels((prev) =>
+        prev.map((node, i) => {
+          if (i === index) {
+            return stateName;
+          } else {
+            return node;
+          }
+        })
+      );
+    }
   }, [stateName]);
 
   useEffect(() => {
@@ -187,7 +200,9 @@ const StateNode: React.FC<StateNodeProps> = ({
 
   const [stateNodes, setStateNodes] = useContext(StateNodesContext);
   const { setLastDeletedVertex } = useContext(LastDeletedVertexContext);
-  //const { vertexPositions } = useContext(VertexPositionsContext);
+
+  const { setNodeLabels } = useContext(NodeLabelsContext);
+
   const handleDeleteState = () => {
     G.removeVertex(index);
     setShowDetails(false);
@@ -216,6 +231,8 @@ const StateNode: React.FC<StateNodeProps> = ({
           }
         })
     );
+
+    setNodeLabels((prev) => prev.filter((_, i) => i !== index));
   };
 
   const [isGroupCreated, setIsGroupCreated] = useState(false);
@@ -318,6 +335,8 @@ const StateNode: React.FC<StateNodeProps> = ({
     ? animationColors[index]
     : animationCircleColorDefault;
 
+  console.log(isLightMode);
+
   return (
     <>
       {showDetails && (
@@ -371,7 +390,11 @@ const StateNode: React.FC<StateNodeProps> = ({
           style={{
             ...styleProps,
             backgroundColor: removeWhiteSpace(color),
-            color: removeWhiteSpace(textColor),
+            color: !!removeWhiteSpace(textColor)
+              ? removeWhiteSpace(textColor)
+              : isLightMode
+              ? "black"
+              : "white",
             boxShadow: coloredBoxShadow,
           }}
           onContextMenu={handleRightClick}

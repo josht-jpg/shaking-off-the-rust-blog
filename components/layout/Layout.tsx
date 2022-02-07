@@ -1,14 +1,14 @@
 import { useContext } from "react";
-import { IsDarkModeContext } from "../../context/IsDarkModeProvider";
+import { IsLightModeContext } from "../../context/IsLightModeProvider";
 import styles from "./Layout.module.scss";
 
 const Layout = ({ children }) => {
-  const { isDarkMode } = useContext(IsDarkModeContext);
+  const { isLightMode } = useContext(IsLightModeContext);
 
   return (
     <div
       className={styles.layout}
-      style={{ color: isDarkMode ? "white" : "black" }}
+      style={{ color: isLightMode ? "black" : "white" }}
     >
       {children}
     </div>

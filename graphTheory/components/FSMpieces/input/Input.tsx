@@ -1,7 +1,6 @@
 import * as d3 from "d3";
 import { useRef } from "react";
 import { useContext } from "react";
-import IsLightModeContext from "../../../contexts/IsLightModeContext";
 import { useEffect } from "react";
 import { useState } from "react";
 import indexOfStateMouseIsOverContext from "../../../contexts/indexOfStateMouseIsOver";
@@ -12,7 +11,7 @@ import moveConstructionInput from "../../../utils/inputs/moveConstructionInput";
 import selectByIdPrefix from "../../../utils/selectByIdPrefix";
 import { CONSTRUCTION_INPUT_CONTAINER_ID } from "../../../constants/inputConstants";
 import G from "../../../adjacencyList";
-//import { AdjacencyListContext } from "../../../contexts/AdjacencyListProvider";
+import { IsLightModeContext } from "../../../../context/IsLightModeProvider";
 
 interface InputProps {
   startPosition;
@@ -27,13 +26,11 @@ const Input: React.FC<InputProps> = ({
   setConstructionInput,
   createdInputIdsState,
 }) => {
-  const isLightMode = useContext(IsLightModeContext);
+  const { isLightMode } = useContext(IsLightModeContext);
   const [isMouseDown, setIsMouseDown] = useState(true);
   const indexOfStateMouseIsOver = useContext(indexOfStateMouseIsOverContext);
   const [isCreated, setIsCreated] = useState(false);
   const [createdInputIds, setCreatedInputIds] = createdInputIdsState;
-
-  //const adjacencyList = useContext(AdjacencyListContext);
 
   const drawConstuctionLineIfNotExists = () => {
     const constructionLineExists = d3

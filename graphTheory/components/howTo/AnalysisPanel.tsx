@@ -1,13 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import G from "../../adjacencyList";
 import { AnimateVerticesContext } from "../../contexts/AnimateVerticesContext";
-import IsLightModeContext from "../../contexts/IsLightModeContext";
 import * as d3 from "d3";
 import Button from "../button/Button";
-import CheckBoxField from "../FSMpieces/stateNode/stateAttributes/checkBoxField/CheckBoxField";
 import styles from "./AnalysisPanel.module.scss";
 import CSSColors from "../../utils/CSSColors";
-import { PRIMARY_COLOR } from "../../constants/styleConstants";
+import {
+  DARK_MODE_BACKGROUND,
+  PRIMARY_COLOR,
+} from "../../constants/styleConstants";
 import Queue from "../../dataStructures.ts/queue";
 import MoreInfoPanel from "./moreInfoPanel/MoreInfoPanel";
 import useDFS from "../../hooks/useDFS";
@@ -18,10 +19,16 @@ import {
   GraphAnalysisTypeContext,
   GraphAnalysisTypes,
 } from "../../../context/GraphAnalysisTypeProvider";
+import Select from "react-select";
+import { NodeLabelsContext } from "../../contexts/NodeLabelsProvider";
+import Latex from "react-latex-next";
+import { IsLightModeContext } from "../../../context/IsLightModeProvider";
 
 const AnalysisPanel = () => {
-  const isLightMode = useContext(IsLightModeContext);
+  const { isLightMode } = useContext(IsLightModeContext);
   const { graphAnalysisType } = useContext(GraphAnalysisTypeContext);
+
+  const { nodeLabels } = useContext(NodeLabelsContext);
 
   const {
     animateVertices,
@@ -92,16 +99,21 @@ const AnalysisPanel = () => {
       )}
       <div
         className={styles.howToContainer}
-        style={{ boxShadow: !isLightMode && "white 0 0 9px" }}
+        style={{
+          boxShadow: !isLightMode && "white 0 0 9px",
+          background: !isLightMode && DARK_MODE_BACKGROUND,
+        }}
       >
-        <h2 style={{ marginBottom: "0" }}>{panelTitle(graphAnalysisType)}</h2>
+        <h3 style={{ marginBottom: "0", fontSize: "1.4rem" }}>
+          {panelTitle(graphAnalysisType)}
+        </h3>
         <hr style={{ marginTop: "4", marginBottom: "25px", width: "95%" }} />
 
         {(graphAnalysisType === GraphAnalysisTypes.BFS ||
           graphAnalysisType === GraphAnalysisTypes.SSSP) && (
           <div>
             <label>Start Node: </label>
-            <input
+            {/* <input
               style={{
                 marginBottom: "0.75rem",
 
@@ -113,16 +125,40 @@ const AnalysisPanel = () => {
               onChange={(e) => setStartNode(e.target.valueAsNumber)}
               min="0"
               max={G.vertices().length - 1}
+            />*/}
+
+            <Select
+              className="basic-single"
+              classNamePrefix="select"
+              name="Start Node"
+              defaultValue={{
+                label: !!nodeLabels[0] && <Latex>{nodeLabels[0]}</Latex>,
+                value: 0,
+              }}
+              options={nodeLabels.map((nl, index) => ({
+                label: !!nl && <Latex>{nl}</Latex>,
+                value: index,
+              }))}
+              onChange={(node) => setStartNode(node.value)}
             />
-            <br />
+
+            <div style={{ margin: "0.75rem" }} />
             <label>End Node: </label>
-            <input
-              type="number"
-              name="endNode"
-              value={endNode}
-              onChange={(e) => setEndNode(e.target.valueAsNumber)}
-              min={0}
-              max={G.vertices().length - 1}
+            <Select
+              className="basic-single"
+              classNamePrefix="select"
+              name="End Node"
+              defaultValue={{
+                label: !!nodeLabels?.[nodeLabels.length - 1] && (
+                  <Latex>{nodeLabels[nodeLabels.length - 1]}</Latex>
+                ),
+                value: 0,
+              }}
+              options={nodeLabels.map((nl, index) => ({
+                label: !!nl && <Latex>{nl}</Latex>,
+                value: index,
+              }))}
+              onChange={(node) => setEndNode(node.value)}
             />
           </div>
         )}

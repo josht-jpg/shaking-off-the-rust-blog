@@ -2,7 +2,6 @@ import * as d3 from "d3";
 import { useContext } from "react";
 import StartStateContext from "../../contexts/StartStateContext";
 import CreatedInput from "../FSMpieces/input/CreatedInput";
-import StartPoint from "../FSMpieces/StartPoint";
 import styles from "./EditArea.module.scss";
 
 const EditArea = ({

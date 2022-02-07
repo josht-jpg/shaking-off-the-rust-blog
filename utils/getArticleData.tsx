@@ -26,6 +26,7 @@ const getArticleData = (articleExtension: string) => {
         jsx: <BreadthFirstSearch />,
       };
     default:
+      //TODO: lol c'mon
       console.log("here");
   }
 };
