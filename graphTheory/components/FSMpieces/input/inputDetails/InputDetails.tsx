@@ -33,6 +33,7 @@ const InputDetails: React.FC<InputDetailsProps> = ({
           onClickCoordinates.y +
           (onClickCoordinates.y > window.innerHeight / 2 ? -360 : 25)
         }px`,
+        color: "black",
       }}
     >
       <h3 style={{ textAlign: "center", marginBottom: "0" }}>Input Details</h3>

@@ -1,4 +1,5 @@
 import BreadthFirstSearch from "../components/articles/BreadthFirstSearch";
+import ComplexNumbers from "../components/articles/ComplexNumbers";
 import DnaSearch from "../components/articles/DnaSearch";
 import NaiveBayes from "../components/articles/NaiveBayes";
 
@@ -27,6 +28,14 @@ const getArticleData = (articleExtension: string) => {
           "https://cdn-images-1.medium.com/max/800/1*nyziGfeh2hk2cOa3FEl5xQ.png",
         date: "Febuary 2nd, 2022",
         jsx: <BreadthFirstSearch />,
+      };
+    case "complex-numbers":
+      return {
+        title: "Complex Numbers",
+        thumbnail:
+          "https://images.pexels.com/photos/4931375/pexels-photo-4931375.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Febuary 2nd, 2022",
+        jsx: <ComplexNumbers />,
       };
     case "mandelbrot":
       return {

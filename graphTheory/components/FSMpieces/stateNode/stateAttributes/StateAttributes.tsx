@@ -60,13 +60,14 @@ const StateAttributes: React.FC<StateDetailsProps> = ({
         width: CONTAINER_WIDTH_IN_PX,
         left,
         top,
+        color: "black",
       }}
     >
       <h3 className={styles.stateDetailsHeader}>{HEADER}</h3>
       <hr style={{ width: HEADER_UNDERLINE_WIDTH }} />
 
       <form>
-        <div className={styles.checkBoxesContainer}>
+        {/*<div className={styles.checkBoxesContainer}>
           <StartStateCheckBox stateIndex={index} />
           <br />
           <br />
@@ -78,7 +79,7 @@ const StateAttributes: React.FC<StateDetailsProps> = ({
             }
             handleClick={handleFinalStateToggle}
           />
-        </div>
+          </div>*/}
         <div className={styles.container}>
           {stateAttributes.map(
             (attribute) =>
@@ -108,13 +109,15 @@ const StateAttributes: React.FC<StateDetailsProps> = ({
               )
           )}
         </div>
-        <DeleteButton
-          action={(e) => {
-            e.preventDefault();
-            handleDeleteState();
-          }}
-          type={DELETE_BUTTON_TEXT}
-        />
+        {false && (
+          <DeleteButton
+            action={(e) => {
+              e.preventDefault();
+              handleDeleteState();
+            }}
+            type={DELETE_BUTTON_TEXT}
+          />
+        )}
       </form>
     </div>
   );

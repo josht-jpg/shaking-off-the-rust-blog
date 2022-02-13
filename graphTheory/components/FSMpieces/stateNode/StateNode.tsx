@@ -126,11 +126,11 @@ const StateNode: React.FC<StateNodeProps> = ({
       setAttribute: setStateName,
       label: <LatexLabel labelType={"State"} />,
     },
-    {
+    /*{
       value: weight,
       setAttribute: setWeight,
       label: "Weight",
-    },
+    },*/
     {
       value: color,
       setAttribute: setColor,
@@ -213,7 +213,7 @@ const StateNode: React.FC<StateNodeProps> = ({
     G.removeVertex(index);
     setShowDetails(false);
 
-    hideNodeInStorage(index);
+    // hideNodeInStorage(index);
     hideInputsConnectedToState(index, () => setStartNodeIndex(undefined));
 
     setLastDeletedVertex(index);
@@ -225,8 +225,8 @@ const StateNode: React.FC<StateNodeProps> = ({
           if (i >= index) {
             return (
               <CreatedStateNode
-                x={/*vertexPositions[index + 1].x*/ 0}
-                y={/*vertexPositions[index + 1].y*/ 0}
+                x={vertex.props?.savedAttributes.x}
+                y={vertex.props?.savedAttributes.y}
                 index={i}
                 savedAttributes={vertex.props?.savedAttributes}
                 // example={example}
@@ -341,6 +341,14 @@ const StateNode: React.FC<StateNodeProps> = ({
     ? animationColors[index]
     : animationCircleColorDefault;
 
+  console.log(
+    !!removeWhiteSpace(textColor)
+      ? removeWhiteSpace(textColor)
+      : isLightMode
+      ? "black"
+      : "white"
+  );
+
   return (
     <>
       {showDetails && (
@@ -361,19 +369,21 @@ const StateNode: React.FC<StateNodeProps> = ({
         />
       )}
 
-      <SelfLoops
-        stateNode={{
-          index,
-          isMouseOver,
-          initialX,
-          initialY,
-          boundingRect: ref.current?.getBoundingClientRect(),
-        }}
-        group={{ isCreated: isGroupCreated, transform: groupTransform }}
-        isCreatingSelfLoopState={isCreatingSelfLoopState}
-        currentSelfLoopIndexState={currentSelfLoopIndexState}
-        example={example}
-      />
+      {false && (
+        <SelfLoops
+          stateNode={{
+            index,
+            isMouseOver,
+            initialX,
+            initialY,
+            boundingRect: ref.current?.getBoundingClientRect(),
+          }}
+          group={{ isCreated: isGroupCreated, transform: groupTransform }}
+          isCreatingSelfLoopState={isCreatingSelfLoopState}
+          currentSelfLoopIndexState={currentSelfLoopIndexState}
+          example={example}
+        />
+      )}
 
       <Draggable
         onStart={handleStartDragging}
@@ -396,9 +406,7 @@ const StateNode: React.FC<StateNodeProps> = ({
             backgroundColor: removeWhiteSpace(color),
             color: !!removeWhiteSpace(textColor)
               ? removeWhiteSpace(textColor)
-              : isLightMode
-              ? "black"
-              : "white",
+              : "black",
             boxShadow: coloredBoxShadow,
           }}
           onContextMenu={handleRightClick}

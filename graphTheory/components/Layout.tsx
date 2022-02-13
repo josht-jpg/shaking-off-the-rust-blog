@@ -117,11 +117,11 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
       //TODO: extract examples to a hashmap
       setStateNodes(
         JSON.parse(
-          `[{"x":719.75,"y":157.46875,"stateName":"You","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":829.75,"initialY":182.46875},{"x":891.75,"y":420.46875,"stateName":"Greg","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":855.75,"initialY":482.46875},{"x":1144.75,"y":171.46875,"stateName":"Ruth","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":1163.75,"initialY":269.46875},{"x":1189.75,"y":382.46875,"stateName":"Santiago","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":1260.75,"initialY":461.46875},{"x":1194.75,"y":654.46875,"stateName":"Jim","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":1298.75,"initialY":697.46875},{"x":750.75,"y":775.46875,"stateName":"Diya","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":908.75,"initialY":737.46875},{"x":1487.75,"y":156.46875,"stateName":"Jessica","color":"","isFinalState":false,"textColor":"","outlineColor":""}]`
+          `[{"x":719.75,"y":57.46875,"stateName":"You","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":829.75,"initialY":182.46875},{"x":891.75,"y":320.46875,"stateName":"Greg","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":855.75,"initialY":482.46875},{"x":1144.75,"y":71.46875,"stateName":"Ruth","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":1163.75,"initialY":269.46875},{"x":1189.75,"y":282.46875,"stateName":"Santiago","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":1260.75,"initialY":461.46875},{"x":1194.75,"y":554.46875,"stateName":"Jim","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":1298.75,"initialY":697.46875},{"x":750.75,"y":675.46875,"stateName":"Diya","color":"","isFinalState":false,"textColor":"","outlineColor":"","initialX":908.75,"initialY":737.46875},{"x":1487.75,"y":56.46875,"stateName":"Jessica","color":"","isFinalState":false,"textColor":"","outlineColor":""}]`
         ).map((node, index) => (
           <CreatedStateNode
-            x={node.x + mainSvgRef?.current?.getBoundingClientRect().left}
-            y={node.y + mainSvgRef?.current?.getBoundingClientRect().top}
+            x={node.x /*+ mainSvgRef?.current?.getBoundingClientRect().left*/}
+            y={node.y /*+ mainSvgRef?.current?.getBoundingClientRect().top*/}
             index={index}
             savedAttributes={node}
             example={example}
@@ -235,7 +235,7 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
           .attr("cursor", "pointer");
 
       JSON.parse(
-        `[{"id":"exampleline0to1Number1","d":"M 190.65625 126.03125 Q 240.59375 191 335.90625 351.5625","name":""},{"id":"exampleline0to2Number1","d":"M 190.65625 126.03125 Q 451.90625 183.5625 577.90625 130.5625","name":""},{"id":"exampleline0to5Number1","d":"M 190.65625 126.03125 Q 247.90625 636.5625 211.90625 693.5625","name":""},{"id":"exampleline5to4Number1","d":"M 221.65625 743.03125 Q 500.59375 597 628.90625 609.5625","name":""},{"id":"exampleline1to4Number1","d":"M 362.65625 389.03125 Q 522.59375 574 634.90625 590.5625","name":""},{"id":"exampleline4to3Number1","d":"M 665.65625 623.03125 Q 591.59375 505 652.90625 377.5625","name":""},{"id":"exampleline3to6Number1","d":"M 660.65625 352.03125 Q 930.90625 139.5625 930.90625 139.5625","name":""}]`
+        `[{"id":"exampleline0to1Number1","d":"M 490.65625 126.03125 Q 240.59375 191 335.90625 351.5625","name":""},{"id":"exampleline0to2Number1","d":"M 790.65625 126.03125 Q 451.90625 183.5625 577.90625 130.5625","name":""},{"id":"exampleline0to5Number1","d":"M 490.65625 126.03125 Q 247.90625 636.5625 211.90625 693.5625","name":""},{"id":"exampleline5to4Number1","d":"M 521.65625 743.03125 Q 500.59375 597 628.90625 609.5625","name":""},{"id":"exampleline1to4Number1","d":"M 662.65625 389.03125 Q 522.59375 574 634.90625 590.5625","name":""},{"id":"exampleline4to3Number1","d":"M 965.65625 623.03125 Q 591.59375 505 652.90625 377.5625","name":""},{"id":"exampleline3to6Number1","d":"M 660.65625 352.03125 Q 930.90625 139.5625 930.90625 139.5625","name":""}]`
       ).map((input) => createPath(input));
 
       const inputIds = JSON.parse(

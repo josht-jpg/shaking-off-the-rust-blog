@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { IsLightModeContext } from "../../context/IsLightModeProvider";
 import styles from "./SubscribeForm.module.scss";
 
 const SubscribeForm = () => {
@@ -7,7 +8,7 @@ const SubscribeForm = () => {
   const [error, setError] = useState(false);
 
   const handleSubscribe = async (e) => {
-    console.info(e, "e");
+    //TODO: subscription
     /*  e.preventDefault();
     try {
       if (!address) {
@@ -20,9 +21,16 @@ const SubscribeForm = () => {
       setError(err.message);
     }*/
   };
+  const { isLightMode } = useContext(IsLightModeContext);
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{
+        color: "black",
+        boxShadow: !isLightMode && "white 0 0 7px",
+      }}
+    >
       <h3>Rust up your inbox!</h3>
 
       <div className={styles.subscribe}>

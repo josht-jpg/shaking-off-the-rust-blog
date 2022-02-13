@@ -111,21 +111,11 @@ const AnalysisPanel = () => {
 
         {(graphAnalysisType === GraphAnalysisTypes.BFS ||
           graphAnalysisType === GraphAnalysisTypes.SSSP) && (
-          <div>
-            <label>Start Node: </label>
-            {/* <input
-              style={{
-                marginBottom: "0.75rem",
-
-                width: `${Math.ceil((startNode + 1) / 10) + 4}ch`,
-              }}
-              type="number"
-              name="startNode"
-              value={startNode}
-              onChange={(e) => setStartNode(e.target.valueAsNumber)}
-              min="0"
-              max={G.vertices().length - 1}
-            />*/}
+          <div style={{ color: "black" }}>
+            <label style={{ color: !isLightMode && "white" }}>
+              {" "}
+              Start Node:
+            </label>
 
             <Select
               className="basic-single"
@@ -143,7 +133,7 @@ const AnalysisPanel = () => {
             />
 
             <div style={{ margin: "0.75rem" }} />
-            <label>End Node: </label>
+            <label style={{ color: !isLightMode && "white" }}>End Node:</label>
             <Select
               className="basic-single"
               classNamePrefix="select"

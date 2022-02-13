@@ -11,6 +11,7 @@ enum Articles {
   DNA = "dna-analysis",
   NAIVE_BAYES = "naive-bayes",
   BFS = "breadth-first-search",
+  COMPLEX_NUMBERS = "complex-numbers",
 }
 
 interface IProps {
@@ -38,7 +39,12 @@ const articlePage: React.FC<IProps> = ({ article }) => {
 export default articlePage;
 
 export async function getStaticPaths() {
-  const paths = [Articles.DNA, Articles.NAIVE_BAYES, Articles.BFS].map((a) => ({
+  const paths = [
+    Articles.DNA,
+    Articles.NAIVE_BAYES,
+    Articles.COMPLEX_NUMBERS,
+    Articles.BFS,
+  ].map((a) => ({
     params: { id: a },
   }));
 

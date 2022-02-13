@@ -51,7 +51,7 @@ const DropDown = () => {
             To Add a Node:
           </i>
           <br />
-          Drag in a Node from the panel above.
+          Drag in a Node from the panel on the left.
         </strong>
         <br />
         <br />
