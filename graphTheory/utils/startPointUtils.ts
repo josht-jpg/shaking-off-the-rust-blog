@@ -31,16 +31,17 @@ export const getInitialPosition = (startStateIndex: number, position) => {
 };
 
 export const saveStartPointPositionInStorage = (mouseEvent: MouseEvent) => {
-  localStorage.setItem(
-    START_POINT_STORAGE_KEY,
-    JSON.stringify({
-      ...JSON.parse(localStorage.getItem(START_POINT_STORAGE_KEY)),
-      position: {
-        cx: mouseEvent.clientX - mainBoundingRect().left,
-        cy: mouseEvent.clientY - mainBoundingRect().top,
-      },
-    })
-  );
+  false &&
+    localStorage.setItem(
+      START_POINT_STORAGE_KEY,
+      JSON.stringify({
+        ...JSON.parse(localStorage.getItem(START_POINT_STORAGE_KEY)),
+        position: {
+          cx: mouseEvent.clientX - mainBoundingRect().left,
+          cy: mouseEvent.clientY - mainBoundingRect().top,
+        },
+      })
+    );
 };
 
 export const saveStartPointPositionAfterMovingState = (
@@ -48,16 +49,17 @@ export const saveStartPointPositionAfterMovingState = (
 ) => {
   const startCircle = d3.select(`#lineStartTo${startStateIndex}Circle`);
 
-  localStorage.setItem(
-    START_POINT_STORAGE_KEY,
-    JSON.stringify({
-      ...JSON.parse(localStorage.getItem(START_POINT_STORAGE_KEY)),
-      position: {
-        cx: startCircle.attr("cx"),
-        cy: startCircle.attr("cy"),
-      },
-    })
-  );
+  false &&
+    localStorage.setItem(
+      START_POINT_STORAGE_KEY,
+      JSON.stringify({
+        ...JSON.parse(localStorage.getItem(START_POINT_STORAGE_KEY)),
+        position: {
+          cx: startCircle.attr("cx"),
+          cy: startCircle.attr("cy"),
+        },
+      })
+    );
 };
 
 export const moveStartInput = (
@@ -79,23 +81,24 @@ export const saveStartInputPositionInStorage = (
     d3.select(startInputId(startStateIndex)).attr("d")
   );
 
-  localStorage.setItem(
-    INPUTS_LOCAL_STORAGE_KEY,
-    JSON.stringify(
-      JSON.parse(localStorage.getItem(INPUTS_LOCAL_STORAGE_KEY)).map(
-        (input) => {
-          if (input.id.includes("Start")) {
-            return {
-              ...input,
-              d: startInputPath(mouseEvent, startInputCoordinates),
-            };
-          } else {
-            return input;
+  false &&
+    localStorage.setItem(
+      INPUTS_LOCAL_STORAGE_KEY,
+      JSON.stringify(
+        JSON.parse(localStorage.getItem(INPUTS_LOCAL_STORAGE_KEY)).map(
+          (input) => {
+            if (input.id.includes("Start")) {
+              return {
+                ...input,
+                d: startInputPath(mouseEvent, startInputCoordinates),
+              };
+            } else {
+              return input;
+            }
           }
-        }
+        )
       )
-    )
-  );
+    );
 };
 
 const startInputPath = (mouseEvent: MouseEvent, startInputCoordinates) => {

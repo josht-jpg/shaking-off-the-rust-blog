@@ -96,7 +96,7 @@ const StateNode: React.FC<StateNodeProps> = ({
   });
 
   useEffect(() => {
-    if (!example) {
+    if (!example && false) {
       const group = JSON.parse(localStorage.getItem("groups"))?.find(
         (g) => g.index === index
       );
@@ -156,7 +156,8 @@ const StateNode: React.FC<StateNodeProps> = ({
 
   useEffect(() => {
     if (!example) {
-      changeNodeInLocalStorage(STATE_ATTRIBUTES.stateName, stateName, index);
+      false &&
+        changeNodeInLocalStorage(STATE_ATTRIBUTES.stateName, stateName, index);
       setNodeLabels((prev) =>
         prev.map((node, i) => {
           if (i === index) {
@@ -170,11 +171,14 @@ const StateNode: React.FC<StateNodeProps> = ({
   }, [stateName]);
 
   useEffect(() => {
-    !example && changeNodeInLocalStorage(STATE_ATTRIBUTES.color, color, index);
+    !example &&
+      false &&
+      changeNodeInLocalStorage(STATE_ATTRIBUTES.color, color, index);
   }, [color]);
 
   useEffect(() => {
     !example &&
+      false &&
       changeNodeInLocalStorage(
         STATE_ATTRIBUTES.isFinalState,
         isFinalState,
@@ -184,11 +188,13 @@ const StateNode: React.FC<StateNodeProps> = ({
 
   useEffect(() => {
     !example &&
+      false &&
       changeNodeInLocalStorage(STATE_ATTRIBUTES.textColor, textColor, index);
   }, [textColor]);
 
   useEffect(() => {
     !example &&
+      false &&
       changeNodeInLocalStorage(
         STATE_ATTRIBUTES.outlineColor,
         outlineColor,
@@ -334,8 +340,6 @@ const StateNode: React.FC<StateNodeProps> = ({
   const animationCircleColor = !!animationColors[index]
     ? animationColors[index]
     : animationCircleColorDefault;
-
-  console.log(isLightMode);
 
   return (
     <>

@@ -49,7 +49,10 @@ const UncreatedStateNode: React.FC<UncreatedStateNodeProps> = ({
 
     setNodeLabels((prev) => [...prev, stateNodes.length]);
 
-    saveNewStateNodeInStorage(top - mainSvgOffSet.y, left - mainSvgOffSet.x);
+    saveNewStateNodeInStorage(
+      top /*- mainSvgOffSet.y*/,
+      left /*- mainSvgOffSet.x*/
+    );
 
     setCloseNode(true);
   };

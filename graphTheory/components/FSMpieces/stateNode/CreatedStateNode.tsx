@@ -49,12 +49,12 @@ const CreatedStateNode: React.FC<CreatedStateNodeProps> = ({
     const changeInY = y - prevY;
 
     moveInputsConnectedToStateNode(index, changeInX, changeInY);
-    moveGroupConnectedToState(
+    /* moveGroupConnectedToState(
       index,
       { x: initialX, y: initialY, setX: setInitialX, setY: setInitialY },
       changeInX,
       changeInY
-    );
+    );*/
 
     prevX = x;
     prevY = y;
@@ -64,23 +64,46 @@ const CreatedStateNode: React.FC<CreatedStateNodeProps> = ({
     setIsDragging(true);
   };
 
+  const [initialPagePosition, setInitialPagePosition] = useState(0);
+  const [scrollOffset, setScrollOffset] = useState(0);
+
+  const handleScroll = () => {
+    if (!example) {
+      if (!initialPagePosition) {
+        setInitialPagePosition(window.screenTop);
+      }
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("scroll", handleScroll);
+    () => document.removeEventListener("scroll", handleScroll);
+  }, [handleScroll, window.screenTop]);
+
+  const [isDragging, setIsDragging] = useState(false);
+
   const handleDrag = (mouseEvent: MouseEvent) => {
-    isDragging && moveInputs(mouseEvent.clientX, mouseEvent.clientY);
+    if (isDragging) {
+      setScrollOffset(initialPagePosition - window.screenTop);
+      moveInputs(mouseEvent.clientX, mouseEvent.clientY);
+    }
   };
 
   useEffect(() => {
     document.addEventListener("mousemove", handleDrag);
     return () => document.removeEventListener("mousemove", handleDrag);
-  }, [handleDrag]);
+  }, [handleDrag, isDragging]);
 
-  const [isDragging, setIsDragging] = useState(false);
+  const graphContainerId = !!example
+    ? "graph-container-example"
+    : "graph-container";
+
   const positionStyle = {
     left:
       x -
-      document.getElementById("graph-container")?.getBoundingClientRect().left,
-    top:
-      y -
-      document.getElementById("graph-container")?.getBoundingClientRect().top,
+      document.getElementById(graphContainerId)?.getBoundingClientRect().left,
+    top: y /*-
+      document.getElementById(graphContainerId)?.getBoundingClientRect().top,*/,
   };
 
   const isShiftPressed = useContext(IsShiftKeyPressedContext);
@@ -89,9 +112,10 @@ const CreatedStateNode: React.FC<CreatedStateNodeProps> = ({
 
   const handleStopDragging = (top: number, left: number) => {
     setIsDragging(false);
-    if (!example) {
-      changeNodeInLocalStorage("x", left - mainSvgOffSet.x, index);
-      changeNodeInLocalStorage("y", top - mainSvgOffSet.y, index);
+
+    if (!example && false) {
+      changeNodeInLocalStorage("x", left /*- mainSvgOffSet.x*/, index);
+      changeNodeInLocalStorage("y", top /*- mainSvgOffSet.y*/, index);
     }
   };
 

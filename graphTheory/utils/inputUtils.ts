@@ -55,14 +55,18 @@ export const changeInputColor = (inputId: string, color: string) => {
 };
 
 const getInputAttributeFromStorage = (inputId: string, attribute: string) =>
-  JSON.parse(localStorage.getItem(INPUTS_LOCAL_STORAGE_KEY))?.find(
-    (input) => input.id === inputId
-  )?.[attribute] ?? "";
+  (false &&
+    JSON.parse(localStorage.getItem(INPUTS_LOCAL_STORAGE_KEY))?.find(
+      (input) => input.id === inputId
+    )?.[attribute]) ??
+  "";
 
 export const getInputNameFronStorage = (inputId: string) =>
-  JSON.parse(localStorage.getItem(INPUTS_LOCAL_STORAGE_KEY))?.find(
-    (input) => input.id === inputId
-  )?.name ?? "";
+  (false &&
+    JSON.parse(localStorage.getItem(INPUTS_LOCAL_STORAGE_KEY))?.find(
+      (input) => input.id === inputId
+    )?.name) ??
+  "";
 
 export const getInputTextColorFromStorage = (inputId: string) =>
   getInputAttributeFromStorage(inputId, INPUT_ATTRIBUTES_CONSTANTS.TEXT_COLOR);
@@ -96,6 +100,7 @@ const changeInputAttributeInStorage = (
   newAttribute: any,
   inputId: string
 ) =>
+  false &&
   localStorage.setItem(
     INPUTS_LOCAL_STORAGE_KEY,
     JSON.stringify(

@@ -1,9 +1,9 @@
 import * as d3 from "d3";
 import removeWhiteSpace from "./removeWhiteSpace";
 
-const createPath = (input) =>
+const createPath = (input, mainSvgId) =>
   d3
-    .select("#mainSVG")
+    .select(mainSvgId)
     .append("path")
     .attr("id", input.id)
     .attr("class", "input")
@@ -17,9 +17,10 @@ const createPath = (input) =>
     .attr("fill", "none")
     .attr("cursor", "pointer");
 
-const createInputsFromLocalStorage = () =>
+const createInputsFromLocalStorage = (mainSvgId: string) =>
+  false &&
   (JSON.parse(localStorage.getItem("inputs")) ?? []).map((input) => {
-    createPath(input);
+    createPath(input, mainSvgId);
   });
 
 export default createInputsFromLocalStorage;

@@ -1,4 +1,5 @@
 const addGroupToStorage = (stateIndex: number) =>
+  false &&
   localStorage.setItem(
     "groups",
     JSON.stringify([

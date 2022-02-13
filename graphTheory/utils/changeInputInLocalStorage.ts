@@ -3,6 +3,7 @@ const changeInputInLocalStorage = (
   newAttribute: any,
   id: string
 ) =>
+  false &&
   localStorage.setItem(
     "inputs",
     JSON.stringify(

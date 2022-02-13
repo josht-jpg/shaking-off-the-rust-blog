@@ -107,6 +107,7 @@ const CreatedInput: React.FC<CreatedInputProps> = ({ id, example }) => {
   const handleMouseUp = () => {
     setIsMouseDown(false);
     !example &&
+      false &&
       changeInputInLocalStorage("d", line.attr("d"), id.replace("#", ""));
   };
 
@@ -211,9 +212,7 @@ const CreatedInput: React.FC<CreatedInputProps> = ({ id, example }) => {
           textAlign: "center",
         }}
       >
-        <strong>
-          <Latex>{name}</Latex>
-        </strong>
+        <strong>{!!name && <Latex>{name}</Latex>}</strong>
         <br />
       </p>
     </>

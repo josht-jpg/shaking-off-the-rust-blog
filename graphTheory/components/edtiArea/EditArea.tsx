@@ -17,7 +17,8 @@ const EditArea = ({
 
   return (
     <div
-      id="editArea"
+      //TODO: This might be causeing your shift issues, yo
+      id={!!example ? "editAreaExample" : "editArea"}
       className={styles.editArea}
       onMouseOver={() => setIsMouseInEditArea(true)}
       onMouseOut={() => setIsMouseInEditArea(false)}
@@ -25,7 +26,11 @@ const EditArea = ({
         cursor,
       }}
     >
-      <svg ref={mainSvgRef} id={`mainSVG`} className={styles.mainSVG} />
+      <svg
+        ref={mainSvgRef}
+        id={!!example ? "mainSVGExample" : "mainSVG"}
+        className={styles.mainSVG}
+      />
 
       {constructionInput}
       {createdInputIds.map(

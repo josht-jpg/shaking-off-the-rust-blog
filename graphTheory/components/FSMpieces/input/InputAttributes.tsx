@@ -76,7 +76,7 @@ const InputAttributes: React.FC<InputAttributesProps> = ({
     changeSelfLoopAttribute(setSelfLoops, line.id.replace("#", ""), attribute);
 
   useEffect(() => {
-    if (CSSColors.includes(removeWhiteSpace(color.toLowerCase()))) {
+    if (CSSColors.includes(removeWhiteSpace(color?.toLowerCase?.()))) {
       d3.select(line.id).attr("stroke", removeWhiteSpace(color));
 
       if (!line.id.startsWith("#selfLoop")) {
@@ -160,9 +160,7 @@ const InputAttributes: React.FC<InputAttributesProps> = ({
           transform: d3.select(line.id).attr("transform"),
         }}
       >
-        <strong>
-          <Latex>{name}</Latex>
-        </strong>
+        <strong>{!!name && <Latex>{name}</Latex>}</strong>
       </p>
     </>
   );

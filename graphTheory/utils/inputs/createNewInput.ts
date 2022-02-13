@@ -37,6 +37,7 @@ const createPath = (id: string, d: string, isLightMode: boolean) =>
     .attr("cursor", "pointer");
 
 const saveInputInStorage = (id: string, d: string) =>
+  false &&
   localStorage.setItem(
     "inputs",
     JSON.stringify([

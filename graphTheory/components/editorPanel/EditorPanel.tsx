@@ -25,11 +25,13 @@ const EditorPanel = () => {
   const [stateMachines, setStateMachines] = useState([]);
 
   useEffect(() => {
-    setCurrentStateMachine(localStorage.getItem("currentStateMachine") ?? "");
+    false &&
+      setCurrentStateMachine(localStorage.getItem("currentStateMachine") ?? "");
   }, [setCurrentStateMachine]);
 
   useEffect(() => {
-    setStateMachines(JSON.parse(localStorage.getItem("stateMachines")) ?? []);
+    false &&
+      setStateMachines(JSON.parse(localStorage.getItem("stateMachines")) ?? []);
   }, [setStateMachines]);
 
   const [showAddStateMachine, setShowAddStateMachine] = useState(false);

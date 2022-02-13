@@ -33,6 +33,7 @@ import CreatedStateNode from "./FSMpieces/stateNode/CreatedStateNode";
 import removeWhiteSpace from "../utils/removeWhiteSpace";
 import { NodeLabelsContext } from "../contexts/NodeLabelsProvider";
 import { IsLightModeContext } from "../../context/IsLightModeProvider";
+import { MainSvgIdContext } from "../contexts/MainSvgIdProvider";
 
 type createInput = {
   x: number;
@@ -139,7 +140,8 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
         "Jessica",
         "Megan",
       ]);
-    } else {
+      //TODO: dev code
+    } else if (false) {
       setStateNodes(
         (JSON.parse(localStorage.getItem("stateNodes")) ?? []).map(
           (node, index) =>
@@ -212,11 +214,13 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
     );
   }, [lastDeletedVertex]);
 
+  const { mainSvgId } = useContext(MainSvgIdContext);
+
   useEffect(() => {
     if (!!example) {
       const createPath = (input) =>
         d3
-          .select("#mainSVG")
+          .select("#mainSVGExample")
           .append("path")
           .attr("id", input.id)
           .attr("class", "input")
@@ -231,17 +235,18 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
           .attr("cursor", "pointer");
 
       JSON.parse(
-        `[{"id":"line0to1Number1","d":"M 190.65625 126.03125 Q 240.59375 191 335.90625 351.5625","name":""},{"id":"line0to2Number1","d":"M 190.65625 126.03125 Q 451.90625 183.5625 577.90625 130.5625","name":""},{"id":"line0to5Number1","d":"M 190.65625 126.03125 Q 247.90625 636.5625 211.90625 693.5625","name":""},{"id":"line5to4Number1","d":"M 221.65625 743.03125 Q 500.59375 597 628.90625 609.5625","name":""},{"id":"line1to4Number1","d":"M 362.65625 389.03125 Q 522.59375 574 634.90625 590.5625","name":""},{"id":"line4to3Number1","d":"M 665.65625 623.03125 Q 591.59375 505 652.90625 377.5625","name":""},{"id":"line3to6Number1","d":"M 660.65625 352.03125 Q 930.90625 139.5625 930.90625 139.5625","name":""}]`
+        `[{"id":"exampleline0to1Number1","d":"M 190.65625 126.03125 Q 240.59375 191 335.90625 351.5625","name":""},{"id":"exampleline0to2Number1","d":"M 190.65625 126.03125 Q 451.90625 183.5625 577.90625 130.5625","name":""},{"id":"exampleline0to5Number1","d":"M 190.65625 126.03125 Q 247.90625 636.5625 211.90625 693.5625","name":""},{"id":"exampleline5to4Number1","d":"M 221.65625 743.03125 Q 500.59375 597 628.90625 609.5625","name":""},{"id":"exampleline1to4Number1","d":"M 362.65625 389.03125 Q 522.59375 574 634.90625 590.5625","name":""},{"id":"exampleline4to3Number1","d":"M 665.65625 623.03125 Q 591.59375 505 652.90625 377.5625","name":""},{"id":"exampleline3to6Number1","d":"M 660.65625 352.03125 Q 930.90625 139.5625 930.90625 139.5625","name":""}]`
       ).map((input) => createPath(input));
 
       const inputIds = JSON.parse(
-        `[{"id":"line0to1Number1","d":"M 190.65625 126.03125 Q 240.59375 191 335.90625 351.5625","name":""},{"id":"line0to2Number1","d":"M 190.65625 126.03125 Q 451.90625 183.5625 577.90625 130.5625","name":""},{"id":"line0to5Number1","d":"M 190.65625 126.03125 Q 247.90625 636.5625 211.90625 693.5625","name":""},{"id":"line5to4Number1","d":"M 221.65625 743.03125 Q 500.59375 597 628.90625 609.5625","name":""},{"id":"line1to4Number1","d":"M 362.65625 389.03125 Q 522.59375 574 634.90625 590.5625","name":""},{"id":"line4to3Number1","d":"M 665.65625 623.03125 Q 591.59375 505 652.90625 377.5625","name":""},{"id":"line3to6Number1","d":"M 660.65625 352.03125 Q 930.90625 139.5625 930.90625 139.5625","name":""}]`
+        `[{"id":"exampleline0to1Number1","d":"M 190.65625 126.03125 Q 240.59375 191 335.90625 351.5625","name":""},{"id":"exampleline0to2Number1","d":"M 190.65625 126.03125 Q 451.90625 183.5625 577.90625 130.5625","name":""},{"id":"exampleline0to5Number1","d":"M 190.65625 126.03125 Q 247.90625 636.5625 211.90625 693.5625","name":""},{"id":"exampleline5to4Number1","d":"M 221.65625 743.03125 Q 500.59375 597 628.90625 609.5625","name":""},{"id":"exampleline1to4Number1","d":"M 362.65625 389.03125 Q 522.59375 574 634.90625 590.5625","name":""},{"id":"exampleline4to3Number1","d":"M 665.65625 623.03125 Q 591.59375 505 652.90625 377.5625","name":""},{"id":"exampleline3to6Number1","d":"M 660.65625 352.03125 Q 930.90625 139.5625 930.90625 139.5625","name":""}]`
       ).map((input) => "#" + input.id);
 
       setCreatedInputIds(inputIds);
     } else {
-      createInputsFromLocalStorage();
-      setCreatedInputIds(getInputIdsFromStorage().map((id) => "#" + id));
+      false && createInputsFromLocalStorage(mainSvgId);
+      false &&
+        setCreatedInputIds(getInputIdsFromStorage().map((id) => "#" + id));
     }
   }, [mainSvgRef, setCreatedInputIds]);
 
@@ -279,7 +284,7 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
     createInput?.y,
   ]);
 
-  //  const [isLightMode, setIsLightMode] = useState(true);
+  // const [isLightMode, setIsLightMode] = useState(true);
 
   const { isLightMode } = useContext(IsLightModeContext);
 

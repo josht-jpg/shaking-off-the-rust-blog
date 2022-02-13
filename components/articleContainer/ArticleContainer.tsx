@@ -7,7 +7,7 @@ const ArticleContainer = ({ article }) => {
       {!!article && (
         <>
           <h3 className={styles.title}>{article.title}</h3>
-          {/* <h3 className={styles.description}>{article.description}</h3> */}
+          {<h3 className={styles.date}>{article.date}</h3>}
           <img
             className={styles.thumbnail}
             src={article.thumbnail}

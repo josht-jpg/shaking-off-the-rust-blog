@@ -52,7 +52,9 @@ const StateNodeSVG = ({
       {!!stateAttributes.stateName && (
         <p>
           <strong>
-            <Latex>{stateAttributes.stateName}</Latex>
+            {!!stateAttributes.stateName && (
+              <Latex>{stateAttributes.stateName}</Latex>
+            )}
           </strong>
         </p>
       )}

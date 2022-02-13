@@ -38,26 +38,28 @@ const createNewStartInput = (startNodeIndex: number) => {
 
   // createStartInput(id);
 
-  localStorage.setItem(
-    "startPoint",
-    JSON.stringify({
-      id,
-      d,
-      startNodeIndex,
-      position: {
-        cx: startStateBoundingRect.left - mainBoundingRect.left - 150,
-        cy: startStateBoundingRect.y + 35 - mainBoundingRect.top,
-      },
-    })
-  );
+  false &&
+    localStorage.setItem(
+      "startPoint",
+      JSON.stringify({
+        id,
+        d,
+        startNodeIndex,
+        position: {
+          cx: startStateBoundingRect.left - mainBoundingRect.left - 150,
+          cy: startStateBoundingRect.y + 35 - mainBoundingRect.top,
+        },
+      })
+    );
 
-  localStorage.setItem(
-    "inputs",
-    JSON.stringify([
-      ...(JSON.parse(localStorage.getItem("inputs")) ?? []),
-      { id, d },
-    ])
-  );
+  false &&
+    localStorage.setItem(
+      "inputs",
+      JSON.stringify([
+        ...(JSON.parse(localStorage.getItem("inputs")) ?? []),
+        { id, d },
+      ])
+    );
 };
 
 export default createNewStartInput;

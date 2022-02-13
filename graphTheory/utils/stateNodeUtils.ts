@@ -17,7 +17,7 @@ export const getStateNodeBounding = (stateIndex: number) =>
   document.getElementById(`stateNode${stateIndex}`).getBoundingClientRect();
 
 const getStateNodeByIndex = (index: number) =>
-  JSON.parse(localStorage.getItem("stateNodes"))?.[index];
+  false && JSON.parse(localStorage.getItem("stateNodes"))?.[index];
 
 export const moveInputsConnectedToStateNode = (
   stateIndex: number,
@@ -193,6 +193,7 @@ const changeAttributeInStorage = (
   attributeToChange: string,
   newValue: string | number
 ) =>
+  false &&
   localStorage.setItem(
     STATE_NODE_LOCAL_STORAGE_KEY,
     JSON.stringify(
@@ -227,6 +228,7 @@ const calculateGroupTransform = (stateIndex: number, initialStatePosition) =>
   })`;
 
 const changeGroupPositionInStorage = (stateIndex: number, transform: string) =>
+  false &&
   localStorage.setItem(
     GROUPS_LOCAL_STORAGE_KEY,
     JSON.stringify(
@@ -270,6 +272,7 @@ const getAllTextInGroup = (stateIndex: number) =>
 
 //TODO: should be a hook with mainSvgOffSetContext
 export const saveNewStateNodeInStorage = (top: number, left: number) =>
+  false &&
   localStorage.setItem(
     STATE_NODE_LOCAL_STORAGE_KEY,
     JSON.stringify([

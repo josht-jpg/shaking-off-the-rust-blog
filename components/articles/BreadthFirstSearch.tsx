@@ -645,7 +645,7 @@ const BreadthFirstSearch = () => {
           }}
         >
           <div
-            id={"graph-container"}
+            id={"graph-container-example"}
             style={{
               width: "75vw",
               height: "85vh",

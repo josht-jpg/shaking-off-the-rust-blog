@@ -3,6 +3,7 @@ const changeNodeInLocalStorage = (
   newAttribute: string | number | boolean,
   nodeIndex: number
 ) =>
+  false &&
   localStorage.setItem(
     "stateNodes",
     JSON.stringify(

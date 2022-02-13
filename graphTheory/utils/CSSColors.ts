@@ -154,4 +154,4 @@ export const CSSColors = [
 export default CSSColors;
 
 export const isValidCSSColor = (color: string) =>
-  CSSColors.includes(removeWhiteSpace(color.toLowerCase()));
+  CSSColors.includes(removeWhiteSpace(color?.toLowerCase?.()));
