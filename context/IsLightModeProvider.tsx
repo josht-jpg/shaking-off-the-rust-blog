@@ -18,7 +18,7 @@ interface IIsLightModeContext {
 export const IsLightModeContext = createContext<IIsLightModeContext>(undefined);
 
 export const IsLightModeProvider = ({ children }) => {
-  const [isLightMode, setIsLightMode] = useState(true);
+  const [isLightMode, setIsLightMode] = useState(false);
 
   useEffect(() => {
     document.body.style.backgroundColor = isLightMode

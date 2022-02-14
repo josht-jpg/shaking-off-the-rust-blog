@@ -7,7 +7,7 @@ import {
   GraphAnalysisTypes,
 } from "../../../context/GraphAnalysisTypeProvider";
 
-enum Articles {
+export enum ArticleExtensions {
   DNA = "dna-analysis",
   NAIVE_BAYES = "naive-bayes",
   BFS = "breadth-first-search",
@@ -22,7 +22,7 @@ const articlePage: React.FC<IProps> = ({ article }) => {
   const { setGraphAnalysisType } = useContext(GraphAnalysisTypeContext);
 
   switch (article) {
-    case Articles.BFS:
+    case ArticleExtensions.BFS:
       setGraphAnalysisType(GraphAnalysisTypes.BFS);
       break;
     default:
@@ -40,10 +40,10 @@ export default articlePage;
 
 export async function getStaticPaths() {
   const paths = [
-    Articles.DNA,
-    Articles.NAIVE_BAYES,
-    Articles.COMPLEX_NUMBERS,
-    Articles.BFS,
+    ArticleExtensions.DNA,
+    ArticleExtensions.NAIVE_BAYES,
+    ArticleExtensions.COMPLEX_NUMBERS,
+    ArticleExtensions.BFS,
   ].map((a) => ({
     params: { id: a },
   }));

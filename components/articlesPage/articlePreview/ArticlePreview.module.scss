@@ -1,0 +1,26 @@
+@import "../../../styles/fadeIn.scss";
+@import "../../../styles/variables.scss";
+
+.container {
+  display: flex;
+  cursor: pointer;
+}
+
+.thumbnail {
+  max-width: 140px;
+  border-radius: 4px;
+  transition: 300ms;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0px;
+  transition: 300ms;
+}
+
+.readMoreIcon {
+  @extend .fadeIn;
+  color: $main-blue;
+  font-size: 1rem;
+  transition: margin-left 300ms ease-in-out;
+}

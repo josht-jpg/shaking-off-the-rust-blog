@@ -42,15 +42,15 @@ const Header = () => {
             <span
               style={{
                 position: "absolute",
-                marginLeft: "5px",
-                marginTop: "-6px",
+                marginLeft: "4.5px",
+                marginTop: "3px",
                 transform: "rotate(45deg)",
               }}
             >
               <Image
-                src={"/rust-mascot.png"}
+                src={"/rustacean-flat-happy.png"}
                 alt={"Rust Mascot"}
-                height={42}
+                height={24}
                 width={42}
               />
             </span>
@@ -59,7 +59,7 @@ const Header = () => {
       </div>
 
       <div className={styles.optionsContainer}>
-        {pages.map((page) => (
+        {/*pages.map((page) => (
           <div>
             <h3
               className={styles.headerItem}
@@ -72,7 +72,7 @@ const Header = () => {
               <Link href={page.href}>{page.button}</Link>
             </h3>
           </div>
-        ))}
+            ))*/}
 
         <button
           style={{
