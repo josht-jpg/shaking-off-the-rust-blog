@@ -301,6 +301,7 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
           text.setAttribute("fill", "black");
         }
       });
+
     changeTextColor();
   }, [isLightMode]);
 

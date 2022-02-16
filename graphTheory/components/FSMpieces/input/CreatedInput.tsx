@@ -72,7 +72,7 @@ const CreatedInput: React.FC<CreatedInputProps> = ({ id, example }) => {
     return () => document.removeEventListener("mousemove", handleMouseMove);
   }, [isMouseDown]);
 
-  const inputOpacity = () => (isSelected ? "1" : "0.4");
+  const inputOpacity = () => (isSelected ? "1" : isLightMode ? "0.4" : "0.7");
   useEffect(() => {
     line.attr("opacity", inputOpacity());
   }, [isSelected]);
@@ -199,11 +199,7 @@ const CreatedInput: React.FC<CreatedInputProps> = ({ id, example }) => {
           fontWeight: "bold",
           fontSize: "1.2rem",
           cursor: "pointer",
-          color: !!textColor
-            ? removeWhiteSpace(textColor)
-            : isLightMode
-            ? "gray"
-            : "white",
+          color: !!textColor ? removeWhiteSpace(textColor) : "gray",
           opacity: !isSelected && "0.85",
           position: "absolute",
           transition: `color ${TRANSITION_TIME}`,

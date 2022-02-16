@@ -20,7 +20,7 @@ const drawConstructionInput = (startPosition, isLightMode: boolean) => {
     .attr("x2", initX)
     .attr("y2", initY)
     .attr("marker-end", `url(#tempMarker)`)
-    .attr("stroke", isLightMode ? "gray" : "white")
+    .attr("stroke", "gray")
     .attr("opacity", "0.5")
     .attr("stroke-width", "3px");
 };

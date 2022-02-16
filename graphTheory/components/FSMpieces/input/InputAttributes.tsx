@@ -141,11 +141,7 @@ const InputAttributes: React.FC<InputAttributesProps> = ({
           fontWeight: "bold",
           fontSize: "1.2rem",
           cursor: "pointer",
-          color: !!textColor
-            ? removeWhiteSpace(textColor)
-            : isLightMode
-            ? "gray"
-            : "white",
+          color: !!textColor ? removeWhiteSpace(textColor) : "gray",
           opacity: !showInputDetails && "0.85",
           position: "absolute",
           transition: `color ${TRANSITION_TIME}`,

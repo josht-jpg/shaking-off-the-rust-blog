@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import * as d3 from "d3";
 import InputAttributes from "../input/InputAttributes";
 import loadSelfLoops from "../../../utils/localStorage/loadSelfLoops";
@@ -11,6 +11,7 @@ import dragSelfLoop, {
   dragTransformOrigin,
 } from "../../../utils/selfLoops/dragUtils";
 import TransformCoordinates from "../../../interfaces/transformCoordinates";
+import { IsLightModeContext } from "../../../../context/IsLightModeProvider";
 
 interface IGroup {
   isCreated: boolean;
@@ -46,6 +47,8 @@ const SelfLoops: React.FC<SelfLoopsProps> = ({
   currentSelfLoopIndexState,
   example,
 }) => {
+  const isLightMode = useContext(IsLightModeContext);
+
   const [selfLoops, setSelfLoops] = useState([]);
   const [isCreatingSelfLoop, setIsCreatingSelfLoop] = isCreatingSelfLoopState;
   const [currentSelfLoopIndex, setCurrentSelfLoopIndex] =

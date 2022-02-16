@@ -102,7 +102,7 @@ const CreatedStateNode: React.FC<CreatedStateNodeProps> = ({
     left:
       x -
       document.getElementById(graphContainerId)?.getBoundingClientRect().left,
-    top: y /*-
+    top: y - 80 /*-
       document.getElementById(graphContainerId)?.getBoundingClientRect().top,*/,
   };
 
@@ -133,7 +133,7 @@ const CreatedStateNode: React.FC<CreatedStateNodeProps> = ({
               ...positionStyle,
             }
           : {
-              transition: `background-color ${TRANSITION_TIME}`,
+              transition: `background-color box-shadow ${TRANSITION_TIME}`,
               zIndex: 1,
               cursor: isShiftPressed && "crosshair",
               ...positionStyle,

@@ -111,7 +111,7 @@ const Input: React.FC<InputProps> = ({
   }, [indexOfStateMouseIsOver, isMouseDown, isCreated, G]);
 
   useEffect(() => {
-    const color = isLightMode ? "gray" : "white";
+    const color = "gray";
     const opacity = isLightMode ? "0.5" : "0.9";
 
     d3.select(selectByIdPrefix(CONSTRUCTION_INPUT_CONTAINER_ID))
