@@ -11,6 +11,15 @@ const ComplexNumbers = () => {
         about an array of technological concepts in the process. In this
         installment, we’re going to dig into complex numbers.
       </p>
+      <p>
+        This installment's Github repo:{" "}
+        <a
+          href={"https://github.com/josht-jpg/rust-complex-numbers"}
+          target="_blank"
+        >
+          https://github.com/josht-jpg/rust-complex-numbers
+        </a>
+      </p>
       <h3 id="225ef24d-6186-442a-9991-54511af34e57">
         Intro to Complex Numbers (feel free to skip if you’re already familiar)
       </h3>

@@ -10,23 +10,39 @@ const DnaSearch = () => (
       array of technological concepts in the process. In this installment, we’re
       doing a bit of bioinformatics.
     </p>
-    <p id="1ca48208-ef6c-4f6b-a019-00380853de23"></p>
+    <p id="e3c4df7d-d0fb-4727-8a13-b9d2f4326d16"></p>
+    <p id="1ca48208-ef6c-4f6b-a019-00380853de23">
+      This installment's Github repo:{" "}
+      <a href="https://github.com/josht-jpg/rust_dna_search">
+        https://github.com/josht-jpg/rust_dna_search
+      </a>
+    </p>
     <h3 id="0e8a08e4-5f2c-4be4-acd3-291d847aa831">Biology Primer</h3>
-    <hr style={{ marginTop: 0 }} id="43e10c41-860d-48ef-872b-02255e0e2f8d" />
+    <hr id="43e10c41-860d-48ef-872b-02255e0e2f8d" />
     <p id="d0e69e96-4fa4-4148-b667-ec2ea6be9af2">
-      Before beginning, you may find a short biology session worth while.{" "}
+      Before beginning, you may find a short biology session worthwhile.{" "}
     </p>
     <p id="2fcf2927-dc18-45d9-b9c6-427533a0660f">
       <em>Deoxyribonucleic acid</em> (DNA) consists of a chain of sugars and
-      phosphates which string together nitrogenous bases [1]. These bases,
-      called <em>nucleotides</em>, come in four types: adenine, guanine,
-      cytosine, and thymine, often abbreviated to A, G, C, and T. Genetic
-      information is encoded by the sequence of nucleotides in DNA [2 (page
-      12)].
+      phosphates which string together nitrogenous bases [
+      <a href="https://www.amazon.ca/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733503">
+        1
+      </a>
+      ]. These bases, called <em>nucleotides</em>, come in four types: adenine,
+      guanine, cytosine, and thymine, often abbreviated to A, G, C, and T.
+      Genetic information is encoded by the sequence of nucleotides in DNA [
+      <a href="https://www.macmillanlearning.com/college/ca/product/Genetics-A-Conceptual-Approach/p/1319216803">
+        2
+      </a>
+      ].
     </p>
     <p id="0fade017-6020-438a-b5f6-effbdeca64ea">
       A set of three nucleotides is a <em>codon</em>. Codons specify amino
-      acids, which are the building blocks of proteins [2].
+      acids, which are the building blocks of proteins [
+      <a href="https://www.macmillanlearning.com/college/ca/product/Genetics-A-Conceptual-Approach/p/1319216803">
+        2
+      </a>
+      ].
     </p>
     <p id="64c64111-dfcf-4a88-9fad-7335537bbdc0">
       In computer programs, we can represent a DNA molecule as a string of
@@ -35,7 +51,7 @@ const DnaSearch = () => (
       algorithms and computation.
     </p>
     <h3 id="e10ba781-3e3e-4127-a886-292dcad56bdc">Getting Started</h3>
-    <hr style={{ marginTop: 0 }} id="99ad4339-5ecb-4839-9e0f-ed620342a552" />
+    <hr id="99ad4339-5ecb-4839-9e0f-ed620342a552" />
     <p id="81d9cb7a-101c-45df-b568-e0e9d8d1c791">
       We’ll begin by creating a new library with Cargo.{" "}
     </p>
@@ -43,7 +59,7 @@ const DnaSearch = () => (
       <code>cargo new dna_search --lib{"\n"}cd dna_search</code>
     </pre>
     <h3 id="505cc283-7636-474c-ac07-09a14b1b055c">Declaring some Types</h3>
-    <hr style={{ marginTop: 0 }} id="2879b24d-948c-40ef-89d3-624b4ee2d7cd" />
+    <hr id="2879b24d-948c-40ef-89d3-624b4ee2d7cd" />
     <p id="1e5dbcf3-de01-49db-b2f7-722c99d3ca03">
       A great way to represent a nucleotide in our Rust program is with an{" "}
       <code>enum</code>:
@@ -51,8 +67,8 @@ const DnaSearch = () => (
     <pre id="d5567174-922f-4469-919f-548c0df11cf0" className="code">
       <code>
         //lib.rs{"\n"}
-        {"\n"}#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]{"\n"}
-        enum Nucleotide {"{"}
+        {"\n"}#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+        {"\n"}enum Nucleotide {"{"}
         {"\n"}
         {"    "}A,{"\n"}
         {"    "}C,{"\n"}
@@ -97,7 +113,7 @@ const DnaSearch = () => (
     <h3 id="4d303c5c-24aa-4c47-af9c-6f0d965c2838">
       Converting a String to Nucleotides
     </h3>
-    <hr style={{ marginTop: 0 }} id="c74a8efe-81b7-474c-ab15-501a1199a518" />
+    <hr id="c74a8efe-81b7-474c-ab15-501a1199a518" />
     <p id="315e2ca3-f870-4206-a31f-bf60e1d57509">
       We’re going to assume that the data we are working with is a string of
       nucleotides, e.g.
@@ -128,12 +144,10 @@ const DnaSearch = () => (
     </pre>
     <p id="88c0c0e3-02ac-4db8-898d-bb33ed13f991">
       The ability to use abstractions like <code>map</code> without hurting
-      performance is one of the reasons why I love Rust so darn much. //Maybe
-      take out
+      performance is one of the reasons why I love Rust so darn much.{" "}
     </p>
-    <p id="fccb4180-32a4-4b31-87a1-8d193d34856b"></p>
     <h3 id="9273f8a2-72c6-440c-8196-f21fec492e40">Nucleotide Frequencies</h3>
-    <hr style={{ marginTop: 0 }} id="c518deb7-1408-4fa3-9119-af56788aabc9" />
+    <hr id="c518deb7-1408-4fa3-9119-af56788aabc9" />
     <p id="a6955098-2fd6-41bd-b7d8-bbe6c50adb05">
       Let’s warm up with a program to calculate nucleotide frequencies of a
       piece of DNA. That is, we’ll count the number of occurrences of each
@@ -207,7 +221,8 @@ const DnaSearch = () => (
     <p id="9f0ee30f-a3c1-4085-89ea-9e72bc711423">
       The need arises for our <code>Nucleotide</code> <code>enum</code> to
       derive the <code>Hash</code> trait. Implementing <code>Hash</code> allows
-      us to use <code>Nucleotide</code>s as keys in a <code>HashMap</code> [10].
+      us to use <code>Nucleotide</code>s as keys in a <code>HashMap</code> [
+      <a href="https://doc.rust-lang.org/std/hash/trait.Hash.html">3</a>].
       Without deriving <code>Hash</code>, the compiler will throw this error:{" "}
       <code>the trait bound Nucleotide: Hash is not satisfied</code>.
     </p>
@@ -224,11 +239,15 @@ const DnaSearch = () => (
       aren’t curious.
     </p>
     <div className="indented">
-      <hr style={{ marginTop: 0 }} id="7661b44a-3597-4dcb-900b-597c1ff9bbc1" />
+      <hr id="7661b44a-3597-4dcb-900b-597c1ff9bbc1" />
       <p id="d1283421-60e8-4105-8c35-39a06d7fb4a0">
         The Rust docs tell us that the <code>get_mut</code> method takes a
         possible key and “returns a mutable reference to the value corresponding
-        to the key” [8].{" "}
+        to the key” [
+        <a href="https://doc.rust-lang.org/std/collections/struct.HashMap.html#method.get_mut">
+          4
+        </a>
+        ].{" "}
       </p>
       <p id="345758f0-57e7-4151-ba12-14e34aef7c94">
         There is generally no guarantee that a <code>HashMap</code> contains the
@@ -244,34 +263,35 @@ const DnaSearch = () => (
         Since <code>get_mut</code> returns an <code>Option</code>, the{" "}
         <code>unwrap</code> method is necessary. The <code>unwrap</code> method
         accesses the data within the <code>Option</code>’s <code>Some</code>{" "}
-        value [9].{" "}
+        value [<a href="https://doc.rust-lang.org/book/">5</a>].{" "}
       </p>
       <p id="fb73f79e-5999-4219-9238-9421a641b4ad">
         There’s a similar method to <code>unwrap</code> that we could use here -
         the <code>expect</code> method. <code>expect</code> is similar to{" "}
         <code>unwrap</code>, but allows us to specify an error message if the{" "}
-        <code>Option</code> it is operating on holds <code>None</code> [9]. In
-        most cases, I prefer using the <code>expect</code> method because it
-        makes the code more explicit and helps with debugging. But in this case,
-        we actually know that the <code>Option</code> returned from{" "}
-        <code>get_mut</code> won’t be <code>None</code> (since we’ve initialized{" "}
+        <code>Option</code> it is operating on holds <code>None</code> [
+        <a href="https://doc.rust-lang.org/book/">5</a>]. In most cases, I
+        prefer using the <code>expect</code> method because it makes the code
+        more explicit and helps with debugging. But in this case, we actually
+        know that the <code>Option</code> returned from <code>get_mut</code>{" "}
+        won’t be <code>None</code> (since we’ve initialized{" "}
         <code>frequencies</code> with values for each kind of{" "}
         <code>Nucleotide</code>). This makes <code>expect</code> unnecessary.
       </p>
       <p id="94efc9f3-54c2-4b44-a041-1bc6c9ca67fe">
         Finally, note that we cannot preform the <code>+=</code> operation on
-        the <code>&amp;mut i32</code> type. This is why we derefference (in
-        Rust, we deference with <code>*</code>):{" "}
+        the <code>&amp;mut i32</code> type. This is why we dereference (in Rust,
+        we deference with <code>*</code>):{" "}
         <code>*frequencies.get_mut(nucleotide).unwrap() += 1</code>
       </p>
-      <hr style={{ marginTop: 0 }} id="6c30328d-0763-4171-a320-d8d6301e049e" />
-      <p id="b695af6a-499c-40ab-a66c-d3baf075db87"></p>
+      <hr id="6c30328d-0763-4171-a320-d8d6301e049e" />
     </div>
     <p />
-    <p id="d98c840f-8a58-4803-9681-a8ffffb4f3cd">
+    <p id="3eb1110f-b06e-4594-be91-d988640f2825"></p>
+    <p id="abc428b7-9386-42bd-ad8c-5b3376c60072">
       Here’s a test for our <code>nucleotide_frequency</code> function:
     </p>
-    <pre id="f17f7b5b-d8ff-4f85-8b08-fd1e4e4ddf8a" className="code">
+    <pre id="9ea59a1f-6464-44b4-8855-b2f79c084e43" className="code">
       <code>
         // lib.rs{"\n"}
         {"\n"}mod tests {"{"}
@@ -303,91 +323,102 @@ const DnaSearch = () => (
         {"}"}
       </code>
     </pre>
-    <p id="f90f2187-025a-4357-a34f-ccd32acd3e71"></p>
     <h3 id="56bb5820-e772-4161-80d4-541a76888c30">Searching DNA for a Codon</h3>
-    <hr style={{ marginTop: 0 }} id="6b7c377f-7dbb-44ba-bf54-f9ee630b17fc" />
+    <hr id="6b7c377f-7dbb-44ba-bf54-f9ee630b17fc" />
     <p id="b74fdb2b-fb21-4e1b-b1be-26ee44520b33">
-      {" "}
-      //Check this is right, page 9 of The Gene: Much like the bit is the
-      fundamental unit of computation, the gene, which is a section of DNA, is
-      the fundamental unit of biological information [3][1]. Searching through a
-      gene for a specific codon is a common problem in bioinformatics [4]. Let’s
-      try it.
+      Much like the bit is the fundamental unit of computation, the gene, which
+      is a section of DNA, is the fundamental unit of biological information [
+      <a href="https://www.macmillanlearning.com/college/ca/product/Introduction-to-Genetic-Analysis/p/1319114784">
+        6
+      </a>
+      ][
+      <a href="https://www.amazon.ca/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733503">
+        1
+      </a>
+      ]. Searching through a gene for a specific codon is a common problem in
+      bioinformatics [
+      <a href="https://www.manning.com/books/classic-computer-science-problems-in-python">
+        7
+      </a>
+      ]. Let’s try it.
     </p>
-    <div className="indented">
-      <p id="4fa41e47-f3b2-44e8-aa7a-6665985f3c52">
-        We’ll make another helper function, similar to{" "}
-        <code>str_to_nucleotides</code>, to convert a string slice representing
-        DNA into a <code>Gene</code>. We’ll call the function{" "}
-        <code>str_to_gene</code>:
-      </p>
-      <pre id="a6296e23-a308-43c9-8845-9239d70a9d41" className="code">
-        <code>
-          fn str_to_gene(s: &amp;str) -&gt; Gene {"{"}
-          {"\n"}
-          {"    "}let nucleotides = str_to_nucleotides(s);{"\n"}
-          {"    "}let num_nucleotides_in_codons = nucleotides.len() -
-          (nucleotides.len() % NUCLEOTIDES_IN_CODON);{"\n"}
-          {"\n"}
-          {"    "}return (0..num_nucleotides_in_codons){"\n"}
-          {"        "}.step_by(NUCLEOTIDES_IN_CODON){"\n"}
-          {"        "}.map(|i| (nucleotides[i], nucleotides[i + 1],
-          nucleotides[i + 2])){"\n"}
-          {"        "}.collect();{"\n"}
-          {"}"}
-        </code>
-      </pre>
-      <p id="7b6665be-b30d-48e6-968f-dec6a51d4a5d">
-        We are not considering any nucleotides that are not a part of a codon.
-        For example, if we are given <code>ATTCACGG</code>, the nucleotides{" "}
-        <code>GG</code> will be ignored as they do not fit within a multiple of
-        three. This is why <code>num_nucleotides_in_codons</code> exists.
-      </p>
-      <p id="be224e58-621c-4c3f-830c-c869f73d9007">
-        We group the remaining nucleotides into codons with the{" "}
-        <code>step_by</code> method, which allows us to take custom sized steps.{" "}
-      </p>
-      <p id="c05c46fb-34d2-43c8-b4af-839db990b0eb">
-        The line{" "}
-        <code>
-          .map(|i| (nucleotides[i], nucleotides[i + 1], nucleotides[i + 2]))
-        </code>{" "}
-        requires implementation of <code>Copy</code> and <code>Clone</code>{" "}
-        triats.{" "}
-      </p>
-      <p id="3225037b-8eb7-46f4-9311-71f297216d42">
-        The Rust docs tell us that <code>Clone</code> provides the ability to
-        explicitly duplicate an object [11] and that Copy (which requires{" "}
-        <code>Clone</code>) provides the ability to duplicate values by copying
-        bits [12].{" "}
-      </p>
-      <p id="009da709-285e-4b8b-9009-d8704d37ab02">
-        If <code>Nucleotide</code> did not implement these traits, the compiler
-        would scold us with:{" "}
-      </p>
-      <p id="4cf4a961-c089-46f0-95b0-3b616284ce6e">
-        <code>cannot move out of index of `Vec&lt;Nucleotide&gt;`</code>
-      </p>
-      <p id="587dd88c-e9eb-4fa6-9a52-0ee32ce91467">
-        <code>
-          move occurs because value has type `Nucleotide`, which does not
-          implement the `Copy` trait
-        </code>
-      </p>
-      <p id="be875a3f-532b-4b5c-87d0-c1730a6d7801"></p>
-    </div>
-    <p />
-    <p id="0812aa79-613c-4f27-a896-3745ba93406e"></p>
-    <p id="25e6f9fc-2ca0-4608-8364-bbd5e6fa6435">
-      To search the given gene for a codon, we’ll use <em>binary search</em>.{" "}
+    <p id="8054015f-0f47-407e-9c33-fbd223dcc886"></p>
+    <p id="fd9ce548-71a9-408c-ad71-d0ec967dfbcd">
+      We’ll make another helper function, similar to{" "}
+      <code>str_to_nucleotides</code>, to convert a string slice representing
+      DNA into a <code>Gene</code>. We’ll call the function{" "}
+      <code>str_to_gene</code>:
+    </p>
+    <pre id="52e62e03-f69f-4fb6-b44f-6460c7e014a5" className="code">
+      <code>
+        fn str_to_gene(s: &amp;str) -&gt; Gene {"{"}
+        {"\n"}
+        {"    "}let nucleotides = str_to_nucleotides(s);{"\n"}
+        {"    "}let num_nucleotides_in_codons = nucleotides.len() -
+        (nucleotides.len() % NUCLEOTIDES_IN_CODON);{"\n"}
+        {"\n"}
+        {"    "}return (0..num_nucleotides_in_codons){"\n"}
+        {"        "}.step_by(NUCLEOTIDES_IN_CODON){"\n"}
+        {"        "}.map(|i| (nucleotides[i], nucleotides[i + 1], nucleotides[i
+        + 2])){"\n"}
+        {"        "}.collect();{"\n"}
+        {"}"}
+      </code>
+    </pre>
+    <p id="371cb6f2-5b96-4537-9870-29cde0d56829">
+      We are not considering any nucleotides that are not a part of a codon. For
+      example, if we are given <code>ATTCACGG</code>, the nucleotides{" "}
+      <code>GG</code> will be ignored as they do not fit within a multiple of
+      three. This is why <code>num_nucleotides_in_codons</code> exists.
+    </p>
+    <p id="1729c7f8-809a-4dfb-9b40-3651b86231a6"></p>
+    <p id="309d2bbd-94e2-47ad-abc0-22a25f8e614e">
+      We group the remaining nucleotides into codons with the{" "}
+      <code>step_by</code> method, which allows us to take custom sized steps.{" "}
+    </p>
+    <p id="2d4ff19b-14ca-422a-aa5d-2b1e37a8cace"></p>
+    <p id="45080f3a-9df9-49bd-b05b-7fdfabee1715">
+      The line{" "}
+      <code>
+        .map(|i| (nucleotides[i], nucleotides[i + 1], nucleotides[i + 2]))
+      </code>{" "}
+      requires implementation of <code>Copy</code> and <code>Clone</code>{" "}
+      triats. The Rust docs tell us that <code>Clone</code> provides the ability
+      to explicitly duplicate an object [
+      <a href="https://doc.rust-lang.org/std/clone/trait.Clone.html">8</a>] and
+      that Copy (which requires <code>Clone</code>) provides the ability to
+      duplicate values by copying bits [
+      <a href="https://doc.rust-lang.org/std/marker/trait.Copy.html">9</a>].{" "}
+    </p>
+    <p id="8e9b0ca1-b086-4939-b9ca-61e396429493">
+      If <code>Nucleotide</code> did not implement these traits, the compiler
+      would scold us with:{" "}
+    </p>
+    <p id="6f52fa86-71ce-4cfd-82e9-52f28603e47a">
+      <code>cannot move out of index of `Vec&lt;Nucleotide&gt;`</code>
+    </p>
+    <p id="e6445c28-553e-4c22-8d5d-e9e474d12d9b">
+      <code>
+        move occurs because value has type `Nucleotide`, which does not
+        implement the `Copy` trait
+      </code>
+    </p>
+    <p id="25e6f9fc-2ca0-4608-8364-bbd5e6fa6435"></p>
+    <p id="6ff80da8-5f80-4257-beae-a2f5c43082bd">
+      To search the given gene for a codon, we’ll use <em>binary search:</em>{" "}
     </p>
     <div className="indented">
       <p id="a18fe044-2026-44e6-a8ef-e555053d9f5a">
-        Binary search requires the structure it’s operating on to be sorted [4].
-        So we’ll start by sorting the codons in our gene by alphabetical order.{" "}
+        Binary search requires the structure it’s operating on to be sorted [
+        <a href="https://www.manning.com/books/classic-computer-science-problems-in-python">
+          7
+        </a>
+        ]. So we’ll start by sorting the codons in our gene by alphabetical
+        order.{" "}
       </p>
       <p id="bf4968e7-b99d-417c-ba8b-f139c0d62998">
-        We’ll continue by comparing our target codon,{" "}
+        We’ll continue the binary search algorithm by comparing our target
+        codon,{" "}
         <style
           dangerouslySetInnerHTML={{
             __html:
@@ -470,7 +501,10 @@ const DnaSearch = () => (
                 <span className="base">
                   <span
                     className="strut"
-                    style={{ height: "1.040392em", verticalAlign: "-0.345em" }}
+                    style={{
+                      height: "1.040392em",
+                      verticalAlign: "-0.345em",
+                    }}
                   />
                   <span className="mord">
                     <span className="mopen nulldelimiter" />
@@ -662,7 +696,10 @@ const DnaSearch = () => (
                 <span className="base">
                   <span
                     className="strut"
-                    style={{ height: "1.040392em", verticalAlign: "-0.345em" }}
+                    style={{
+                      height: "1.040392em",
+                      verticalAlign: "-0.345em",
+                    }}
                   />
                   <span className="mord">
                     <span className="mopen nulldelimiter" />
@@ -768,7 +805,7 @@ const DnaSearch = () => (
           </span>
           <span>﻿</span>
         </span>{" "}
-        is greater, we dicard the first half.{" "}
+        is greater, we discard the first half.{" "}
       </p>
       <p id="7113ef42-13b6-4f3b-93c5-c62e0c5fd6c6">
         Binary search works by repeating this process until we either find the
@@ -815,7 +852,10 @@ const DnaSearch = () => (
                 <span className="base">
                   <span
                     className="strut"
-                    style={{ height: "0.93858em", verticalAlign: "-0.24414em" }}
+                    style={{
+                      height: "0.93858em",
+                      verticalAlign: "-0.24414em",
+                    }}
                   />
                   <span className="mop">
                     <span className="mop">
@@ -867,7 +907,8 @@ const DnaSearch = () => (
           </span>
           <span>﻿</span>
         </span>{" "}
-        steps (if the target codon is not present in the gene) [5].
+        steps (if the target codon is not present in the gene) [
+        <a href="https://www.algorist.com/">10</a>].
       </p>
       <p id="d9edb729-3361-421b-a3a0-e305052829fa">
         *By <em>less</em>, I mean{" "}
@@ -953,7 +994,10 @@ const DnaSearch = () => (
                 <span className="base">
                   <span
                     className="strut"
-                    style={{ height: "1.040392em", verticalAlign: "-0.345em" }}
+                    style={{
+                      height: "1.040392em",
+                      verticalAlign: "-0.345em",
+                    }}
                   />
                   <span className="mord">
                     <span className="mopen nulldelimiter" />
@@ -1102,7 +1146,7 @@ const DnaSearch = () => (
         {"}"}
       </code>
     </pre>
-    <hr style={{ marginTop: 0 }} id="1ec090be-bf37-4ad8-85a2-6b495a2b15a4" />
+    <hr id="1ec090be-bf37-4ad8-85a2-6b495a2b15a4" />
     <pre id="97bed3a3-123f-4631-a0ba-54eb606b1c82" className="code">
       <code>
         fn binary_search_for_codon(sorted_gene: &amp;Gene, target_codon:
@@ -1170,10 +1214,12 @@ const DnaSearch = () => (
         {"        "}let tcc: Codon = (Nucleotide::T, Nucleotide::C,
         Nucleotide::C);{"\n"}
         {"\n"}
-        {"        "}assert!(binary_search_for_codon(&amp;gene, &amp;ata));{"\n"}
+        {"        "}assert!(binary_search_for_codon(&amp;gene, &amp;ata));
+        {"\n"}
         {"        "}assert!(!binary_search_for_codon(&amp;gene, &amp;atc));
         {"\n"}
-        {"        "}assert!(binary_search_for_codon(&amp;gene, &amp;agg));{"\n"}
+        {"        "}assert!(binary_search_for_codon(&amp;gene, &amp;agg));
+        {"\n"}
         {"        "}assert!(!binary_search_for_codon(&amp;gene, &amp;tcc));
         {"\n"}
         {"    "}
@@ -1183,8 +1229,9 @@ const DnaSearch = () => (
     <p id="92c6e8b3-9fb2-466d-b618-fa04377d02e1">
       For <code>gene.sort()</code> to work, <code>Nucleotide</code> needs to
       implement the <code>Ord</code> trait. Values of a type that implements{" "}
-      <code>Ord</code> can compared relative to one another [13]. To implement{" "}
-      <code>Ord</code>, the traits{" "}
+      <code>Ord</code> can be compared relative to one another [
+      <a href="https://www.youtube.com/watch?v=h4RkCyJyXmM&t=259s">11</a>]. To
+      implement <code>Ord</code>, the traits{" "}
       <a href="https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html">
         <code>PartialOrd</code>
       </a>{" "}
@@ -1199,7 +1246,7 @@ const DnaSearch = () => (
       ).
     </p>
     <h3 id="4e731d1f-558d-419e-89b3-b24197dbd2bf">Naive Exact Matching</h3>
-    <hr style={{ marginTop: 0 }} id="425480a0-c4e6-4a3a-810c-5ed2b3ed0bb2" />
+    <hr id="425480a0-c4e6-4a3a-810c-5ed2b3ed0bb2" />
     <p id="ebca8e18-a19f-488c-9aee-a675050c49c9">
       The <em>exact matching problem</em> consists of finding all occurrences of
       a <em>pattern</em> string{" "}
@@ -1546,7 +1593,7 @@ const DnaSearch = () => (
         </span>
         <span>﻿</span>
       </span>{" "}
-      [6]. Example?
+      [<a href="https://www.coursera.org/learn/dna-sequencing">12</a>].
     </p>
     <p id="ce374f26-6ff3-4615-9f6a-2ddf722d3829">
       For example, if we have a <em>pattern</em> <code>'ATT'</code> and{" "}
@@ -1555,9 +1602,10 @@ const DnaSearch = () => (
     </p>
     <p id="ce6a16e1-59ef-4668-9a0f-a95314344e07"></p>
     <p id="44fef7d8-3ac3-45a1-8962-f5162113a677">
-      Optimiztions for the exact matching problem can get complex. For now,
-      we’ll only concern ourselves with a naive or brute force solution. The
-      naive solution consists of looking at all possible positions in{" "}
+      Optimizations for the exact matching problem can get complex. For now,
+      we’ll only concern ourselves with a <em>naive</em> or <em>brute force</em>{" "}
+      solution. The naive solution consists of looking at all possible positions
+      in{" "}
       <style
         dangerouslySetInnerHTML={{
           __html:
@@ -1643,7 +1691,11 @@ const DnaSearch = () => (
         </span>
         <span>﻿</span>
       </span>{" "}
-      could occur and checking if there is a match [7].{" "}
+      could occur and checking if there is a match [
+      <a href="https://www.amazon.com/Handbook-Exact-String-Matching-Algorithms/dp/0954300645">
+        13
+      </a>
+      ].{" "}
     </p>
     <p id="95ccdf13-ad43-4d04-93a1-f0b034a52cb3"></p>
     <p id="fcb5a7ea-b51a-4a12-a57c-eed7feb1658b">
@@ -1752,7 +1804,8 @@ const DnaSearch = () => (
         {"\t"}#[test]{"\n"}
         {"    "}fn naive_match_test() {"{"}
         {"\n"}
-        {"        "}let dna = str_to_nucleotides("ATATCTTAGAGGGAGGGAGG");{"\n"}
+        {"        "}let dna = str_to_nucleotides("ATATCTTAGAGGGAGGGAGG");
+        {"\n"}
         {"        "}let target_sequence = str_to_nucleotides("AGG");{"\n"}
         {"\n"}
         {"        "}let match_indices = naive_match(&amp;dna,
@@ -1774,91 +1827,141 @@ const DnaSearch = () => (
     </p>
     <p id="8e2b923e-381e-4498-a23a-a08c3d8eb24d"></p>
     <p id="5729ad04-d84e-452f-bb95-34f4b4bc743e">
-      Thanks again for coding with me, friends. Becoming a great Rust programmer
-      is a marathon - I hope this session has brought you one step closer.
+      Thanks for coding with me, friends. Becoming a great Rust programmer is a
+      marathon - I hope this session has brought you one step closer.
     </p>
     <p id="abcdd191-1315-4c9d-bd27-efe2a49192b4"></p>
     <p id="54ba145c-b0f3-4dcf-8dc3-0b671db7fe1d"></p>
     <p id="f3494113-aafa-4a44-a509-60891819b71d">
-      [1] The Gene: An Intimate History
-    </p>
-    <p id="018478a7-f279-4120-a4b9-8fef3bc603fa">
-      [2] Genetics: A Conceptual Approach
-    </p>
-    <p id="e0a8c28e-0943-4e6c-9d71-c23aaa8b6442">
-      [3] Introduction to Genetic Analysis -{" "}
-      <a href="https://www.amazon.ca/s/ref=dp_byline_sr_book_1?ie=UTF8&field-author=Anthony+J.+F.+Griffiths&text=Anthony+J.+F.+Griffiths&sort=relevancerank&search-alias=books-ca">
-        Anthony J. F. Griffiths
-      </a>{" "}
-      (Author),{" "}
-      <a href="https://www.amazon.ca/s/ref=dp_byline_sr_book_2?ie=UTF8&field-author=John+Doebley&text=John+Doebley&sort=relevancerank&search-alias=books-ca">
-        John Doebley
-      </a>{" "}
-      (Author),{" "}
-      <a href="https://www.amazon.ca/s/ref=dp_byline_sr_book_3?ie=UTF8&field-author=Catherine+Peichel&text=Catherine+Peichel&sort=relevancerank&search-alias=books-ca">
-        Catherine Peichel
-      </a>{" "}
-      (Author),{" "}
-      <a href="https://www.amazon.ca/s/ref=dp_byline_sr_book_4?ie=UTF8&field-author=David+A.+Wassarman&text=David+A.+Wassarman&sort=relevancerank&search-alias=books-ca">
-        David A. Wassarman
-      </a>{" "}
-      (Author)
-    </p>
-    <p id="8d4d7fa4-e472-4e12-b8a0-a0a46e8aac50">
-      [4] <strong>Classic Computer Science Problems in Python</strong>
-    </p>
-    <p id="03846ed8-6938-49ed-b6b7-e4ba44d90cc0">
-      [5] Algorithm design manual.
-    </p>
-    <p id="1325de04-6c05-4328-ae2b-083a714194f6">
-      [6] <strong>Algorithms for DNA Sequencing course </strong>
-      <a href="https://www.coursera.org/learn/dna-sequencing">
-        https://www.coursera.org/learn/dna-sequencing
+      [1]{" "}
+      <a href="https://www.amazon.ca/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733503">
+        Mukherjee, S. (2016).{" "}
+      </a>
+      <a href="https://www.amazon.ca/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733503">
+        <em>The Gene: An Intimate History. </em>
+      </a>
+      <a href="https://www.amazon.ca/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733503">
+        Scribner.
       </a>
     </p>
+    <p id="018478a7-f279-4120-a4b9-8fef3bc603fa">
+      [2]{" "}
+      <a href="https://www.macmillanlearning.com/college/ca/product/Genetics-A-Conceptual-Approach/p/1319216803">
+        Benjamin, P. (2003).{" "}
+      </a>
+      <a href="https://www.macmillanlearning.com/college/ca/product/Genetics-A-Conceptual-Approach/p/1319216803">
+        <em>Genetics: A Conceptual Approach.</em>
+      </a>
+      <a href="https://www.macmillanlearning.com/college/ca/product/Genetics-A-Conceptual-Approach/p/1319216803">
+        {" "}
+        Macmillan Learning.
+      </a>
+    </p>
+    <p id="380d1be8-5f1d-47ca-becb-f4b37e45fb07">
+      [3]{" "}
+      <a href="https://doc.rust-lang.org/std/hash/trait.Hash.html">
+        Rust docs for the{" "}
+      </a>
+      <code>
+        <a href="https://doc.rust-lang.org/std/hash/trait.Hash.html">Hash</a>
+      </code>
+      <a href="https://doc.rust-lang.org/std/hash/trait.Hash.html"> Trait</a>
+    </p>
+    <p id="cd0feb95-04e8-4302-8799-7d43f7227f98">
+      [4]{" "}
+      <a href="https://doc.rust-lang.org/std/collections/struct.HashMap.html#method.get_mut">
+        Rust docs for{" "}
+      </a>
+      <a href="https://doc.rust-lang.org/std/collections/struct.HashMap.html#method.get_mut">
+        <code>get_mut</code>
+      </a>{" "}
+    </p>
+    <p id="4322ddd0-f22e-4547-93d3-07bbfc049f5e">
+      [5]{" "}
+      <a href="https://doc.rust-lang.org/book/">
+        Nichols, C. and Klabnik, S. (2018).{" "}
+      </a>
+      <a href="https://doc.rust-lang.org/book/">
+        <em>The Rust Programming Language.</em>
+      </a>
+      <a href="https://doc.rust-lang.org/book/"> No Starch Press.</a>
+    </p>
+    <p id="e0a8c28e-0943-4e6c-9d71-c23aaa8b6442">
+      [6]{" "}
+      <a href="https://www.macmillanlearning.com/college/ca/product/Introduction-to-Genetic-Analysis/p/1319114784">
+        Griffiths, A., Doebley, J., Peichel, C., and Wassarman, D. (2015).{" "}
+      </a>
+      <a href="https://www.macmillanlearning.com/college/ca/product/Introduction-to-Genetic-Analysis/p/1319114784">
+        <em>Introduction to Genetic Analysis</em>
+      </a>
+      <a href="https://www.macmillanlearning.com/college/ca/product/Introduction-to-Genetic-Analysis/p/1319114784">
+        . Macmillan Learning.
+      </a>
+    </p>
+    <p id="8d4d7fa4-e472-4e12-b8a0-a0a46e8aac50">
+      [7]{" "}
+      <a href="https://www.manning.com/books/classic-computer-science-problems-in-python">
+        Kopec, D. (2018).{" "}
+      </a>
+      <a href="https://www.manning.com/books/classic-computer-science-problems-in-python">
+        <em>Classic Computer Science Problems in Python. </em>
+      </a>
+      <a href="https://www.manning.com/books/classic-computer-science-problems-in-python">
+        Manning.
+      </a>
+    </p>
+    <p id="0034bacc-847b-4372-9660-e27191e7151b">
+      [8]{" "}
+      <a href="https://doc.rust-lang.org/std/clone/trait.Clone.html">
+        Rust docs for the Clone trait
+      </a>
+    </p>
+    <p id="50de1afa-9941-4810-b559-fbf49c4a4a09">
+      [9]{" "}
+      <a href="https://doc.rust-lang.org/std/marker/trait.Copy.html">
+        Rust docs for the Copy trait
+      </a>
+    </p>
+    <p id="03846ed8-6938-49ed-b6b7-e4ba44d90cc0">
+      [10] <a href="https://www.algorist.com/">Skiena, S. (2021). </a>
+      <a href="https://www.algorist.com/">
+        <em>The Algorithm Design Manual, 3rd edition. </em>
+      </a>
+      <a href="https://www.algorist.com/">Springer Nature.</a>
+    </p>
+    <p id="ce830b4a-7986-4665-b11a-ff2dfe95cd0c">
+      [11]{" "}
+      <a href="https://www.youtube.com/watch?v=h4RkCyJyXmM&t=259s">
+        Crust of Rust: Sorting Algorithms
+      </a>{" "}
+    </p>
+    <p id="1325de04-6c05-4328-ae2b-083a714194f6">
+      [12]{" "}
+      <a href="https://www.coursera.org/learn/dna-sequencing">Langmead, B. </a>
+      <em>
+        <a href="https://www.coursera.org/learn/dna-sequencing">
+          Algorithms for DNA Sequencing.
+        </a>
+      </em>
+      <a href="https://www.coursera.org/learn/dna-sequencing"> Coursera.</a>
+    </p>
     <p id="bd515c7c-a1f9-49c2-8944-b94bb54c7634">
-      [7] Handbook of Exact String-Matching Algorithms
+      [13]{" "}
+      <a href="https://www.amazon.com/Handbook-Exact-String-Matching-Algorithms/dp/0954300645">
+        Charras, C. and Lecroq, T. (2004).{" "}
+      </a>
+      <a href="https://www.amazon.com/Handbook-Exact-String-Matching-Algorithms/dp/0954300645">
+        <em>Handbook of Exact String-Matching Algorithms. </em>
+      </a>
+      <a href="https://www.amazon.com/Handbook-Exact-String-Matching-Algorithms/dp/0954300645">
+        College Publications.
+      </a>
     </p>
     <p id="e9915722-23cf-4557-8eb0-13409ae4c3fc"></p>
     <p id="4d6047a0-f8c6-4b13-8c9f-8e7bcb8c065d"></p>
-    <p id="9bca9618-9cf6-43c3-b108-37eb399a2f6f">
-      [8] Rust docs{" "}
-      <a href="https://doc.rust-lang.org/std/collections/struct.HashMap.html#method.get_mut">
-        https://doc.rust-lang.org/std/collections/struct.HashMap.html#method.get_mut
-      </a>
-    </p>
-    <p id="57755a70-37eb-43ae-a08b-8b9c57694539">
-      [9] Rust Programming Language
-    </p>
-    <p id="0527a559-ad7b-4729-a563-ae8f925ab9c7">
-      [10] Rust docs{" "}
-      <a href="https://doc.rust-lang.org/std/hash/trait.Hash.html">
-        https://doc.rust-lang.org/std/hash/trait.Hash.html
-      </a>
-    </p>
-    <p id="eeb6a1c9-443e-4996-8ca4-5152eb6974f5">
-      [11]{" "}
-      <a href="https://doc.rust-lang.org/std/clone/trait.Clone.html">
-        https://doc.rust-lang.org/std/clone/trait.Clone.html
-      </a>
-    </p>
-    <p id="e783e034-5da4-4b92-aa58-530bdae00134">
-      [12]{" "}
-      <a href="https://doc.rust-lang.org/std/marker/trait.Copy.html">
-        https://doc.rust-lang.org/std/marker/trait.Copy.html
-      </a>
-    </p>
-    <p id="173635fc-0673-45d4-96e4-8a70650108b6">
-      [13]{" "}
-      <a href="https://www.youtube.com/watch?v=h4RkCyJyXmM&t=259s">
-        https://www.youtube.com/watch?v=h4RkCyJyXmM&amp;t=259s
-      </a>
-    </p>
+    <p id="0527a559-ad7b-4729-a563-ae8f925ab9c7"></p>
+    <p id="eeb6a1c9-443e-4996-8ca4-5152eb6974f5"></p>
     <p id="fc3d2c50-e3a8-475a-ae6f-381a56665764"></p>
-    <p id="f226ffeb-50e4-44b8-9977-10badd5a9852"></p>
-    <p id="49e36122-756b-4f90-bbe8-5c904b2fbd98">
-      TODO: gene_copy in binary_search pseudocode
-    </p>
   </div>
 );
 

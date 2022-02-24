@@ -35,6 +35,16 @@ const BreadthFirstSearch = () => {
           search.
         </p>
         <p id="85654351-75a2-4653-a241-38e43c36d322"></p>
+        <p>
+          This installment's Github repo:{" "}
+          <a
+            href={"https://github.com/josht-jpg/rust-breadth-first-search"}
+            target="_blank"
+          >
+            https://github.com/josht-jpg/rust-breadth-first-search
+          </a>
+        </p>
+        <p id="85654351-75a2-4653-a241--38e43c36d324"></p>
         <p id="8832f5aa-1951-4e41-89b9-3e34040e9148">
           Rust is good. Breadth-first search is good. Good.
         </p>
@@ -74,10 +84,10 @@ const BreadthFirstSearch = () => {
           look like this:
         </p>
         <figure id="57080998-c6c8-44ab-ab2a-10d487196b80" className="image">
-          <a href="https://cdn-images-1.medium.com/max/800/1*wD4pe5RuEfiYnTwl4J9ETw.png">
+          <a href="https://cdn-images-1.medium.com/max/800/1*ylHE5u8l5eOSk9M8mjr0NA.png">
             <img
               style={{ width: "980px", marginLeft: "-25px" }}
-              src="https://cdn-images-1.medium.com/max/800/1*wD4pe5RuEfiYnTwl4J9ETw.png"
+              src="https://cdn-images-1.medium.com/max/800/1*ylHE5u8l5eOSk9M8mjr0NA.png"
             />
           </a>
         </figure>
