@@ -26,7 +26,7 @@ const socialMediaLinks = [
   },
 ];
 
-const sourceCodeHref = "https://github.com/josht-jpg/blog-portfolio";
+const sourceCodeHref = "https://github.com/josht-jpg/shaking-off-the-rust-blog";
 
 const Footer = () => {
   return (
