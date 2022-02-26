@@ -10,15 +10,10 @@ const PseudoCodePanel = ({ stateNodeBoundingRect, conditionMet }) => {
   const BELOW_MOUSE_CONTAINER_OFFSET = 240;
 
   const [color, setColor] = useState("white");
-  const [markerOpacity, setMarkerOpacity] = useState(0);
 
   useEffect(() => {
     setColor(conditionMet ? "green" : "red");
   }, [setColor]);
-
-  useEffect(() => {
-    setMarkerOpacity(1);
-  }, [setMarkerOpacity]);
 
   const left =
     stateNodeBoundingRect.left - CONTAINER_WIDTH_IN_PX / 2 + STATE_NODE_RADIUS;
