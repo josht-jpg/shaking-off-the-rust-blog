@@ -307,16 +307,6 @@ const Layout: React.FC<LayoutProps> = ({ title = "FSM Builder", example }) => {
 
   return (
     <div>
-      <Head>
-        <title>{title}</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link
-          href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
-          rel="stylesheet"
-        />
-      </Head>
-
       <main
         id="main"
         style={{

@@ -16,6 +16,12 @@ export default function Home() {
     <>
       <Head>
         <title>Shaking off the Rust</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link
+          href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+          rel="stylesheet"
+        />
       </Head>
       <MainSection>
         <ArticlesPage

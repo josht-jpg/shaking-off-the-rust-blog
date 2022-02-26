@@ -14,9 +14,6 @@ export const articles = [
 export default function Articles() {
   return (
     <>
-      <Head>
-        <title>Shaking off the Rust</title>
-      </Head>
       <MainSection>
         <ArticlesPage
           articles={articles.map((article) => getArticleData(article, false))}
