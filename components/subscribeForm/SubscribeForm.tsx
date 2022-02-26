@@ -3,7 +3,7 @@ import { IsLightModeContext } from "../../context/IsLightModeProvider";
 import styles from "./SubscribeForm.module.scss";
 
 const SubscribeForm = () => {
-  const [address, setAddress] = useState(false);
+  const [address, setAddress] = useState("");
   const [subscribeSuccess, setSubscribeSuccess] = useState(false);
   const [error, setError] = useState(false);
 

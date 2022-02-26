@@ -1,14 +1,9 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    //  "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -16,7 +11,6 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    // "jsx": "preserve",
     "incremental": true,
     "strict": false,
     "jsx": "preserve"
@@ -26,10 +20,11 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/**/*",
-    "src/**/*"
+    "src/**/*",
+    "components/articles/BreadthFirstSearch.jsx",
+    "components/articles/NaiveBayes.jsx",
+    "components/articles/DnaSearch.jsx",
+    "components/articles/ComplexNumbers.jsx"
   ],
-  "exclude": [
-    "node_modules",
-    "BreadthFirstSearch.tsx"
-  ]
+  "exclude": ["node_modules"]
 }

@@ -14,8 +14,6 @@ import {
   changeInputColor,
   changeInputNameInStorage,
   changeInputTextColorInStorage,
-  getInputNameFronStorage,
-  getInputTextColorFromStorage,
   inputTextPosition,
   removeInputFromStorage,
 } from "../../../utils/inputUtils";
@@ -100,9 +98,7 @@ const CreatedInput: React.FC<CreatedInputProps> = ({ id, example }) => {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isSelected, handleDeleteInput]);
 
-  const [name, setName] = useState(
-    getInputNameFronStorage(id.replace("#", ""))
-  );
+  const [name, setName] = useState("");
 
   const handleMouseUp = () => {
     setIsMouseDown(false);
@@ -134,9 +130,7 @@ const CreatedInput: React.FC<CreatedInputProps> = ({ id, example }) => {
       : "";
   const [color, setColor] = useState(inputColor());
 
-  const [textColor, setTextColor] = useState(
-    getInputTextColorFromStorage(id.replace("#", ""))
-  );
+  const [textColor, setTextColor] = useState("");
 
   const inputAttributes = [
     {

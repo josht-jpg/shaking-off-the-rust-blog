@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import { useContext } from "react";
 import EMAIL_ADDRESS from "../../constants/emailAddress";
 import { IsLightModeContext } from "../../context/IsLightModeProvider";

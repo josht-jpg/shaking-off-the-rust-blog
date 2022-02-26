@@ -8,8 +8,8 @@ import { isPathCurved } from "./inputUtils";
 
 export const getPositionFromStorage = (stateIndex: number) => {
   const stateNode = getStateNodeByIndex(stateIndex);
-  const initialX = stateNode?.initialX;
-  const initialY = stateNode?.initialY;
+  const initialX = null; //stateNode?.initialX;
+  const initialY = null; //stateNode?.initialY;
   return { initialX, initialY };
 };
 

@@ -71,7 +71,7 @@ export const getInputNameFronStorage = (inputId: string) =>
 export const getInputTextColorFromStorage = (inputId: string) =>
   getInputAttributeFromStorage(inputId, INPUT_ATTRIBUTES_CONSTANTS.TEXT_COLOR);
 
-export const changeInputNameInStorage = (inputId: string, newName: string) =>
+export const changeInputNameInStorage = (inputId: string, newName: any) =>
   changeInputAttributeInStorage(
     INPUT_ATTRIBUTES_CONSTANTS.NAME,
     newName,
