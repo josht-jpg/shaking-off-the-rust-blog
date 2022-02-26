@@ -2,6 +2,8 @@ import { useContext } from "react";
 import EMAIL_ADDRESS from "../../constants/emailAddress";
 import { IsLightModeContext } from "../../context/IsLightModeProvider";
 import GraphTheoryIndex from "../../graphTheory";
+import styles from "./articleStyles.module.scss";
+import ReactPlayer from "react-player";
 
 /*const WasmComponent = dynamic({
   loader: async () => {
@@ -679,29 +681,15 @@ const BreadthFirstSearch = () => {
         <p id="66b5fdb8-593d-4696-a36e-3d3cb1bb9749"></p>
         <p id="6af26a99-cd07-44b3-b630-b42add01f2a1">
           Going back to our alpaca farm, let{`'`}s visualize how breath-first
-          search will find Megan, our closest potential customer:
+          search will find Megan, our closest potential customer (shown below is
+          an applet I made for playing around with Breadth First Search, scroll
+          to the bottom of this article to give it a whirl).
         </p>
-        <div
-          style={{
-            marginLeft: "-18vw",
-            marginTop: "4rem",
-            marginBottom: "4rem",
-          }}
-        >
-          <div
-            id={"graph-container-example"}
-            style={{
-              width: "75vw",
-              height: "85vh",
-              boxShadow: isLightMode
-                ? "0px 1px 8px -1px rgb(0 0 0 / 20%), 0px 3px 24px -2px rgb(0 0 0 / 5%)"
-                : "white 0 0 7px",
-              position: "relative",
-              marginBottom: "4rem",
-            }}
-          >
-            <GraphTheoryIndex example={"ALPACA"} />
-          </div>
+        <div className={styles.playerContainer}>
+          <ReactPlayer
+            url={"https://www.youtube.com/watch?v=ALQRD2HceVM"}
+            controls={true}
+          />
         </div>
         <p id="1d7e5b1c-5838-4d71-ab9e-f941171eed69">
           Before getting into the workings of breadth-first search and coding
