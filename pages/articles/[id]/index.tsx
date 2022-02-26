@@ -18,7 +18,7 @@ interface IProps {
   article: string;
 }
 
-const articlePage: React.FC<IProps> = ({ article }) => {
+const ArticlePage: React.FC<IProps> = ({ article }) => {
   const { setGraphAnalysisType } = useContext(GraphAnalysisTypeContext);
 
   switch (article) {
@@ -36,7 +36,7 @@ const articlePage: React.FC<IProps> = ({ article }) => {
   );
 };
 
-export default articlePage;
+export default ArticlePage;
 
 export async function getStaticPaths() {
   const paths = [

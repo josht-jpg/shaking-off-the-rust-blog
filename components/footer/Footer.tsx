@@ -36,9 +36,9 @@ const Footer = () => {
           className={styles.sourceCodeLink}
           href={sourceCodeHref}
           target="_blank"
-          rel="noopener"
+          rel="noreferrer"
         >
-          This blog's source code
+          This blog{`'`}s source code
         </a>
 
         <a href={`mailto: ${EMAIL_ADDRESS}`} className={styles.email}>
@@ -48,10 +48,11 @@ const Footer = () => {
         <div className={styles.iconsContainer}>
           {socialMediaLinks.map((socialMediaLink) => (
             <button
+              key={socialMediaLink.title}
               className={styles.socialMediaLink}
               title={socialMediaLink.title}
             >
-              <a href={socialMediaLink.href} target="_blank" rel="noopener">
+              <a href={socialMediaLink.href} target="_blank" rel="noreferrer">
                 {socialMediaLink.icon}
               </a>
             </button>
