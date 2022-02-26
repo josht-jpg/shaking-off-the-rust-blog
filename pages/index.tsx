@@ -4,10 +4,10 @@ import SubscribeForm from "../components/subscribeForm/SubscribeForm";
 import getArticleData from "../utils/getArticleData";
 
 export const articles = [
-  "naive-bayes",
+  "breadth-first-search",
   "dna-analysis",
   "complex-numbers",
-  "breadth-first-search",
+  "naive-bayes",
 ];
 
 export default function Home() {

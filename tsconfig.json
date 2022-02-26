@@ -24,7 +24,8 @@
     "components/articles/BreadthFirstSearch.jsx",
     "components/articles/NaiveBayes.jsx",
     "components/articles/DnaSearch.jsx",
-    "components/articles/ComplexNumbers.jsx"
+    "components/articles/ComplexNumbers.jsx",
+    "utils/mongodb.js"
   ],
   "exclude": ["node_modules"]
 }

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { IsLightModeContext } from "../../context/IsLightModeProvider";
 import styles from "./SubscribeForm.module.scss";
+import axios from "axios";
 
 const SubscribeForm = () => {
   const [address, setAddress] = useState("");
@@ -8,8 +9,7 @@ const SubscribeForm = () => {
   const [error, setError] = useState(false);
 
   const handleSubscribe = async (e) => {
-    //TODO: subscription
-    /*  e.preventDefault();
+    e.preventDefault();
     try {
       if (!address) {
         throw new Error("No email address provided.");
@@ -19,8 +19,9 @@ const SubscribeForm = () => {
       setSubscribeSuccess(true);
     } catch (err) {
       setError(err.message);
-    }*/
+    }
   };
+
   const { isLightMode } = useContext(IsLightModeContext);
 
   return (

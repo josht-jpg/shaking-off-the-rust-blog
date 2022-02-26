@@ -70,12 +70,12 @@ const BreadthFirstSearch = () => {
           >
             1
           </a>
-          ].{" "}
+          ]. Graphs consist of nodes and edges.{" "}
         </p>
         <p id="7a4e31aa-0715-4a61-a731-349b5c3b3eff">
-          Graphs consist of nodes and edges. Let{`'`}s say you raise alpacas,
-          and you want to find your closest LinkedIn connection that{`'`}s in
-          the market for a handsome young alpaca.
+          Let{`'`}s say you raise alpacas, and you want to find your closest
+          LinkedIn connection that{`'`}s in the market for a handsome young
+          alpaca.
         </p>
         <p id="249024ee-c628-4b10-aa03-06861e877a9c"></p>
         <figure id="60df204d-ca20-41c6-a37e-24ee95e6dacc" className="image">
