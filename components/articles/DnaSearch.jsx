@@ -13,7 +13,11 @@ const DnaSearch = () => (
     <p id="e3c4df7d-d0fb-4727-8a13-b9d2f4326d16"></p>
     <p id="1ca48208-ef6c-4f6b-a019-00380853de23">
       This installment{`'`}s Github repo:{" "}
-      <a href="https://github.com/josht-jpg/rust_dna_search">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://github.com/josht-jpg/rust_dna_search"
+      >
         https://github.com/josht-jpg/rust_dna_search
       </a>
     </p>
@@ -25,13 +29,21 @@ const DnaSearch = () => (
     <p id="2fcf2927-dc18-45d9-b9c6-427533a0660f">
       <em>Deoxyribonucleic acid</em> (DNA) consists of a chain of sugars and
       phosphates which string together nitrogenous bases [
-      <a href="https://www.amazon.ca/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733503">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.amazon.ca/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733503"
+      >
         1
       </a>
       ]. These bases, called <em>nucleotides</em>, come in four types: adenine,
       guanine, cytosine, and thymine, often abbreviated to A, G, C, and T.
       Genetic information is encoded by the sequence of nucleotides in DNA [
-      <a href="https://www.macmillanlearning.com/college/ca/product/Genetics-A-Conceptual-Approach/p/1319216803">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.macmillanlearning.com/college/ca/product/Genetics-A-Conceptual-Approach/p/1319216803"
+      >
         2
       </a>
       ].
@@ -39,7 +51,11 @@ const DnaSearch = () => (
     <p id="0fade017-6020-438a-b5f6-effbdeca64ea">
       A set of three nucleotides is a <em>codon</em>. Codons specify amino
       acids, which are the building blocks of proteins [
-      <a href="https://www.macmillanlearning.com/college/ca/product/Genetics-A-Conceptual-Approach/p/1319216803">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.macmillanlearning.com/college/ca/product/Genetics-A-Conceptual-Approach/p/1319216803"
+      >
         2
       </a>
       ].
@@ -80,7 +96,11 @@ const DnaSearch = () => (
     <p id="aa4ec0b7-658d-40e4-8cc8-33a711780d8f">
       If the <code>derive</code> attribute is new to you, I recommend taking a
       glance at{" "}
-      <a href="https://doc.rust-lang.org/book/appendix-03-derivable-traits.html?highlight=%5Bderive#appendix-c-derivable-traits">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/book/appendix-03-derivable-traits.html?highlight=%5Bderive#appendix-c-derivable-traits"
+      >
         Appendix C of The Rust Programming Language Book.
       </a>{" "}
       As we go through the code, I’ll explain when and why we need each of these
@@ -89,7 +109,11 @@ const DnaSearch = () => (
     <p id="445e8702-63ff-4472-a26f-350bc1e99cca"></p>
     <p id="774656f2-da32-4e5f-8faa-57e504a6f7f8">
       To prevent contaminating our code with{" "}
-      <a href="https://refactoring.com/catalog/replaceMagicLiteral.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://refactoring.com/catalog/replaceMagicLiteral.html"
+      >
         <em>magic literals</em>
       </a>
       , I’ve created a constant for the number of nucleotides in a codon:
@@ -229,8 +253,14 @@ const DnaSearch = () => (
       The need arises for our <code>Nucleotide</code> <code>enum</code> to
       derive the <code>Hash</code> trait. Implementing <code>Hash</code> allows
       us to use <code>Nucleotide</code>s as keys in a <code>HashMap</code> [
-      <a href="https://doc.rust-lang.org/std/hash/trait.Hash.html">3</a>].
-      Without deriving <code>Hash</code>, the compiler will throw this error:{" "}
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/std/hash/trait.Hash.html"
+      >
+        3
+      </a>
+      ]. Without deriving <code>Hash</code>, the compiler will throw this error:{" "}
       <code>the trait bound Nucleotide: Hash is not satisfied</code>.
     </p>
     <p id="f483c94f-4e6c-4baf-8235-204f1df15408"></p>
@@ -251,7 +281,11 @@ const DnaSearch = () => (
         The Rust docs tell us that the <code>get_mut</code> method takes a
         possible key and “returns a mutable reference to the value corresponding
         to the key” [
-        <a href="https://doc.rust-lang.org/std/collections/struct.HashMap.html#method.get_mut">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://doc.rust-lang.org/std/collections/struct.HashMap.html#method.get_mut"
+        >
           4
         </a>
         ].{" "}
@@ -261,7 +295,11 @@ const DnaSearch = () => (
         key given to <code>get_mut</code>. Thus, <code>get_mut</code> returns an{" "}
         <code>Option</code>. If you’re unfamiliar with <code>Option</code>s in
         Rust, I suggest reading{" "}
-        <a href="https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html?highlight=option#the-option-enum-and-its-advantages-over-null-values">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html?highlight=option#the-option-enum-and-its-advantages-over-null-values"
+        >
           this section of the Rust Programming Language Book
         </a>
         .{" "}
@@ -270,18 +308,32 @@ const DnaSearch = () => (
         Since <code>get_mut</code> returns an <code>Option</code>, the{" "}
         <code>unwrap</code> method is necessary. The <code>unwrap</code> method
         accesses the data within the <code>Option</code>’s <code>Some</code>{" "}
-        value [<a href="https://doc.rust-lang.org/book/">5</a>].{" "}
+        value [
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://doc.rust-lang.org/book/"
+        >
+          5
+        </a>
+        ].{" "}
       </p>
       <p id="fb73f79e-5999-4219-9238-9421a641b4ad">
         There’s a similar method to <code>unwrap</code> that we could use here -
         the <code>expect</code> method. <code>expect</code> is similar to{" "}
         <code>unwrap</code>, but allows us to specify an error message if the{" "}
         <code>Option</code> it is operating on holds <code>None</code> [
-        <a href="https://doc.rust-lang.org/book/">5</a>]. In most cases, I
-        prefer using the <code>expect</code> method because it makes the code
-        more explicit and helps with debugging. But in this case, we actually
-        know that the <code>Option</code> returned from <code>get_mut</code>{" "}
-        won’t be <code>None</code> (since we’ve initialized{" "}
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://doc.rust-lang.org/book/"
+        >
+          5
+        </a>
+        ]. In most cases, I prefer using the <code>expect</code> method because
+        it makes the code more explicit and helps with debugging. But in this
+        case, we actually know that the <code>Option</code> returned from{" "}
+        <code>get_mut</code> won’t be <code>None</code> (since we’ve initialized{" "}
         <code>frequencies</code> with values for each kind of{" "}
         <code>Nucleotide</code>). This makes <code>expect</code> unnecessary.
       </p>
@@ -335,16 +387,28 @@ const DnaSearch = () => (
     <p id="b74fdb2b-fb21-4e1b-b1be-26ee44520b33">
       Much like the bit is the fundamental unit of computation, the gene, which
       is a section of DNA, is the fundamental unit of biological information [
-      <a href="https://www.macmillanlearning.com/college/ca/product/Introduction-to-Genetic-Analysis/p/1319114784">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.macmillanlearning.com/college/ca/product/Introduction-to-Genetic-Analysis/p/1319114784"
+      >
         6
       </a>
       ][
-      <a href="https://www.amazon.ca/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733503">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.amazon.ca/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733503"
+      >
         1
       </a>
       ]. Searching through a gene for a specific codon is a common problem in
       bioinformatics [
-      <a href="https://www.manning.com/books/classic-computer-science-problems-in-python">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.manning.com/books/classic-computer-science-problems-in-python"
+      >
         7
       </a>
       ]. Let’s try it.
@@ -392,10 +456,23 @@ const DnaSearch = () => (
       requires implementation of <code>Copy</code> and <code>Clone</code>{" "}
       triats. The Rust docs tell us that <code>Clone</code> provides the ability
       to explicitly duplicate an object [
-      <a href="https://doc.rust-lang.org/std/clone/trait.Clone.html">8</a>] and
-      that Copy (which requires <code>Clone</code>) provides the ability to
-      duplicate values by copying bits [
-      <a href="https://doc.rust-lang.org/std/marker/trait.Copy.html">9</a>].{" "}
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/std/clone/trait.Clone.html"
+      >
+        8
+      </a>
+      ] and that Copy (which requires <code>Clone</code>) provides the ability
+      to duplicate values by copying bits [
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/std/marker/trait.Copy.html"
+      >
+        9
+      </a>
+      ].{" "}
     </p>
     <p id="8e9b0ca1-b086-4939-b9ca-61e396429493">
       If <code>Nucleotide</code> did not implement these traits, the compiler
@@ -417,7 +494,11 @@ const DnaSearch = () => (
     <div className="indented">
       <p id="a18fe044-2026-44e6-a8ef-e555053d9f5a">
         Binary search requires the structure it’s operating on to be sorted [
-        <a href="https://www.manning.com/books/classic-computer-science-problems-in-python">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.manning.com/books/classic-computer-science-problems-in-python"
+        >
           7
         </a>
         ]. So we’ll start by sorting the codons in our gene by alphabetical
@@ -915,7 +996,10 @@ const DnaSearch = () => (
           <span>﻿</span>
         </span>{" "}
         steps (if the target codon is not present in the gene) [
-        <a href="https://www.algorist.com/">10</a>].
+        <a target="_blank" rel="noreferrer" href="https://www.algorist.com/">
+          10
+        </a>
+        ].
       </p>
       <p id="d9edb729-3361-421b-a3a0-e305052829fa">
         *By <em>less</em>, I mean{" "}
@@ -1240,17 +1324,35 @@ const DnaSearch = () => (
       For <code>gene.sort()</code> to work, <code>Nucleotide</code> needs to
       implement the <code>Ord</code> trait. Values of a type that implements{" "}
       <code>Ord</code> can be compared relative to one another [
-      <a href="https://www.youtube.com/watch?v=h4RkCyJyXmM&t=259s">11</a>]. To
-      implement <code>Ord</code>, the traits{" "}
-      <a href="https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.youtube.com/watch?v=h4RkCyJyXmM&t=259s"
+      >
+        11
+      </a>
+      ]. To implement <code>Ord</code>, the traits{" "}
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html"
+      >
         <code>PartialOrd</code>
       </a>{" "}
       and{" "}
-      <a href="https://doc.rust-lang.org/std/cmp/trait.Eq.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/std/cmp/trait.Eq.html"
+      >
         <code>Eq</code>
       </a>{" "}
       are required (and <code>Eq</code> requires{" "}
-      <a href="https://doc.rust-lang.org/std/cmp/trait.PartialEq.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/std/cmp/trait.PartialEq.html"
+      >
         <code>PartialEq</code>
       </a>
       ).
@@ -1603,7 +1705,15 @@ const DnaSearch = () => (
         </span>
         <span>﻿</span>
       </span>{" "}
-      [<a href="https://www.coursera.org/learn/dna-sequencing">12</a>].
+      [
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.coursera.org/learn/dna-sequencing"
+      >
+        12
+      </a>
+      ].
     </p>
     <p id="ce374f26-6ff3-4615-9f6a-2ddf722d3829">
       For example, if we have a <em>pattern</em>{" "}
@@ -1708,7 +1818,11 @@ const DnaSearch = () => (
         <span>﻿</span>
       </span>{" "}
       could occur and checking if there is a match [
-      <a href="https://www.amazon.com/Handbook-Exact-String-Matching-Algorithms/dp/0954300645">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.amazon.com/Handbook-Exact-String-Matching-Algorithms/dp/0954300645"
+      >
         13
       </a>
       ].{" "}
@@ -1854,126 +1968,260 @@ const DnaSearch = () => (
     <p id="54ba145c-b0f3-4dcf-8dc3-0b671db7fe1d"></p>
     <p id="f3494113-aafa-4a44-a509-60891819b71d">
       [1]{" "}
-      <a href="https://www.amazon.ca/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733503">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.amazon.ca/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733503"
+      >
         Mukherjee, S. (2016).{" "}
       </a>
-      <a href="https://www.amazon.ca/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733503">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.amazon.ca/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733503"
+      >
         <em>The Gene: An Intimate History. </em>
       </a>
-      <a href="https://www.amazon.ca/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733503">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.amazon.ca/Gene-Intimate-History-Siddhartha-Mukherjee/dp/1476733503"
+      >
         Scribner.
       </a>
     </p>
     <p id="018478a7-f279-4120-a4b9-8fef3bc603fa">
       [2]{" "}
-      <a href="https://www.macmillanlearning.com/college/ca/product/Genetics-A-Conceptual-Approach/p/1319216803">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.macmillanlearning.com/college/ca/product/Genetics-A-Conceptual-Approach/p/1319216803"
+      >
         Benjamin, P. (2003).{" "}
       </a>
-      <a href="https://www.macmillanlearning.com/college/ca/product/Genetics-A-Conceptual-Approach/p/1319216803">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.macmillanlearning.com/college/ca/product/Genetics-A-Conceptual-Approach/p/1319216803"
+      >
         <em>Genetics: A Conceptual Approach.</em>
       </a>
-      <a href="https://www.macmillanlearning.com/college/ca/product/Genetics-A-Conceptual-Approach/p/1319216803">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.macmillanlearning.com/college/ca/product/Genetics-A-Conceptual-Approach/p/1319216803"
+      >
         {" "}
         Macmillan Learning.
       </a>
     </p>
     <p id="380d1be8-5f1d-47ca-becb-f4b37e45fb07">
       [3]{" "}
-      <a href="https://doc.rust-lang.org/std/hash/trait.Hash.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/std/hash/trait.Hash.html"
+      >
         Rust docs for the{" "}
       </a>
       <code>
-        <a href="https://doc.rust-lang.org/std/hash/trait.Hash.html">Hash</a>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://doc.rust-lang.org/std/hash/trait.Hash.html"
+        >
+          Hash
+        </a>
       </code>
-      <a href="https://doc.rust-lang.org/std/hash/trait.Hash.html"> Trait</a>
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/std/hash/trait.Hash.html"
+      >
+        {" "}
+        Trait
+      </a>
     </p>
     <p id="cd0feb95-04e8-4302-8799-7d43f7227f98">
       [4]{" "}
-      <a href="https://doc.rust-lang.org/std/collections/struct.HashMap.html#method.get_mut">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/std/collections/struct.HashMap.html#method.get_mut"
+      >
         Rust docs for{" "}
       </a>
-      <a href="https://doc.rust-lang.org/std/collections/struct.HashMap.html#method.get_mut">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/std/collections/struct.HashMap.html#method.get_mut"
+      >
         <code>get_mut</code>
       </a>{" "}
     </p>
     <p id="4322ddd0-f22e-4547-93d3-07bbfc049f5e">
       [5]{" "}
-      <a href="https://doc.rust-lang.org/book/">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/book/"
+      >
         Nichols, C. and Klabnik, S. (2018).{" "}
       </a>
-      <a href="https://doc.rust-lang.org/book/">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/book/"
+      >
         <em>The Rust Programming Language.</em>
       </a>
-      <a href="https://doc.rust-lang.org/book/"> No Starch Press.</a>
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/book/"
+      >
+        {" "}
+        No Starch Press.
+      </a>
     </p>
     <p id="e0a8c28e-0943-4e6c-9d71-c23aaa8b6442">
       [6]{" "}
-      <a href="https://www.macmillanlearning.com/college/ca/product/Introduction-to-Genetic-Analysis/p/1319114784">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.macmillanlearning.com/college/ca/product/Introduction-to-Genetic-Analysis/p/1319114784"
+      >
         Griffiths, A., Doebley, J., Peichel, C., and Wassarman, D. (2015).{" "}
       </a>
-      <a href="https://www.macmillanlearning.com/college/ca/product/Introduction-to-Genetic-Analysis/p/1319114784">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.macmillanlearning.com/college/ca/product/Introduction-to-Genetic-Analysis/p/1319114784"
+      >
         <em>Introduction to Genetic Analysis</em>
       </a>
-      <a href="https://www.macmillanlearning.com/college/ca/product/Introduction-to-Genetic-Analysis/p/1319114784">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.macmillanlearning.com/college/ca/product/Introduction-to-Genetic-Analysis/p/1319114784"
+      >
         . Macmillan Learning.
       </a>
     </p>
     <p id="8d4d7fa4-e472-4e12-b8a0-a0a46e8aac50">
       [7]{" "}
-      <a href="https://www.manning.com/books/classic-computer-science-problems-in-python">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.manning.com/books/classic-computer-science-problems-in-python"
+      >
         Kopec, D. (2018).{" "}
       </a>
-      <a href="https://www.manning.com/books/classic-computer-science-problems-in-python">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.manning.com/books/classic-computer-science-problems-in-python"
+      >
         <em>Classic Computer Science Problems in Python. </em>
       </a>
-      <a href="https://www.manning.com/books/classic-computer-science-problems-in-python">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.manning.com/books/classic-computer-science-problems-in-python"
+      >
         Manning.
       </a>
     </p>
     <p id="0034bacc-847b-4372-9660-e27191e7151b">
       [8]{" "}
-      <a href="https://doc.rust-lang.org/std/clone/trait.Clone.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/std/clone/trait.Clone.html"
+      >
         Rust docs for the Clone trait
       </a>
     </p>
     <p id="50de1afa-9941-4810-b559-fbf49c4a4a09">
       [9]{" "}
-      <a href="https://doc.rust-lang.org/std/marker/trait.Copy.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/std/marker/trait.Copy.html"
+      >
         Rust docs for the Copy trait
       </a>
     </p>
     <p id="03846ed8-6938-49ed-b6b7-e4ba44d90cc0">
-      [10] <a href="https://www.algorist.com/">Skiena, S. (2021). </a>
-      <a href="https://www.algorist.com/">
+      [10]{" "}
+      <a target="_blank" rel="noreferrer" href="https://www.algorist.com/">
+        Skiena, S. (2021).{" "}
+      </a>
+      <a target="_blank" rel="noreferrer" href="https://www.algorist.com/">
         <em>The Algorithm Design Manual, 3rd edition. </em>
       </a>
-      <a href="https://www.algorist.com/">Springer Nature.</a>
+      <a target="_blank" rel="noreferrer" href="https://www.algorist.com/">
+        Springer Nature.
+      </a>
     </p>
     <p id="ce830b4a-7986-4665-b11a-ff2dfe95cd0c">
       [11]{" "}
-      <a href="https://www.youtube.com/watch?v=h4RkCyJyXmM&t=259s">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.youtube.com/watch?v=h4RkCyJyXmM&t=259s"
+      >
         Crust of Rust: Sorting Algorithms
       </a>{" "}
     </p>
     <p id="1325de04-6c05-4328-ae2b-083a714194f6">
       [12]{" "}
-      <a href="https://www.coursera.org/learn/dna-sequencing">Langmead, B. </a>
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.coursera.org/learn/dna-sequencing"
+      >
+        Langmead, B.{" "}
+      </a>
       <em>
-        <a href="https://www.coursera.org/learn/dna-sequencing">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.coursera.org/learn/dna-sequencing"
+        >
           Algorithms for DNA Sequencing.
         </a>
       </em>
-      <a href="https://www.coursera.org/learn/dna-sequencing"> Coursera.</a>
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.coursera.org/learn/dna-sequencing"
+      >
+        {" "}
+        Coursera.
+      </a>
     </p>
     <p id="bd515c7c-a1f9-49c2-8944-b94bb54c7634">
       [13]{" "}
-      <a href="https://www.amazon.com/Handbook-Exact-String-Matching-Algorithms/dp/0954300645">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.amazon.com/Handbook-Exact-String-Matching-Algorithms/dp/0954300645"
+      >
         Charras, C. and Lecroq, T. (2004).{" "}
       </a>
-      <a href="https://www.amazon.com/Handbook-Exact-String-Matching-Algorithms/dp/0954300645">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.amazon.com/Handbook-Exact-String-Matching-Algorithms/dp/0954300645"
+      >
         <em>Handbook of Exact String-Matching Algorithms. </em>
       </a>
-      <a href="https://www.amazon.com/Handbook-Exact-String-Matching-Algorithms/dp/0954300645">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.amazon.com/Handbook-Exact-String-Matching-Algorithms/dp/0954300645"
+      >
         College Publications.
       </a>
     </p>

@@ -313,7 +313,11 @@ const ComplexNumbers = () => {
           <span>﻿</span>
         </span>{" "}
         [
-        <a href="https://www.maa.org/press/maa-reviews/visual-complex-analysis">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.maa.org/press/maa-reviews/visual-complex-analysis"
+        >
           1
         </a>
         ]. We call{" "}
@@ -404,7 +408,11 @@ const ComplexNumbers = () => {
         </span>{" "}
         the imaginary part. Real numbers and complex numbers follow the same
         laws of arithmetic [
-        <a href="https://people.math.gatech.edu/~mccuan/courses/6321/lars-ahlfors-complex-analysis-third-edition-mcgraw-hill-science_engineering_math-1979.pdf">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://people.math.gatech.edu/~mccuan/courses/6321/lars-ahlfors-complex-analysis-third-edition-mcgraw-hill-science_engineering_math-1979.pdf"
+        >
           2
         </a>
         ]. Let’s explore complex numbers, and learn some stuff about Rust along
@@ -427,7 +435,14 @@ const ComplexNumbers = () => {
         Tuple structs are structs that do not have names for their fields. Tuple
         structs are useful when you want to give a name to the tuple, but naming
         each field would be verbose [
-        <a href="https://doc.rust-lang.org/book/">3</a>].
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://doc.rust-lang.org/book/"
+        >
+          3
+        </a>
+        ].
       </p>
       <p id="27627bcc-0232-47e1-8b90-015ab3858593">
         Here’s what our <code>Complex</code> tuple struct looks like:
@@ -456,7 +471,11 @@ const ComplexNumbers = () => {
       <ul id="56c12e3e-fc11-4b3e-bbb6-82d85afdacbe" className="bulleted-list">
         <li style={{ listStyleType: "disc" }}>
           Debug -{" "}
-          <a href="https://doc.rust-lang.org/std/fmt/trait.Debug.html">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://doc.rust-lang.org/std/fmt/trait.Debug.html"
+          >
             https://doc.rust-lang.org/std/fmt/trait.Debug.html
           </a>
         </li>
@@ -464,7 +483,11 @@ const ComplexNumbers = () => {
       <ul id="8e534acf-4cfe-4a8d-8899-fce872e136b9" className="bulleted-list">
         <li style={{ listStyleType: "disc" }}>
           PartialEq -{" "}
-          <a href="https://doc.rust-lang.org/std/cmp/trait.PartialEq.html">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://doc.rust-lang.org/std/cmp/trait.PartialEq.html"
+          >
             https://doc.rust-lang.org/std/cmp/trait.PartialEq.html
           </a>
         </li>
@@ -472,7 +495,11 @@ const ComplexNumbers = () => {
       <ul id="9e329758-c5cb-44f8-a2db-4902319dc01d" className="bulleted-list">
         <li style={{ listStyleType: "disc" }}>
           Clone -{" "}
-          <a href="https://doc.rust-lang.org/std/clone/trait.Clone.html">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://doc.rust-lang.org/std/clone/trait.Clone.html"
+          >
             https://doc.rust-lang.org/std/clone/trait.Clone.html
           </a>
         </li>
@@ -480,7 +507,11 @@ const ComplexNumbers = () => {
       <ul id="89a86d59-18f4-4d97-906f-560377a19b2f" className="bulleted-list">
         <li style={{ listStyleType: "disc" }}>
           Copy -{" "}
-          <a href="https://doc.rust-lang.org/std/marker/trait.Copy.html">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://doc.rust-lang.org/std/marker/trait.Copy.html"
+          >
             https://doc.rust-lang.org/std/marker/trait.Copy.html
           </a>
         </li>
@@ -784,7 +815,11 @@ const ComplexNumbers = () => {
           <span>﻿</span>
         </span>{" "}
         [
-        <a href="https://people.math.gatech.edu/~mccuan/courses/6321/lars-ahlfors-complex-analysis-third-edition-mcgraw-hill-science_engineering_math-1979.pdf">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://people.math.gatech.edu/~mccuan/courses/6321/lars-ahlfors-complex-analysis-third-edition-mcgraw-hill-science_engineering_math-1979.pdf"
+        >
           2
         </a>
         ].
@@ -3037,7 +3072,11 @@ const ComplexNumbers = () => {
           <span>﻿</span>
         </span>{" "}
         [
-        <a href="https://people.math.gatech.edu/~mccuan/courses/6321/lars-ahlfors-complex-analysis-third-edition-mcgraw-hill-science_engineering_math-1979.pdf">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://people.math.gatech.edu/~mccuan/courses/6321/lars-ahlfors-complex-analysis-third-edition-mcgraw-hill-science_engineering_math-1979.pdf"
+        >
           2
         </a>
         ].
@@ -3063,7 +3102,11 @@ const ComplexNumbers = () => {
       <p id="82e56574-8ffb-4629-a321-7391ca0b7830">
         If this is the first time you’ve seen Rust’s <code>powi</code> method,
         note that it raises numbers to an integer power [
-        <a href="https://doc.rust-lang.org/std/primitive.f64.html#method.powi">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://doc.rust-lang.org/std/primitive.f64.html#method.powi"
+        >
           4
         </a>
         ]. You could probably guess that from reading the code - I bring it up
@@ -3742,47 +3785,94 @@ M834 80h400000v40h-400000z"
       <hr id="c89fbc3f-5a58-43a4-b6b6-eefd3292888d" />
       <p id="7fb88330-c239-4db8-9da2-c26b18ec6481">
         [1]{" "}
-        <a href="https://www.maa.org/press/maa-reviews/visual-complex-analysis">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.maa.org/press/maa-reviews/visual-complex-analysis"
+        >
           Needham, T. (2009).{" "}
         </a>
-        <a href="https://www.maa.org/press/maa-reviews/visual-complex-analysis">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.maa.org/press/maa-reviews/visual-complex-analysis"
+        >
           <em>Visual Complex Analysis. </em>
         </a>
-        <a href="https://www.maa.org/press/maa-reviews/visual-complex-analysis">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.maa.org/press/maa-reviews/visual-complex-analysis"
+        >
           Oxford University Press.
         </a>
       </p>
       <p id="22d619cc-79f3-42b8-9f5d-7a0c7dc71753">
         [2]{" "}
-        <a href="https://people.math.gatech.edu/~mccuan/courses/6321/lars-ahlfors-complex-analysis-third-edition-mcgraw-hill-science_engineering_math-1979.pdf">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://people.math.gatech.edu/~mccuan/courses/6321/lars-ahlfors-complex-analysis-third-edition-mcgraw-hill-science_engineering_math-1979.pdf"
+        >
           Ahlfors, L. (1953).{" "}
         </a>
-        <a href="https://people.math.gatech.edu/~mccuan/courses/6321/lars-ahlfors-complex-analysis-third-edition-mcgraw-hill-science_engineering_math-1979.pdf">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://people.math.gatech.edu/~mccuan/courses/6321/lars-ahlfors-complex-analysis-third-edition-mcgraw-hill-science_engineering_math-1979.pdf"
+        >
           <em>
             Complex Analysis: An Introduction to The Theory of Analytic
             Functions of One Complex Variable.{" "}
           </em>
         </a>
-        <a href="https://people.math.gatech.edu/~mccuan/courses/6321/lars-ahlfors-complex-analysis-third-edition-mcgraw-hill-science_engineering_math-1979.pdf">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://people.math.gatech.edu/~mccuan/courses/6321/lars-ahlfors-complex-analysis-third-edition-mcgraw-hill-science_engineering_math-1979.pdf"
+        >
           McGraw-Hill Education.
         </a>
       </p>
       <p id="b1ea6fa6-2707-4a3c-83c3-abbbe223707a">
         [3]{" "}
-        <a href="https://doc.rust-lang.org/book/">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://doc.rust-lang.org/book/"
+        >
           Nichols, C. and Klabnik, S. (2018).{" "}
         </a>
-        <a href="https://doc.rust-lang.org/book/">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://doc.rust-lang.org/book/"
+        >
           <em>The Rust Programming Language.</em>
         </a>
-        <a href="https://doc.rust-lang.org/book/"> No Starch Press.</a>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://doc.rust-lang.org/book/"
+        >
+          {" "}
+          No Starch Press.
+        </a>
       </p>
       <p id="104de9b1-d068-43c0-88bd-cae9ed389387">
         [4]{" "}
-        <a href="https://doc.rust-lang.org/std/primitive.f64.html#method.powi">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://doc.rust-lang.org/std/primitive.f64.html#method.powi"
+        >
           Rust Documation on{" "}
         </a>
-        <a href="https://doc.rust-lang.org/std/primitive.f64.html#method.powi">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://doc.rust-lang.org/std/primitive.f64.html#method.powi"
+        >
           <code>powi</code>
         </a>
       </p>

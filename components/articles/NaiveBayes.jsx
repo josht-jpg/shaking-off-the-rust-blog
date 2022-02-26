@@ -27,7 +27,13 @@ const NaiveBayes = () => (
     <p id="1a6378ea-c91f-44db-be00-e228697c4f72">
       The Naive Bayes classifier is a machine learning algorithm based on Bayes’
       Theorem.{" "}
-      <a href="https://greenteapress.com/wp/think-bayes/">Bayes’ Theorem</a>{" "}
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://greenteapress.com/wp/think-bayes/"
+      >
+        Bayes’ Theorem
+      </a>{" "}
       gives us a way to update the probability of a hypothesis{" "}
       <style
         dangerouslySetInnerHTML={{
@@ -580,7 +586,11 @@ const NaiveBayes = () => (
       Naive Bayesian models rest on a big assumption: whether a data point is
       present or absent from the data set is independent from data already in
       that set [
-      <a href="https://learning.oreilly.com/library/view/data-science-from/9781492041122/">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://learning.oreilly.com/library/view/data-science-from/9781492041122/"
+      >
         1
       </a>
       ]. That is, each piece of data conveys no information about any other data
@@ -590,7 +600,14 @@ const NaiveBayes = () => (
     <p id="98d59d5a-f86b-4794-b292-fb9c6da036f9">
       We do not expect this assumption to be true – it is weak. But it’s still
       useful, allowing us to create efficient classifiers that work quite well [
-      <a href="https://greenteapress.com/wp/think-bayes/">2</a>].
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://greenteapress.com/wp/think-bayes/"
+      >
+        2
+      </a>
+      ].
     </p>
     <p id="1ae72c9f-96a3-479a-9af4-1c6d2e566d96"></p>
     <p id="ed775237-8892-4229-856b-c4102110c3f8">
@@ -604,7 +621,11 @@ const NaiveBayes = () => (
     <ul id="bf109bac-3cb3-434e-9c24-6d8125607561" className="bulleted-list">
       <li style={{ listStyleType: "disc" }}>
         I can’t say enough good things{" "}
-        <a href="https://www.youtube.com/watch?v=O2L2Uv9pdDA&t=657s">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.youtube.com/watch?v=O2L2Uv9pdDA&t=657s"
+        >
           about this video from Josh Starmer
         </a>
         .
@@ -613,7 +634,11 @@ const NaiveBayes = () => (
     <ul id="e5931edc-729b-4280-a482-862bc58b171a" className="bulleted-list">
       <li style={{ listStyleType: "disc" }}>
         Joel Grus has{" "}
-        <a href="https://learning.oreilly.com/library/view/data-science-from/9781492041122/">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://learning.oreilly.com/library/view/data-science-from/9781492041122/"
+        >
           written a chapter on Naive Bayes
         </a>{" "}
         in his great book <em>Data Science from Scratch,</em> which was the main
@@ -623,10 +648,18 @@ const NaiveBayes = () => (
     <ul id="e3fd0362-f07d-43a3-821f-4f14a7952566" className="bulleted-list">
       <li style={{ listStyleType: "disc" }}>
         If mathematical notation is your thing,{" "}
-        <a href="https://hastie.su.domains/Papers/ESLII.pdf">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://hastie.su.domains/Papers/ESLII.pdf"
+        >
           try section 6.6.3 of{" "}
         </a>
-        <a href="https://hastie.su.domains/Papers/ESLII.pdf">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://hastie.su.domains/Papers/ESLII.pdf"
+        >
           <em>The Elements of Statisical Learning</em>
         </a>
         <em>.</em>
@@ -635,7 +668,11 @@ const NaiveBayes = () => (
     <ul id="40ad9c12-3a9b-43eb-a083-33f5e933eff6" className="bulleted-list">
       <li style={{ listStyleType: "disc" }}>
         And{" "}
-        <a href="https://www.freecodecamp.org/news/how-naive-bayes-classifiers-work/">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.freecodecamp.org/news/how-naive-bayes-classifiers-work/"
+        >
           here{`'`}s a helpful article
         </a>{" "}
         on the basics of how the algorithm works
@@ -645,7 +682,11 @@ const NaiveBayes = () => (
     <p id="bea6c5b4-6438-4998-9300-5116621664cc">
       The canonical application of the Naive Bayes classifier is a spam
       classifier. That is what we’ll build. You can find all the code here:{" "}
-      <a href="https://github.com/josht-jpg/shaking-off-the-rust">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://github.com/josht-jpg/shaking-off-the-rust"
+      >
         https://github.com/josht-jpg/shaking-off-the-rust
       </a>
     </p>
@@ -667,7 +708,11 @@ const NaiveBayes = () => (
       To work with the message we’re given, we’ll want to <em>tokenized </em>it.
       Our tokenized representation will be a set of words in lower case where
       order and repeat entries are disregarded. Rust’s{" "}
-      <a href="https://doc.rust-lang.org/std/collections/struct.HashSet.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/std/collections/struct.HashSet.html"
+      >
         <code>
           <strong>std::collections::HashSet</strong>
         </code>
@@ -676,8 +721,16 @@ const NaiveBayes = () => (
     </p>
     <p id="0937be70-6bdf-4a82-8a88-47a50174243d">
       The function we’ll write to perform tokenization will require the use of
-      the <a href="https://docs.rs/regex/latest/regex/">regex</a> crate. Make
-      sure you include this dependency in your <code>Cargo.toml</code> file:
+      the{" "}
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://docs.rs/regex/latest/regex/"
+      >
+        regex
+      </a>{" "}
+      crate. Make sure you include this dependency in your{" "}
+      <code>Cargo.toml</code> file:
     </p>
     <pre id="3d05cb44-b29f-45b4-a262-c9156cb58cbc" className="code">
       <code>
@@ -711,11 +764,19 @@ const NaiveBayes = () => (
       letters. Whenever we come across a different type of symbol (often
       whitespace or punctuation), we split the input and group together all
       numbers and letters encountered since the last split (you can{" "}
-      <a href="https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html"
+      >
         read more about regex in Rust here
       </a>
       ) [
-      <a href="https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html"
+      >
         4
       </a>
       ]. That is, we{`'`}re identifying and isolating words in the input text.
@@ -741,7 +802,11 @@ const NaiveBayes = () => (
       The <code>{`'`}a</code> is a lifetime parameter annotation. If you’re
       unfamiliar with lifetimes, and want to learn about them, I recommend
       reading{" "}
-      <a href="https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html"
+      >
         section 10.3 of The Rust Programming Language Book
       </a>
       .
@@ -761,7 +826,14 @@ const NaiveBayes = () => (
         some non-spam messages, but does not appear in any spam messages. Then,
         the Naive Bayes classifier will assign a probability <strong>0</strong>{" "}
         of spam to any message that contains the word <em>fubar</em> [
-        <a href="https://www.youtube.com/watch?v=nt63k3bfXS0">5</a>].
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.youtube.com/watch?v=nt63k3bfXS0"
+        >
+          5
+        </a>
+        ].
       </p>
       <p id="ad9503b6-5c02-4c4e-a47b-92155a73ebab">
         Unless we’re talking about my success with online dating, it’s not smart
@@ -818,9 +890,15 @@ const NaiveBayes = () => (
           <span>﻿</span>
         </span>{" "}
         to the number of observations of each token [
-        <a href="https://www.youtube.com/watch?v=nt63k3bfXS0">5</a>]. Let’s see
-        this mathematically: without Laplace Smoothing, the probability of
-        seeing a word <em>w</em> in a spam message is:
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.youtube.com/watch?v=nt63k3bfXS0"
+        >
+          5
+        </a>
+        ]. Let’s see this mathematically: without Laplace Smoothing, the
+        probability of seeing a word <em>w</em> in a spam message is:
       </p>
       <p id="c9a1792f-a318-4a5a-a566-884c2f4c75d2">
         {" "}
@@ -2297,17 +2375,32 @@ const NaiveBayes = () => (
       Since probabilities are floating point numbers between 0 and 1,
       multiplying many probabilities together can result in{" "}
       <strong>underflow </strong>[
-      <a href="https://learning.oreilly.com/library/view/data-science-from/9781492041122/">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://learning.oreilly.com/library/view/data-science-from/9781492041122/"
+      >
         1
       </a>
       ]. This is when an operation results in a number smaller than what the
       computer can accurately store [
-      <a href="https://www.amazon.ca/Numerical-Analysis-Richard-Burden/dp/1305253663/ref=asc_df_1305253663/?tag=googleshopc0c-20&linkCode=df0&hvadid=293014842916&hvpos=&hvnetw=g&hvrand=9862733826869340686&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9001551&hvtargid=pla-450666638521&psc=1">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.amazon.ca/Numerical-Analysis-Richard-Burden/dp/1305253663/ref=asc_df_1305253663/?tag=googleshopc0c-20&linkCode=df0&hvadid=293014842916&hvpos=&hvnetw=g&hvrand=9862733826869340686&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9001551&hvtargid=pla-450666638521&psc=1"
+      >
         6
       </a>
-      ][<a href="https://www.techopedia.com/definition/712/underflow">7</a>].
-      Thus, we’ll use logarithms and exponentials to transform the task into a
-      series of additions:
+      ][
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.techopedia.com/definition/712/underflow"
+      >
+        7
+      </a>
+      ]. Thus, we’ll use logarithms and exponentials to transform the task into
+      a series of additions:
     </p>
     <p id="805e1f1e-9610-4150-a91c-e4b880370ad8">
       {" "}
@@ -3241,81 +3334,166 @@ const NaiveBayes = () => (
     <p id="d330862a-4854-4524-9200-cbda215c621a">
       Thank you for coding with me, friends. Feel free to reach out if you have
       any feedback or questions:{" "}
-      <a href={`mailto: ${EMAIL_ADDRESS}`}>joshtaylor361@gmail.com</a>. Cheers!
+      <a target="_blank" rel="noreferrer" href={`mailto: ${EMAIL_ADDRESS}`}>
+        joshtaylor361@gmail.com
+      </a>
+      . Cheers!
     </p>
     <h3 id="9f0ff2e8-07b8-436e-a18f-2233ece34735">References</h3>
     <hr id="872db108-f110-4379-941d-8a5f38dcf9ef" />
     <p id="368fc2a6-d730-4d74-8018-ac0196430dc6">
       [1]{" "}
-      <a href="https://learning.oreilly.com/library/view/data-science-from/9781492041122/">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://learning.oreilly.com/library/view/data-science-from/9781492041122/"
+      >
         Grus, J. (2019).{" "}
       </a>
-      <a href="https://learning.oreilly.com/library/view/data-science-from/9781492041122/">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://learning.oreilly.com/library/view/data-science-from/9781492041122/"
+      >
         <em>
           Data Science from Scratch: First Principles with Python, 2nd edition.{" "}
         </em>
       </a>
-      <a href="https://learning.oreilly.com/library/view/data-science-from/9781492041122/">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://learning.oreilly.com/library/view/data-science-from/9781492041122/"
+      >
         O’Reilly Media.
       </a>
     </p>
     <p id="099f9024-352d-4d06-86bd-cf5380fc8772">
       [2]{" "}
-      <a href="https://greenteapress.com/wp/think-bayes/">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://greenteapress.com/wp/think-bayes/"
+      >
         Downey, A. (2021).{" "}
       </a>
-      <a href="https://greenteapress.com/wp/think-bayes/">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://greenteapress.com/wp/think-bayes/"
+      >
         <em>Think Bayes: Bayesian Statistics in Python, 2nd edition.</em>
       </a>
-      <a href="https://greenteapress.com/wp/think-bayes/">O’Reilly Media.</a>
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://greenteapress.com/wp/think-bayes/"
+      >
+        O’Reilly Media.
+      </a>
     </p>
     <p id="e68ca83a-eeb9-4e1d-a8be-5c2feb09a8e8">
       [3]{" "}
-      <a href="https://probml.github.io/pml-book/book0.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://probml.github.io/pml-book/book0.html"
+      >
         Murphy, K. (2012).{" "}
       </a>
-      <a href="https://probml.github.io/pml-book/book0.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://probml.github.io/pml-book/book0.html"
+      >
         <em>Machine Learning: A Probabilistic Perspective. </em>
       </a>
-      <a href="https://probml.github.io/pml-book/book0.html">MIT Press.</a>
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://probml.github.io/pml-book/book0.html"
+      >
+        MIT Press.
+      </a>
     </p>
     <p id="4b917c0c-776c-4465-8818-554076da93d0">
       [4]{" "}
-      <a href="https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html"
+      >
         Dhinakaran, V. (2017).{" "}
       </a>
-      <a href="https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html"
+      >
         <em>Rust Cookbook. </em>
       </a>
-      <a href="https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html"
+      >
         Packt.
       </a>
     </p>
     <p id="541604f8-3033-4d68-be9d-7eb9f18e9154">
       [5]{" "}
-      <a href="https://www.youtube.com/watch?v=nt63k3bfXS0">Ng, A. (2018). </a>
-      <a href="https://www.youtube.com/watch?v=nt63k3bfXS0">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.youtube.com/watch?v=nt63k3bfXS0"
+      >
+        Ng, A. (2018).{" "}
+      </a>
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.youtube.com/watch?v=nt63k3bfXS0"
+      >
         <em>Stanford CS229: Lecture 5 - GDA &amp; Naive Bayes.</em>
       </a>
     </p>
     <p id="d1032a2c-65f5-4edb-88e8-396c8f3517d9">
       [6]{" "}
-      <a href="https://www.amazon.ca/Numerical-Analysis-Richard-Burden/dp/1305253663/ref=asc_df_1305253663/?tag=googleshopc0c-20&linkCode=df0&hvadid=293014842916&hvpos=&hvnetw=g&hvrand=9862733826869340686&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9001551&hvtargid=pla-450666638521&psc=1">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.amazon.ca/Numerical-Analysis-Richard-Burden/dp/1305253663/ref=asc_df_1305253663/?tag=googleshopc0c-20&linkCode=df0&hvadid=293014842916&hvpos=&hvnetw=g&hvrand=9862733826869340686&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9001551&hvtargid=pla-450666638521&psc=1"
+      >
         Burden, R. Faires, J. Burden, A. (2015).{" "}
       </a>
-      <a href="https://www.amazon.ca/Numerical-Analysis-Richard-Burden/dp/1305253663/ref=asc_df_1305253663/?tag=googleshopc0c-20&linkCode=df0&hvadid=293014842916&hvpos=&hvnetw=g&hvrand=9862733826869340686&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9001551&hvtargid=pla-450666638521&psc=1">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.amazon.ca/Numerical-Analysis-Richard-Burden/dp/1305253663/ref=asc_df_1305253663/?tag=googleshopc0c-20&linkCode=df0&hvadid=293014842916&hvpos=&hvnetw=g&hvrand=9862733826869340686&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9001551&hvtargid=pla-450666638521&psc=1"
+      >
         <em>Numerical Analysis, 10th edition. </em>
       </a>
-      <a href="https://www.amazon.ca/Numerical-Analysis-Richard-Burden/dp/1305253663/ref=asc_df_1305253663/?tag=googleshopc0c-20&linkCode=df0&hvadid=293014842916&hvpos=&hvnetw=g&hvrand=9862733826869340686&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9001551&hvtargid=pla-450666638521&psc=1">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.amazon.ca/Numerical-Analysis-Richard-Burden/dp/1305253663/ref=asc_df_1305253663/?tag=googleshopc0c-20&linkCode=df0&hvadid=293014842916&hvpos=&hvnetw=g&hvrand=9862733826869340686&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9001551&hvtargid=pla-450666638521&psc=1"
+      >
         Brooks Cole.
       </a>
     </p>
     <p id="4e8496be-8678-4752-861c-705ae8724088">
       [7]{" "}
-      <a href="https://www.techopedia.com/definition/712/underflow">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.techopedia.com/definition/712/underflow"
+      >
         <em>Underflow.</em>
       </a>
-      <a href="https://www.techopedia.com/definition/712/underflow">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://www.techopedia.com/definition/712/underflow"
+      >
         {" "}
         Technopedia.
       </a>

@@ -61,7 +61,14 @@ const BreadthFirstSearch = () => {
         <p id="d10780d2-385a-4e53-8829-779b278fdc78">
           Whenever we{`'`}re dealing with graph algorithms, a <em>graph</em>{" "}
           refers to a mathematical structure that models a set of connections [
-          <a href="https://www.manning.com/books/grokking-algorithms">1</a>].{" "}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.manning.com/books/grokking-algorithms"
+          >
+            1
+          </a>
+          ].{" "}
         </p>
         <p id="7a4e31aa-0715-4a61-a731-349b5c3b3eff">
           Graphs consist of nodes and edges. Let{`'`}s say you raise alpacas,
@@ -70,7 +77,11 @@ const BreadthFirstSearch = () => {
         </p>
         <p id="249024ee-c628-4b10-aa03-06861e877a9c"></p>
         <figure id="60df204d-ca20-41c6-a37e-24ee95e6dacc" className="image">
-          <a href="https://images.pexels.com/photos/3396657/pexels-photo-3396657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://images.pexels.com/photos/3396657/pexels-photo-3396657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          >
             <img
               style={{ width: "288px" }}
               src="https://images.pexels.com/photos/3396657/pexels-photo-3396657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
@@ -84,7 +95,11 @@ const BreadthFirstSearch = () => {
           look like this:
         </p>
         <figure id="57080998-c6c8-44ab-ab2a-10d487196b80" className="image">
-          <a href="https://cdn-images-1.medium.com/max/800/1*ylHE5u8l5eOSk9M8mjr0NA.png">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://cdn-images-1.medium.com/max/800/1*ylHE5u8l5eOSk9M8mjr0NA.png"
+          >
             <img
               style={{ width: "980px", marginLeft: "-25px" }}
               src="https://cdn-images-1.medium.com/max/800/1*ylHE5u8l5eOSk9M8mjr0NA.png"
@@ -231,8 +246,15 @@ const BreadthFirstSearch = () => {
             <span>﻿</span>
           </span>
           . Then three connections away, and so on until the search is complete
-          [<a href="https://neo4j.com/graph-algorithms-book/">2</a>]. That is,
-          it explores all nodes{" "}
+          [
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://neo4j.com/graph-algorithms-book/"
+          >
+            2
+          </a>
+          ]. That is, it explores all nodes{" "}
           <style
             dangerouslySetInnerHTML={{
               __html:
@@ -426,7 +448,11 @@ const BreadthFirstSearch = () => {
             <span>﻿</span>
           </span>
           ; it explores nodes in layers [
-          <a href="https://mitpress.mit.edu/books/introduction-algorithms-third-edition">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://mitpress.mit.edu/books/introduction-algorithms-third-edition"
+          >
             3
           </a>
           ].
@@ -639,7 +665,15 @@ const BreadthFirstSearch = () => {
               </span>
               <span>﻿</span>
             </span>{" "}
-            [<a href="https://www.manning.com/books/grokking-algorithms">1</a>].
+            [
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.manning.com/books/grokking-algorithms"
+            >
+              1
+            </a>
+            ].
           </li>
         </ol>
         <p id="66b5fdb8-593d-4696-a36e-3d3cb1bb9749"></p>
@@ -764,8 +798,10 @@ const BreadthFirstSearch = () => {
         <p id="39882b19-1ddc-4f05-acf8-7f49390d7fc0">
           Queues store a collection of data items, which are accessed in a
           first-in, first-out (FIFO) order [
-          <a href="https://www.algorist.com/">4</a>]. The queue supports at
-          least two operations:{" "}
+          <a target="_blank" rel="noreferrer" href="https://www.algorist.com/">
+            4
+          </a>
+          ]. The queue supports at least two operations:{" "}
         </p>
         <p id="5c209b23-8171-4018-8523-92debf12225d">
           {" "}
@@ -840,12 +876,23 @@ const BreadthFirstSearch = () => {
           we are implementing the <code>Queue</code> <code>struct</code> with a
           generic. Generics are stand-ins that allow us to write code that
           operates on multiple concrete types or other properties [
-          <a href="https://doc.rust-lang.org/book/">5</a>].{" "}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://doc.rust-lang.org/book/"
+          >
+            5
+          </a>
+          ].{" "}
         </p>
         <p id="cd37bfe2-120f-4567-9fa3-0ce857931eba">
           If you{`'`}re unfamiliar with Rust{`'`}s generic types, I suggest
           reading{" "}
-          <a href="https://doc.rust-lang.org/book/ch10-01-syntax.html">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://doc.rust-lang.org/book/ch10-01-syntax.html"
+          >
             section 10.1 of the Rust programming language book
           </a>
           . Generics are an essential component of a Rust programmer{`'`}s
@@ -1228,7 +1275,14 @@ const BreadthFirstSearch = () => {
         <p id="fa655706-24f7-4ba1-a7d4-1dfb1e43aea8">
           We{`'`}ll use our alpaca example once again to help describe
           breadth-first search. The algorithm can be broken into six steps [
-          <a href="https://www.manning.com/books/grokking-algorithms">1</a>]:
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.manning.com/books/grokking-algorithms"
+          >
+            1
+          </a>
+          ]:
         </p>
         <ol
           type={1}
@@ -2521,7 +2575,11 @@ const BreadthFirstSearch = () => {
                 <code>Option</code> is either <code>None</code> or{" "}
                 <code>Some</code>. If it is <code>Some</code>, then it contains
                 a value [
-                <a href="https://doc.rust-lang.org/std/option/enum.Option.html#variant.None">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://doc.rust-lang.org/std/option/enum.Option.html#variant.None"
+                >
                   6
                 </a>
                 ]. We can see an example of <code>Some</code> a few lines down:{" "}
@@ -2537,8 +2595,15 @@ const BreadthFirstSearch = () => {
               <code>{`'`}outer: while !queue.is_empty()</code> and{" "}
               <code>break {`'`}outer;</code> - Rust allows us to{" "}
               <code>break</code> out of an outer loop from within a nested loop
-              [<a href="https://doc.rust-lang.org/rust-by-example/">7</a>]. This
-              is accomplished by annotating our outer loop with a{" "}
+              [
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://doc.rust-lang.org/rust-by-example/"
+              >
+                7
+              </a>
+              ]. This is accomplished by annotating our outer loop with a{" "}
               <code>{`'`}label</code> and passing that label into the break
               statement. Note that <code>outer</code> is not a key word here -{" "}
               <code>{`'`}foo: while !queue.is_empty()</code>,{" "}
@@ -2555,7 +2620,13 @@ const BreadthFirstSearch = () => {
               <code>usize</code> is a primitive type for pointer-sized unsigned
               integers. Its size is the number of bytes it takes to reference
               any location in memory [
-              <a href="https://doc.rust-lang.org/std/primitive.usize.html">8</a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://doc.rust-lang.org/std/primitive.usize.html"
+              >
+                8
+              </a>
               ]. In Rust, vectors must be indexed by numbers of type{" "}
               <code>usize</code>. Thus, we perform the type conversion to{" "}
               <code>usize</code>.
@@ -2711,76 +2782,151 @@ const BreadthFirstSearch = () => {
         <h3 id="48e8658d-89cf-40ab-bed4-7da6fd5d95ec">References </h3>
         <hr id="6e5e4a11-59d2-41ea-a617-a71bff76675f" />
         <p id="a791a631-c398-4207-9158-fe1aa9834adb">
-          <a href="https://www.manning.com/books/grokking-algorithms">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.manning.com/books/grokking-algorithms"
+          >
             [1] Bhargava, A. (2015).{" "}
           </a>
-          <a href="https://www.manning.com/books/grokking-algorithms">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.manning.com/books/grokking-algorithms"
+          >
             <em>Grokking Algorithms. </em>
           </a>
-          <a href="https://www.manning.com/books/grokking-algorithms">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.manning.com/books/grokking-algorithms"
+          >
             Manning Publications.
           </a>
         </p>
         <p id="f7ddf4c2-1bab-4bf8-94c0-8c2f9c9c714c">
-          <a href="https://neo4j.com/graph-algorithms-book/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://neo4j.com/graph-algorithms-book/"
+          >
             [2] Hodler, A. and Needham, M. (2019).{" "}
           </a>
-          <a href="https://neo4j.com/graph-algorithms-book/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://neo4j.com/graph-algorithms-book/"
+          >
             <em>
               Graph Algorithms: Practical Examples in Apache Spark and Neo4j.{" "}
             </em>
           </a>
-          <a href="https://neo4j.com/graph-algorithms-book/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://neo4j.com/graph-algorithms-book/"
+          >
             O{`'`}Reilly Media.
           </a>
         </p>
         <p id="76c40a4d-bbfe-4cd9-9b4b-9eb0b27025a0">
-          <a href="https://mitpress.mit.edu/books/introduction-algorithms-third-edition">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://mitpress.mit.edu/books/introduction-algorithms-third-edition"
+          >
             [3]
           </a>
-          <a href="https://mitpress.mit.edu/books/introduction-algorithms-third-edition">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://mitpress.mit.edu/books/introduction-algorithms-third-edition"
+          >
             <strong> </strong>
           </a>
-          <a href="https://mitpress.mit.edu/books/introduction-algorithms-third-edition">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://mitpress.mit.edu/books/introduction-algorithms-third-edition"
+          >
             Cormen, T. Leiserson, C. Rivest, R. Stein, C. (2009).{" "}
           </a>
-          <a href="https://mitpress.mit.edu/books/introduction-algorithms-third-edition">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://mitpress.mit.edu/books/introduction-algorithms-third-edition"
+          >
             <em>Introduction to Algorithms, 3rd edition.</em>
           </a>
-          <a href="https://mitpress.mit.edu/books/introduction-algorithms-third-edition">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://mitpress.mit.edu/books/introduction-algorithms-third-edition"
+          >
             {" "}
             MIT Press.
           </a>
         </p>
         <p id="d762da41-9059-4066-90ca-43e5a149c012">
-          <a href="https://www.algorist.com/">[4] Skiena, S. (2020). </a>
-          <a href="https://www.algorist.com/">
+          <a target="_blank" rel="noreferrer" href="https://www.algorist.com/">
+            [4] Skiena, S. (2020).{" "}
+          </a>
+          <a target="_blank" rel="noreferrer" href="https://www.algorist.com/">
             <em>The Algorithm Design Manual, 3rd edition</em>
           </a>
-          <a href="https://www.algorist.com/">. Springer.</a>
+          <a target="_blank" rel="noreferrer" href="https://www.algorist.com/">
+            . Springer.
+          </a>
         </p>
         <p id="4252f5ee-cc8e-43e8-986b-c88712679445">
-          <a href="https://doc.rust-lang.org/book/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://doc.rust-lang.org/book/"
+          >
             [5] Nichols, C. and Klabnik, S. (2018).{" "}
           </a>
-          <a href="https://doc.rust-lang.org/book/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://doc.rust-lang.org/book/"
+          >
             <em>The Rust Programming Language.</em>
           </a>
-          <a href="https://doc.rust-lang.org/book/"> No Starch Press.</a>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://doc.rust-lang.org/book/"
+          >
+            {" "}
+            No Starch Press.
+          </a>
         </p>
         <p id="ff442d90-1a6d-4dba-83d7-5885215aa08a">
-          <a href="https://doc.rust-lang.org/std/option/enum.Option.html#variant.None">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://doc.rust-lang.org/std/option/enum.Option.html#variant.None"
+          >
             [6] Rust Documentation on Enum std::option::Option
           </a>
           .
         </p>
         <p id="f523466f-dd5e-4e92-be22-552848103f0e">
-          <a href="https://doc.rust-lang.org/rust-by-example/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://doc.rust-lang.org/rust-by-example/"
+          >
             [7] Rust by Example.
           </a>
         </p>
         <p id="68b89cf9-d20a-47db-bbf0-f0ea024bae29">
-          <a href="https://doc.rust-lang.org/std/primitive.usize.html">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://doc.rust-lang.org/std/primitive.usize.html"
+          >
             [8] Rust Documentation on usize.
           </a>
         </p>
