@@ -636,7 +636,7 @@ const NaiveBayes = () => (
       <li style={{ listStyleType: "disc" }}>
         And{" "}
         <a href="https://www.freecodecamp.org/news/how-naive-bayes-classifiers-work/">
-          here's a helpful article
+          here{`'`}s a helpful article
         </a>{" "}
         on the basics of how the algorithm works
       </li>
@@ -680,7 +680,9 @@ const NaiveBayes = () => (
       sure you include this dependency in your <code>Cargo.toml</code> file:
     </p>
     <pre id="3d05cb44-b29f-45b4-a262-c9156cb58cbc" className="code">
-      <code>[dependencies]{"\n"}regex = "^1.5.4"</code>
+      <code>
+        [dependencies]{"\n"}regex = {'"'}^1.5.4{'"'}
+      </code>
     </pre>
     <p id="1b318af9-a6fb-4684-b23b-25d1223ee731"></p>
     <p id="e84d6532-f33b-4a63-936d-bbd6a9e9004d">
@@ -688,14 +690,15 @@ const NaiveBayes = () => (
     </p>
     <pre id="cc310016-e715-4100-ab83-50ce380aba53" className="code">
       <code>
-        // lib.rs{"\n"}
-        {"\n"}// We'll need HashMap later{"\n"}use std::collections::{"{"}
+        {`// `}lib.rs{"\n"}
+        {"\n"}
+        {`// `}We{`'`}ll need HashMap later{"\n"}use std::collections::{"{"}
         HashMap, HashSet{"}"};{"\n"}
         {"\n"}extern crate regex;{"\n"}use regex::Regex;{"\n"}
         {"\n"}pub fn tokenize(lower_case_text: &amp;str) -&gt;
         HashSet&lt;&amp;str&gt; {"{"}
         {"\n"}
-        {"    "}Regex::new(r"[a-z0-9']+"){"\n"}
+        {"    "}Regex::new(r{'"'}[a-z0-9{`'`}]+{'"'}){"\n"}
         {"        "}.unwrap(){"\n"}
         {"        "}.find_iter(lower_case_text){"\n"}
         {"        "}.map(|mat| mat.as_str()){"\n"}
@@ -715,7 +718,7 @@ const NaiveBayes = () => (
       <a href="https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html">
         4
       </a>
-      ]. That is, we're identifying and isolating words in the input text.
+      ]. That is, we{`'`}re identifying and isolating words in the input text.
     </p>
     <h3 id="d0625e0f-99c2-4cc0-bb22-6819a29c7ca5">Some Handy Structures</h3>
     <hr id="7169ed14-5623-454d-9135-b6b154e49b47" />
@@ -727,15 +730,15 @@ const NaiveBayes = () => (
     </p>
     <pre id="5eaf37d8-9423-4f24-9483-a2ca2c06ad28" className="code">
       <code>
-        struct Message&lt;'a&gt; {"{"}
+        struct Message&lt;{`'`}a&gt; {"{"}
         {"\n"}
-        {"    "}pub text: &amp;'a str,{"\n"}
+        {"    "}pub text: &amp;{`'`}a str,{"\n"}
         {"    "}pub is_spam: bool,{"\n"}
         {"}"}
       </code>
     </pre>
     <p id="f05b1955-ee88-49d1-8ed8-5dbcd19a54a8">
-      The <code>'a</code> is a lifetime parameter annotation. If you’re
+      The <code>{`'`}a</code> is a lifetime parameter annotation. If you’re
       unfamiliar with lifetimes, and want to learn about them, I recommend
       reading{" "}
       <a href="https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html">
@@ -1716,8 +1719,8 @@ const NaiveBayes = () => (
     <p id="4f6ebdc2-5211-4fd5-81c8-dfa157cb57c9">
       Here’s the pseudocode for our <code>train</code> method. If you feel like
       it, try to convert the pseudocode into Rust before looking at my
-      implementation below. Don't hesitate to send me your implementation, I’d
-      love to see it!
+      implementation below. Don{`'`}t hesitate to send me your implementation,
+      I’d love to see it!
     </p>
     <pre id="1fe496c0-c392-4cbc-a3bb-c7dc207f686e" className="code">
       <code>
@@ -2817,7 +2820,9 @@ const NaiveBayes = () => (
       <code>
         implementation block for NaiveBayesCalssifier {"{"}
         {"\n"}
-        {"\t"}/*...*/{"\n"}
+        {"\t"}
+        {`/*...*/`}
+        {"\n"}
         {"\n"}
         {"\t"}predict(self, text) {"{"}
         {"\n"}
@@ -2939,7 +2944,9 @@ const NaiveBayes = () => (
         {"\n"}
         {"\n"}
         {"\t"}
-        {"\t"}/*...*/{"\n"}
+        {"\t"}
+        {`/*...*/`}
+        {"\n"}
         {"\n"}
         {"\t"}pub fn predict(&amp;self, text: &amp;str) -&gt; f64 {"{"}
         {"\n"}
@@ -3024,7 +3031,7 @@ const NaiveBayes = () => (
     </p>
     <pre id="51e14e25-0373-4aae-b480-7dd74dc2e62b" className="code">
       <code>
-        // ...lib.rs{"\n"}
+        {`// `}...lib.rs{"\n"}
         {"\n"}pub fn new_classifier(alpha: f64) -&gt; NaiveBayesClassifier {"{"}
         {"\n"}
         {"    "}return NaiveBayesClassifier {"{"}
@@ -3049,21 +3056,21 @@ const NaiveBayes = () => (
         {"        "}let train_messages = [{"\n"}
         {"            "}Message {"{"}
         {"\n"}
-        {"                "}text: "Free Bitcoin viagra XXX christmas deals
-        😻😻😻",{"\n"}
+        {"                "}text: {'"'}Free Bitcoin viagra XXX christmas deals
+        😻😻😻{'"'},{"\n"}
         {"                "}is_spam: true,{"\n"}
         {"            "}
         {"}"},{"\n"}
         {"            "}Message {"{"}
         {"\n"}
-        {"                "}text: "My dear Granddaughter, please explain Bitcoin
-        over Christmas dinner",{"\n"}
+        {"                "}text: {'"'}My dear Granddaughter, please explain
+        Bitcoin over Christmas dinner{'"'},{"\n"}
         {"                "}is_spam: false,{"\n"}
         {"            "}
         {"}"},{"\n"}
         {"            "}Message {"{"}
         {"\n"}
-        {"                "}text: "Here in my garage...",{"\n"}
+        {"                "}text: {'"'}Here in my garage...{'"'},{"\n"}
         {"                "}is_spam: true,{"\n"}
         {"            "}
         {"}"},{"\n"}
@@ -3091,77 +3098,121 @@ const NaiveBayes = () => (
         {"}"}
         {"\n"}
         {"\n"}
-        {"        "}let input_text = "Bitcoin crypto academy Christmas deals";
-        {"\n"}
+        {"        "}let input_text = {'"'}Bitcoin crypto academy Christmas deals
+        {'"'};{"\n"}
         {"\n"}
         {"        "}let probs_if_spam = [{"\n"}
         {"            "}1. - (1. + alpha) / (num_spam_messages + 2. * alpha), //
-        "Free"{"  "}(not present){"\n"}
+        {'"'}Free{'"'}
+        {"  "}(not present){"\n"}
         {"            "}(1. + alpha) / (num_spam_messages + 2. * alpha),
-        {"      "}// "Bitcoin"{"  "}(present){"\n"}
+        {"      "}
+        {`// `}
+        {'"'}Bitcoin{'"'}
+        {"  "}(present){"\n"}
         {"            "}1. - (1. + alpha) / (num_spam_messages + 2. * alpha), //
-        "viagra"{"  "}(not present){"\n"}
+        {'"'}viagra{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (1. + alpha) / (num_spam_messages + 2. * alpha), //
-        "XXX"{"  "}(not present){"\n"}
+        {'"'}XXX{'"'}
+        {"  "}(not present){"\n"}
         {"            "}(1. + alpha) / (num_spam_messages + 2. * alpha),
-        {"      "}// "christmas"{"  "}(present){"\n"}
+        {"      "}
+        {`// `}
+        {'"'}christmas{'"'}
+        {"  "}(present){"\n"}
         {"            "}(1. + alpha) / (num_spam_messages + 2. * alpha),
-        {"      "}// "deals"{"  "}(present){"\n"}
+        {"      "}
+        {`// `}
+        {'"'}deals{'"'}
+        {"  "}(present){"\n"}
         {"            "}1. - (1. + alpha) / (num_spam_messages + 2. * alpha), //
-        "my"{"  "}(not present){"\n"}
+        {'"'}my{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (0. + alpha) / (num_spam_messages + 2. * alpha), //
-        "dear"{"  "}(not present){"\n"}
+        {'"'}dear{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (0. + alpha) / (num_spam_messages + 2. * alpha), //
-        "granddaughter"{"  "}(not present){"\n"}
+        {'"'}granddaughter{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (0. + alpha) / (num_spam_messages + 2. * alpha), //
-        "please"{"  "}(not present){"\n"}
+        {'"'}please{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (0. + alpha) / (num_spam_messages + 2. * alpha), //
-        "explain"{"  "}(not present){"\n"}
+        {'"'}explain{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (0. + alpha) / (num_spam_messages + 2. * alpha), //
-        "over"{"  "}(not present){"\n"}
+        {'"'}over{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (0. + alpha) / (num_spam_messages + 2. * alpha), //
-        "dinner"{"  "}(not present){"\n"}
+        {'"'}dinner{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (1. + alpha) / (num_spam_messages + 2. * alpha), //
-        "here"{"  "}(not present){"\n"}
+        {'"'}here{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (1. + alpha) / (num_spam_messages + 2. * alpha), //
-        "in"{"  "}(not present){"\n"}
+        {'"'}in{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (1. + alpha) / (num_spam_messages + 2. * alpha), //
-        "garage"{"  "}(not present){"\n"}
+        {'"'}garage{'"'}
+        {"  "}(not present){"\n"}
         {"        "}];{"\n"}
         {"\n"}
         {"        "}let probs_if_ham = [{"\n"}
         {"            "}1. - (0. + alpha) / (num_ham_messages + 2. * alpha), //
-        "Free"{"  "}(not present){"\n"}
+        {'"'}Free{'"'}
+        {"  "}(not present){"\n"}
         {"            "}(1. + alpha) / (num_ham_messages + 2. * alpha),
-        {"      "}// "Bitcoin"{"  "}(present){"\n"}
+        {"      "}
+        {`// `}
+        {'"'}Bitcoin{'"'}
+        {"  "}(present){"\n"}
         {"            "}1. - (0. + alpha) / (num_ham_messages + 2. * alpha), //
-        "viagra"{"  "}(not present){"\n"}
+        {'"'}viagra{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (0. + alpha) / (num_ham_messages + 2. * alpha), //
-        "XXX"{"  "}(not present){"\n"}
+        {'"'}XXX{'"'}
+        {"  "}(not present){"\n"}
         {"            "}(1. + alpha) / (num_ham_messages + 2. * alpha),
-        {"      "}// "christmas"{"  "}(present){"\n"}
+        {"      "}
+        {`// `}
+        {'"'}christmas{'"'}
+        {"  "}(present){"\n"}
         {"            "}(0. + alpha) / (num_ham_messages + 2. * alpha),
-        {"      "}// "deals"{"  "}(present){"\n"}
+        {"      "}
+        {`// `}
+        {'"'}deals{'"'}
+        {"  "}(present){"\n"}
         {"            "}1. - (1. + alpha) / (num_ham_messages + 2. * alpha), //
-        "my"{"  "}(not present){"\n"}
+        {'"'}my{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (1. + alpha) / (num_ham_messages + 2. * alpha), //
-        "dear"{"  "}(not present){"\n"}
+        {'"'}dear{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (1. + alpha) / (num_ham_messages + 2. * alpha), //
-        "granddaughter"{"  "}(not present){"\n"}
+        {'"'}granddaughter{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (1. + alpha) / (num_ham_messages + 2. * alpha), //
-        "please"{"  "}(not present){"\n"}
+        {'"'}please{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (1. + alpha) / (num_ham_messages + 2. * alpha), //
-        "explain"{"  "}(not present){"\n"}
+        {'"'}explain{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (1. + alpha) / (num_ham_messages + 2. * alpha), //
-        "over"{"  "}(not present){"\n"}
+        {'"'}over{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (1. + alpha) / (num_ham_messages + 2. * alpha), //
-        "dinner"{"  "}(not present){"\n"}
+        {'"'}dinner{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (0. + alpha) / (num_ham_messages + 2. * alpha), //
-        "here"{"  "}(not present){"\n"}
+        {'"'}here{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (0. + alpha) / (num_ham_messages + 2. * alpha), //
-        "in"{"  "}(not present){"\n"}
+        {'"'}in{'"'}
+        {"  "}(not present){"\n"}
         {"            "}1. - (0. + alpha) / (num_ham_messages + 2. * alpha), //
-        "garage"{"  "}(not present){"\n"}
+        {'"'}garage{'"'}
+        {"  "}(not present){"\n"}
         {"        "}];{"\n"}
         {"\n"}
         {"        "}let p_if_spam_log: f64 = probs_if_spam.iter().map(|p|
@@ -3172,8 +3223,9 @@ const NaiveBayes = () => (
         p.ln()).sum();{"\n"}
         {"        "}let p_if_ham = p_if_ham_log.exp();{"\n"}
         {"\n"}
-        {"        "}// P(message | spam) / (P(messge | spam) + P(message | ham))
-        rounds to 0.97{"\n"}
+        {"        "}
+        {`// `}P(message | spam) / (P(messge | spam) + P(message | ham)) rounds
+        to 0.97{"\n"}
         {"        "}assert!((model.predict(input_text) - p_if_spam / (p_if_spam
         + p_if_ham)).abs() &lt; 0.000001);{"\n"}
         {"    "}

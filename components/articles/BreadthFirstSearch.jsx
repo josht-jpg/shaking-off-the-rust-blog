@@ -27,18 +27,19 @@ const BreadthFirstSearch = () => {
             <strong>Shaking off the Rust</strong>
           </em>{" "}
           is a series of exercises with the Rust programing language. The
-          purpose of the series is to improve both my and my dear reader’s
+          purpose of the series is to improve both my and my dear reader{`'`}s
           abilities with Rust by building things. Plus, by actually building
-          stuff, we'll learn about an array of technological concepts in the
-          process. In this installment, we’re going to perform breadth-first
+          stuff, we{`'`}ll learn about an array of technological concepts in the
+          process. In this installment, we{`'`}re going to perform breadth-first
           search.
         </p>
         <p id="85654351-75a2-4653-a241-38e43c36d322"></p>
         <p>
-          This installment's Github repo:{" "}
+          This installment{`'`}s Github repo:{" "}
           <a
             href={"https://github.com/josht-jpg/rust-breadth-first-search"}
             target="_blank"
+            rel="noreferrer"
           >
             https://github.com/josht-jpg/rust-breadth-first-search
           </a>
@@ -58,14 +59,14 @@ const BreadthFirstSearch = () => {
           id="9706ef8c-a0a2-42d4-9358-aed08e1c9275"
         />
         <p id="d10780d2-385a-4e53-8829-779b278fdc78">
-          Whenever we’re dealing with graph algorithms, a <em>graph</em> refers
-          to a mathematical structure that models a set of connections [
+          Whenever we{`'`}re dealing with graph algorithms, a <em>graph</em>{" "}
+          refers to a mathematical structure that models a set of connections [
           <a href="https://www.manning.com/books/grokking-algorithms">1</a>].{" "}
         </p>
         <p id="7a4e31aa-0715-4a61-a731-349b5c3b3eff">
-          Graphs consist of nodes and edges. Let’s say you raise alpacas, and
-          you want to find your closest LinkedIn connection that’s in the market
-          for a handsome young alpaca.
+          Graphs consist of nodes and edges. Let{`'`}s say you raise alpacas,
+          and you want to find your closest LinkedIn connection that{`'`}s in
+          the market for a handsome young alpaca.
         </p>
         <p id="249024ee-c628-4b10-aa03-06861e877a9c"></p>
         <figure id="60df204d-ca20-41c6-a37e-24ee95e6dacc" className="image">
@@ -91,9 +92,9 @@ const BreadthFirstSearch = () => {
           </a>
         </figure>
         <p id="6cd43688-4be4-4d7d-881a-bb616e02e8df">
-          Suppose that Megan wants to buy an alpaca. We’ll see how breadth-first
-          search can help us discover Megan, and the connections that lead us to
-          Megan.
+          Suppose that Megan wants to buy an alpaca. We{`'`}ll see how
+          breadth-first search can help us discover Megan, and the connections
+          that lead us to Megan.
         </p>
         <h3 id="0205a55f-e170-4300-9566-a6fa4130cbea">
           Blazingly Fast Intro to Breadth-First Search
@@ -643,8 +644,8 @@ const BreadthFirstSearch = () => {
         </ol>
         <p id="66b5fdb8-593d-4696-a36e-3d3cb1bb9749"></p>
         <p id="6af26a99-cd07-44b3-b630-b42add01f2a1">
-          Going back to our alpaca farm, let’s visualize how breath-first search
-          will find Megan, our closest potential customer:
+          Going back to our alpaca farm, let{`'`}s visualize how breath-first
+          search will find Megan, our closest potential customer:
         </p>
         <div
           style={{
@@ -670,7 +671,7 @@ const BreadthFirstSearch = () => {
         </div>
         <p id="1d7e5b1c-5838-4d71-ab9e-f941171eed69">
           Before getting into the workings of breadth-first search and coding
-          our Rust implementation, we’ll need a{" "}
+          our Rust implementation, we{`'`}ll need a{" "}
           <em>blazingly fast introduction</em>
           <style
             dangerouslySetInnerHTML={{
@@ -781,7 +782,7 @@ const BreadthFirstSearch = () => {
         <h3 id="80483acd-d54e-4674-b7aa-ad8021e8b7d2">Getting Started</h3>
         <hr id="cacef74e-e84d-4ab8-9b53-ff47558173da" />
         <p id="ac7fecac-5458-474f-a8a5-b13aac494595">
-          We’ll begin by creating a new library with Cargo.
+          We{`'`}ll begin by creating a new library with Cargo.
         </p>
         <pre id="e800192a-a3e0-4c72-8348-7af3328d53fa" className="code">
           <code>cargo new bfs --lib{"\n"}cd bfs</code>
@@ -790,11 +791,11 @@ const BreadthFirstSearch = () => {
         <h3 id="84febca4-ac83-42f2-9cb2-65c3eb9b8d68">Implementing a Queue</h3>
         <hr id="6b5e0e89-0fd2-41e6-a473-6e4ff6fe2fe1" />
         <p id="10fe70bb-c199-4c98-8240-5e2acd38c22d">
-          We’ll use a <code>struct</code> to implement our queue.
+          We{`'`}ll use a <code>struct</code> to implement our queue.
         </p>
         <pre id="4e8631b1-9a51-4dde-b73d-e807774b8aac" className="code">
           <code>
-            // lib.rs {"\n"}
+            {"//"} lib.rs {"\n"}
             {"\n"}struct Queue&lt;T&gt; {"{"}
             {"\n"}
             {"    "}pub items: Vec&lt;T&gt;,{"\n"}
@@ -842,17 +843,19 @@ const BreadthFirstSearch = () => {
           <a href="https://doc.rust-lang.org/book/">5</a>].{" "}
         </p>
         <p id="cd37bfe2-120f-4567-9fa3-0ce857931eba">
-          If you’re unfamiliar with Rust’s generic types, I suggest reading{" "}
+          If you{`'`}re unfamiliar with Rust{`'`}s generic types, I suggest
+          reading{" "}
           <a href="https://doc.rust-lang.org/book/ch10-01-syntax.html">
             section 10.1 of the Rust programming language book
           </a>
-          . Generics are an essential component of a Rust programmer’s toolkit.
+          . Generics are an essential component of a Rust programmer{`'`}s
+          toolkit.
         </p>
         <p id="1f8e8012-a2c0-4702-a4b7-8ac917bdf8b9">
           The rest of our queue implementation seems self-explanatory to me, but
-          please don’t hesitate to email me at{" "}
+          please don{`'`}t hesitate to email me at{" "}
           <a href={`mailto: ${EMAIL_ADDRESS}`}>joshtaylor361@gmail.com</a> if
-          something doesn’t make sense.
+          something doesn{`'`}t make sense.
         </p>
         <h3 id="b6f3403f-e319-4a29-a726-06e1df0fd59d">
           Representing a Graph in Rust
@@ -1204,25 +1207,27 @@ const BreadthFirstSearch = () => {
           is connected to.
         </p>
         <p id="3699376a-32c2-4609-b2c5-2ac5c8f9c270">
-          We can use Rust’s custom types to help us implement our adjacency list
-          representation.
+          We can use Rust{`'`}s custom types to help us implement our adjacency
+          list representation.
         </p>
         <pre id="cfa3c4a6-1d47-4c60-a6f2-87f3f42615f8" className="code">
           <code>
-            // lib.rs{"\n"}
-            {"\n"}/*...*/{"\n"}
+            {"// "}lib.rs{"\n"}
+            {"\n"}
+            {"/*...*/"}
+            {"\n"}
             {"\n"}type Vertex = Vec&lt;u32&gt;;{"\n"}type Graph =
             Vec&lt;Vertex&gt;;
           </code>
         </pre>
         <p id="702130cd-961e-4538-b8c4-dc39f8339f57">Nice.</p>
         <h3 id="09d37338-e05c-48b0-a50f-f6ec76f6c364">
-          O l'oun t'awa se n'yara Je k'abere
+          O l{`'`}oun t{`'`}awa se n{`'`}yara Je k{`'`}abere
         </h3>
         <hr id="bd9515d2-1a6e-4344-b34b-411327bd7afb" />
         <p id="fa655706-24f7-4ba1-a7d4-1dfb1e43aea8">
-          We’ll use our alpaca example once again to help describe breadth-first
-          search. The algorithm can be broken into six steps [
+          We{`'`}ll use our alpaca example once again to help describe
+          breadth-first search. The algorithm can be broken into six steps [
           <a href="https://www.manning.com/books/grokking-algorithms">1</a>]:
         </p>
         <ol
@@ -1799,7 +1804,7 @@ const BreadthFirstSearch = () => {
               </span>
               <span>﻿</span>
             </span>
-            , check if we’ve already asked{" "}
+            , check if we{`'`}ve already asked{" "}
             <style
               dangerouslySetInnerHTML={{
                 __html:
@@ -1889,8 +1894,8 @@ const BreadthFirstSearch = () => {
               </span>
               <span>﻿</span>
             </span>{" "}
-            if they’re interested in purchasing an alpaca. If we have already
-            asked, skip to step 5.
+            if they{`'`}re interested in purchasing an alpaca. If we have
+            already asked, skip to step 5.
           </li>
         </ol>
         <ol
@@ -2289,11 +2294,11 @@ const BreadthFirstSearch = () => {
         </ol>
         <p id="7165cb5b-5b65-4b28-ac99-d7e468a858c2"></p>
         <p id="1ad94b81-0b8d-41bb-9f4b-1c423973a699">
-          Here’s pseudocode for the algorithm, which will be followed by a Rust
-          implementation. Note that we’re also recording the path from the{" "}
-          <code>start_node</code> to the <code>end_node</code>, should that path
-          exist. This is what the <code>prev</code> list is for, which records
-          the order in which we visit nodes.
+          Here{`'`}s pseudocode for the algorithm, which will be followed by a
+          Rust implementation. Note that we{`'`}re also recording the path from
+          the <code>start_node</code> to the <code>end_node</code>, should that
+          path exist. This is what the <code>prev</code> list is for, which
+          records the order in which we visit nodes.
         </p>
         <pre id="5d1dc2e2-a92b-4d71-8250-97185e92691a" className="code">
           <code>
@@ -2407,12 +2412,14 @@ const BreadthFirstSearch = () => {
         </pre>
         <p id="a1bc0bd1-ef1f-42a8-a19a-228fe981c81c"></p>
         <p id="f9f2e9b5-a8f6-43b4-9429-45cfd6fed114">
-          And here’s our Rust implementation:
+          And here{`'`}s our Rust implementation:
         </p>
         <pre id="14db5333-f342-4f08-a61c-70c2447934bc" className="code">
           <code>
-            // lib.rs{"\n"}
-            {"\n"}/*...*/{"\n"}
+            {"// "}lib.rs{"\n"}
+            {"\n"}
+            {"/*...*/"}
+            {"\n"}
             {"\n"}fn bfs(graph: Graph, start_node: u32, end_node: u32) -&gt;
             Vec&lt;Option&lt;u32&gt;&gt; {"{"}
             {"\n"}
@@ -2425,7 +2432,8 @@ const BreadthFirstSearch = () => {
             {"    "}let mut prev: Vec&lt;Option&lt;u32&gt;&gt; = vec![None;
             graph.len()];{"\n"}
             {"\n"}
-            {"    "}'outer: while !queue.is_empty() {"{"}
+            {"    "}
+            {`'`}outer: while !queue.is_empty() {"{"}
             {"\n"}
             {"        "}let current_node = queue.dequeue();{"\n"}
             {"        "}for v in graph[current_node as usize].iter() {"{"}
@@ -2433,7 +2441,7 @@ const BreadthFirstSearch = () => {
             {"            "}if *v == end_node {"{"}
             {"\n"}
             {"                "}prev[*v as usize] = Some(current_node);{"\n"}
-            {"                "}break 'outer;{"\n"}
+            {"                "}break {`'`}outer;{"\n"}
             {"            "}
             {"}"}
             {"\n"}
@@ -2475,9 +2483,9 @@ const BreadthFirstSearch = () => {
           </code>
         </pre>
         <p id="1478c3e5-45e5-4ac0-892f-dd886d51314e">
-          I’ll go through the implementation, and highlight features of Rust
-          that could use illumination. If I miss something you don’t understand,
-          again, feel free to email me at{" "}
+          I{`'`}ll go through the implementation, and highlight features of Rust
+          that could use illumination. If I miss something you don{`'`}t
+          understand, again, feel free to email me at{" "}
           <a href={`mailto: ${EMAIL_ADDRESS}`}>joshtaylor361@gmail.com</a>.
         </p>
         <div style={{ fontWeight: "bold", fontSize: "1.11rem" }}>
@@ -2526,15 +2534,15 @@ const BreadthFirstSearch = () => {
             className="bulleted-list"
           >
             <li style={{ listStyleType: "disc" }}>
-              <code>'outer: while !queue.is_empty()</code> and{" "}
-              <code>break 'outer;</code> - Rust allows us to <code>break</code>{" "}
-              out of an outer loop from within a nested loop [
-              <a href="https://doc.rust-lang.org/rust-by-example/">7</a>]. This
+              <code>{`'`}outer: while !queue.is_empty()</code> and{" "}
+              <code>break {`'`}outer;</code> - Rust allows us to{" "}
+              <code>break</code> out of an outer loop from within a nested loop
+              [<a href="https://doc.rust-lang.org/rust-by-example/">7</a>]. This
               is accomplished by annotating our outer loop with a{" "}
-              <code>'label</code> and passing that label into the break
+              <code>{`'`}label</code> and passing that label into the break
               statement. Note that <code>outer</code> is not a key word here -{" "}
-              <code>'foo: while !queue.is_empty()</code>,{" "}
-              <code>break 'foo;</code> would work just as well.
+              <code>{`'`}foo: while !queue.is_empty()</code>,{" "}
+              <code>break {`'`}foo;</code> would work just as well.
             </li>
           </ul>
           <ul
@@ -2606,8 +2614,10 @@ const BreadthFirstSearch = () => {
         </p>
         <pre id="2830de18-fb7d-4ff6-8c88-934cac2ac102" className="code">
           <code>
-            // lib.rs{"\n"}
-            {"\n"}/*...*/{"\n"}
+            {"// "}lib.rs{"\n"}
+            {"\n"}
+            {"/*...*/"}
+            {"\n"}
             {"\n"}#[cfg(test)]{"\n"}mod tests {"{"}
             {"\n"}
             {"    "}use super::*;{"\n"}
@@ -2657,17 +2667,17 @@ const BreadthFirstSearch = () => {
           </code>
         </pre>
         <p id="a2a652a4-9849-4bc1-b6b2-cccf15f6b0e2">
-          If running <code>cargo test</code> doesn't fail, then congratulations,
-          you’ve implemented breadth-first search in Rust!
+          If running <code>cargo test</code> doesn{`'`}t fail, then
+          congratulations, you{`'`}ve implemented breadth-first search in Rust!
         </p>
         <p id="b89f1660-fb4d-4423-b4b9-40cdc20e70e6">
-          I’ve made an applet for playing around with breadth-first search. You
-          may wish to test your understanding of graphs and breadth-first search
-          by recreating the test cases in the applet.
+          I{`'`}ve made an applet for playing around with breadth-first search.
+          You may wish to test your understanding of graphs and breadth-first
+          search by recreating the test cases in the applet.
         </p>
         <p id="a5fd9a14-fc23-45fa-acde-43e87389e3a1">
-          In a future installment of SOTR, we’ll see how to power this applet
-          with WebAssembly.
+          In a future installment of SOTR, we{`'`}ll see how to power this
+          applet with WebAssembly.
         </p>
         <div
           style={{
@@ -2720,7 +2730,9 @@ const BreadthFirstSearch = () => {
               Graph Algorithms: Practical Examples in Apache Spark and Neo4j.{" "}
             </em>
           </a>
-          <a href="https://neo4j.com/graph-algorithms-book/">O’Reilly Media.</a>
+          <a href="https://neo4j.com/graph-algorithms-book/">
+            O{`'`}Reilly Media.
+          </a>
         </p>
         <p id="76c40a4d-bbfe-4cd9-9b4b-9eb0b27025a0">
           <a href="https://mitpress.mit.edu/books/introduction-algorithms-third-edition">

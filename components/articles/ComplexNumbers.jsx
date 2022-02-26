@@ -6,16 +6,17 @@ const ComplexNumbers = () => {
           <strong>Shaking off the Rust</strong>
         </em>{" "}
         is a series of exercises with the Rust programing language. The purpose
-        of the series is to improve both my and my dear reader’s abilities with
-        Rust by building things. Plus, by actually building stuff, we'll learn
-        about an array of technological concepts in the process. In this
-        installment, we’re going to dig into complex numbers.
+        of the series is to improve both my and my dear reader{`'`}s abilities
+        with Rust by building things. Plus, by actually building stuff, we{`'`}
+        ll learn about an array of technological concepts in the process. In
+        this installment, we{`'`}re going to dig into complex numbers.
       </p>
       <p>
-        This installment's Github repo:{" "}
+        This installment{`'`}s Github repo:{" "}
         <a
           href={"https://github.com/josht-jpg/rust-complex-numbers"}
           target="_blank"
+          rel="noreferrer"
         >
           https://github.com/josht-jpg/rust-complex-numbers
         </a>
@@ -433,7 +434,7 @@ const ComplexNumbers = () => {
       </p>
       <pre id="41981c7a-bea4-417f-8ef8-cf813a6ab967" className="code">
         <code>
-          // lib.rs{"\n"}
+          {"// "}lib.rs{"\n"}
           {"\n"}#[derive(Debug, PartialEq, Clone, Copy)]{"\n"}pub struct
           Complex(pub f64, pub f64);
         </code>
@@ -1026,8 +1027,10 @@ const ComplexNumbers = () => {
       </p>
       <pre id="c7c3c432-f63c-470f-a310-58f51741fcf6" className="code">
         <code>
-          // lib.rs{"\n"}
-          {"\n"}/*...*/{"\n"}
+          {"// "}lib.rs{"\n"}
+          {"\n"}
+          {"/*...*/"}
+          {"\n"}
           {"\n"}#[cfg(test)]{"\n"}mod tests {"{"}
           {"\n"}
           {"    "}use super::*;{"\n"}
@@ -1659,7 +1662,9 @@ const ComplexNumbers = () => {
           #[cfg(test)]{"\n"}mod tests {"{"}
           {"\n"}
           {"\n"}
-          {"    "}/*...*/{"\n"}
+          {"    "}
+          {"/*...*/"}
+          {"\n"}
           {"\n"}
           {"    "}#[test]{"\n"}
           {"    "}fn mult_test() {"{"}
@@ -3337,7 +3342,9 @@ const ComplexNumbers = () => {
           #[cfg(test)]{"\n"}mod tests {"{"}
           {"\n"}
           {"\n"}
-          {"    "}/*...*/{"\n"}
+          {"    "}
+          {"/*...*/"}
+          {"\n"}
           {"\n"}
           {"    "}#[test]{"\n"}
           {"    "}fn div_test() {"{"}
@@ -3705,7 +3712,9 @@ M834 80h400000v40h-400000z"
           {"    "}
           {"\n"}
           {"\t"}
-          {"  "}/*...*/{"\n"}
+          {"  "}
+          {"/*...*/"}
+          {"\n"}
           {"\n"}
           {"    "}#[test]{"\n"}
           {"    "}fn magnitude_test() {"{"}

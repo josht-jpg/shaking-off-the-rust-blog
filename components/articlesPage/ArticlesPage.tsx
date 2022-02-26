@@ -23,6 +23,7 @@ const ArticlesPage = ({ articles }) => (
 
       {articles.map((article, index) => (
         <div
+          key={`article-preview-${index}`}
           style={{
             marginTop: index === 0 ? "0.25rem" : "4rem",
             padding: "1rem",

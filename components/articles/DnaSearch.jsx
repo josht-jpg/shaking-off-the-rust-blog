@@ -6,13 +6,13 @@ const DnaSearch = () => (
       </em>{" "}
       is a series of exercises with the Rust programing language. The purpose of
       the series is to improve both my and my dear reader’s abilities with Rust
-      by building things. Plus, by actually building stuff, we'll learn about an
-      array of technological concepts in the process. In this installment, we’re
-      doing a bit of bioinformatics.
+      by building things. Plus, by actually building stuff, we{`'`}ll learn
+      about an array of technological concepts in the process. In this
+      installment, we’re doing a bit of bioinformatics.
     </p>
     <p id="e3c4df7d-d0fb-4727-8a13-b9d2f4326d16"></p>
     <p id="1ca48208-ef6c-4f6b-a019-00380853de23">
-      This installment's Github repo:{" "}
+      This installment{`'`}s Github repo:{" "}
       <a href="https://github.com/josht-jpg/rust_dna_search">
         https://github.com/josht-jpg/rust_dna_search
       </a>
@@ -66,7 +66,7 @@ const DnaSearch = () => (
     </p>
     <pre id="d5567174-922f-4469-919f-548c0df11cf0" className="code">
       <code>
-        //lib.rs{"\n"}
+        {"// "} lib.rs{"\n"}
         {"\n"}#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
         {"\n"}enum Nucleotide {"{"}
         {"\n"}
@@ -120,9 +120,12 @@ const DnaSearch = () => (
     </p>
     <p id="c92a19a1-7849-48bc-b5e9-a326ed09e915">
       {" "}
-      <code>let gene_str = "ATTCGCA";</code>. So we’ll want a helper function to
-      convert a <em>string slice</em> into a vector of <code>Nucleotide</code>s.
-      We’ll call this <code>str_to_nucleotides</code>.{" "}
+      <code>
+        let gene_str = {`"`}ATTCGCA{`"`};
+      </code>
+      . So we’ll want a helper function to convert a <em>string slice</em> into
+      a vector of <code>Nucleotide</code>s. We’ll call this{" "}
+      <code>str_to_nucleotides</code>.{" "}
     </p>
     <pre id="dee0b2ae-0306-4e8c-b356-72602c71994f" className="code">
       <code>
@@ -131,11 +134,15 @@ const DnaSearch = () => (
         {"    "}s.chars(){"\n"}
         {"        "}.map(|c| match c {"{"}
         {"\n"}
-        {"            "}'A' =&gt; Nucleotide::A,{"\n"}
-        {"            "}'C' =&gt; Nucleotide::C,{"\n"}
-        {"            "}'G' =&gt; Nucleotide::G,{"\n"}
-        {"            "}'T' =&gt; Nucleotide::T,{"\n"}
-        {"            "}_ =&gt; panic!("Not a nucleotide"),{"\n"}
+        {"            "}
+        {`'`}A{`'`} =&gt; Nucleotide::A,{"\n"}
+        {"            "}
+        {`'`}C{`'`} =&gt; Nucleotide::C,{"\n"}
+        {"            "}
+        {`'`}G{`'`} =&gt; Nucleotide::G,{"\n"}
+        {"            "}
+        {`'`}T{`'`} =&gt; Nucleotide::T,{"\n"}
+        {"            "}_ =&gt; panic!({`"`}Not a nucleotide{`"`}),{"\n"}
         {"        "}
         {"}"}){"\n"}
         {"        "}.collect(){"\n"}
@@ -293,7 +300,7 @@ const DnaSearch = () => (
     </p>
     <pre id="9ea59a1f-6464-44b4-8855-b2f79c084e43" className="code">
       <code>
-        // lib.rs{"\n"}
+        {"// "}lib.rs{"\n"}
         {"\n"}mod tests {"{"}
         {"\t"}
         {"\n"}
@@ -305,7 +312,7 @@ const DnaSearch = () => (
         {"\t"}#[test]{"\n"}
         {"    "}fn nucleotide_frequency_test() {"{"}
         {"\n"}
-        {"        "}let dna_str = "ATATCTTAGAGGGAG";{"\n"}
+        {"        "}let dna_str = {`"`}ATATCTTAGAGGGAG{`"`};{"\n"}
         {"        "}let freq =
         nucleotide_frequency(&amp;str_to_nucleotides(&amp;dna_str));{"\n"}
         {"\n"}
@@ -1193,7 +1200,9 @@ const DnaSearch = () => (
         {"\n"}
         {"\n"}
         {"\t"}
-        {"\t"}/*...*/{"\n"}
+        {"\t"}
+        {"/*...*/"}
+        {"\n"}
         {"\t"}
         {"\t"}
         {"\n"}
@@ -1201,7 +1210,8 @@ const DnaSearch = () => (
         {"\t"}#[test]{"\n"}
         {"    "}fn binary_search() {"{"}
         {"\n"}
-        {"        "}let gene_str = "ATATCTTAGAGGGAGGGCTGAGGGTTTGAAGTCC";{"\n"}
+        {"        "}let gene_str = {`"`}ATATCTTAGAGGGAGGGCTGAGGGTTTGAAGTCC{`"`};
+        {"\n"}
         {"        "}let mut gene = str_to_gene(gene_str);{"\n"}
         {"        "}gene.sort();{"\n"}
         {"\n"}
@@ -1596,9 +1606,15 @@ const DnaSearch = () => (
       [<a href="https://www.coursera.org/learn/dna-sequencing">12</a>].
     </p>
     <p id="ce374f26-6ff3-4615-9f6a-2ddf722d3829">
-      For example, if we have a <em>pattern</em> <code>'ATT'</code> and{" "}
-      <em>text </em>
-      <code>'ATTGATTC'</code>, the offsets will be 0 and 4.
+      For example, if we have a <em>pattern</em>{" "}
+      <code>
+        {`'`}ATT{`'`}
+      </code>{" "}
+      and <em>text </em>
+      <code>
+        {`'`}ATTGATTC{`'`}
+      </code>
+      , the offsets will be 0 and 4.
     </p>
     <p id="ce6a16e1-59ef-4668-9a0f-a95314344e07"></p>
     <p id="44fef7d8-3ac3-45a1-8962-f5162113a677">
@@ -1798,15 +1814,19 @@ const DnaSearch = () => (
         {"\n"}
         {"\n"}
         {"\t"}
-        {"\t"}/*...*/{"\n"}
+        {"\t"}
+        {"/*...*/"}
+        {"\n"}
         {"\n"}
         {"\t"}
         {"\t"}#[test]{"\n"}
         {"    "}fn naive_match_test() {"{"}
         {"\n"}
-        {"        "}let dna = str_to_nucleotides("ATATCTTAGAGGGAGGGAGG");
+        {"        "}let dna = str_to_nucleotides({`"`}ATATCTTAGAGGGAGGGAGG{`"`}
+        );
         {"\n"}
-        {"        "}let target_sequence = str_to_nucleotides("AGG");{"\n"}
+        {"        "}let target_sequence = str_to_nucleotides({`"`}AGG{`"`});
+        {"\n"}
         {"\n"}
         {"        "}let match_indices = naive_match(&amp;dna,
         &amp;target_sequence);{"\n"}
@@ -1822,8 +1842,8 @@ const DnaSearch = () => (
       </code>
     </pre>
     <p id="46dcb35a-84ae-4936-a515-af9909751164">
-      If that passes for you, then congratulation, today's set of exercises are
-      complete!
+      If that passes for you, then congratulation, today{`'`}s set of exercises
+      are complete!
     </p>
     <p id="8e2b923e-381e-4498-a23a-a08c3d8eb24d"></p>
     <p id="5729ad04-d84e-452f-bb95-34f4b4bc743e">
