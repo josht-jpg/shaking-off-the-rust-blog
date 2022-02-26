@@ -4,7 +4,7 @@ import EMAIL_ADDRESS from "../../constants/emailAddress";
 import { IsLightModeContext } from "../../context/IsLightModeProvider";
 import GraphTheoryIndex from "../../graphTheory";
 
-const WasmComponent = dynamic({
+/*const WasmComponent = dynamic({
   loader: async () => {
     const wasmModule = await import("../../main.wasm");
     return () => (
@@ -15,7 +15,7 @@ const WasmComponent = dynamic({
       )}`}</div>
     );
   },
-});
+});*/
 
 const BreadthFirstSearch = () => {
   const { isLightMode } = useContext(IsLightModeContext);
