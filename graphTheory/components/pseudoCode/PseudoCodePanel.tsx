@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { STATE_NODE_RADIUS } from "../../constants/stateNodeConstants";
 import { DARK_MODE_BACKGROUND } from "../../constants/styleConstants";
 import { AnimateVerticesContext } from "../../contexts/AnimateVerticesContext";
-import styles from "./PseudoCodePanel.module.scss";
+import styles from "./PseudocodePanel.module.scss";
 
 const PseudoCodePanel = ({ stateNodeBoundingRect, conditionMet }) => {
   const CONTAINER_WIDTH_IN_PX = 275;
