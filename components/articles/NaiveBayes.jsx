@@ -675,7 +675,7 @@ const NaiveBayes = () => (
         >
           here{`'`}s a helpful article
         </a>{" "}
-        on the basics of how the algorithm works
+        on the basics of how the algorithm works.
       </li>
     </ul>
     <p id="3da4ca1f-3f59-436b-9197-b1b7d4d3deb6"></p>
