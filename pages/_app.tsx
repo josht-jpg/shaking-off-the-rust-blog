@@ -23,6 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link
           href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
           rel="stylesheet"
+          type="text/css"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap"

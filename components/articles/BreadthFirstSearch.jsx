@@ -61,8 +61,9 @@ const BreadthFirstSearch = () => {
           id="9706ef8c-a0a2-42d4-9358-aed08e1c9275"
         />
         <p id="d10780d2-385a-4e53-8829-779b278fdc78">
-          Whenever we{`'`}re dealing with graph algorithms, a <em>graph</em>{" "}
-          refers to a mathematical structure that models a set of connections [
+          Whenever we{`'`}re dealing with graph algorithms, the word{" "}
+          <em>graph</em> refers to a mathematical structure that models a set of
+          connections [
           <a
             target="_blank"
             rel="noreferrer"
@@ -103,7 +104,7 @@ const BreadthFirstSearch = () => {
             href="https://cdn-images-1.medium.com/max/800/1*ylHE5u8l5eOSk9M8mjr0NA.png"
           >
             <img
-              style={{ width: "980px", marginLeft: "-25px" }}
+              style={{ width: "980px", marginLeft: "-39px" }}
               src="https://cdn-images-1.medium.com/max/800/1*ylHE5u8l5eOSk9M8mjr0NA.png"
             />
           </a>
@@ -682,8 +683,8 @@ const BreadthFirstSearch = () => {
         <p id="6af26a99-cd07-44b3-b630-b42add01f2a1">
           Going back to our alpaca farm, let{`'`}s visualize how breath-first
           search will find Megan, our closest potential customer (shown below is
-          an applet I made for playing around with Breadth First Search, scroll
-          to the bottom of this article to give it a whirl).
+          an applet I made to help us understand Breadth First Search, scroll to
+          the bottom of this article to give it a whirl).
         </p>
         <div className={styles.playerContainer}>
           <ReactPlayer

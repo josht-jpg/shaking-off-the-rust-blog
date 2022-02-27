@@ -14,7 +14,7 @@ const getArticleData = (
         title: "DNA Analysis",
         thumbnail:
           "https://images.pexels.com/photos/5721679/pexels-photo-5721679.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        date: "Febuary 2nd, 2022",
+        date: "Febuary 12th, 2022",
         jsx: includeJsx && <DnaSearch />,
         extension: ArticleExtensions.DNA,
         description: `Use Rust to count nucleotide frequencies, search DNA for codons, and much more. Real cool stuff. 🤙`,
@@ -34,7 +34,7 @@ const getArticleData = (
         title: "Breadth First Search",
         thumbnail:
           "https://cdn-images-1.medium.com/max/800/1*nyziGfeh2hk2cOa3FEl5xQ.png",
-        date: "Febuary 2nd, 2022",
+        date: "Febuary 19th, 2022",
         jsx: includeJsx && <BreadthFirstSearch />,
         extension: ArticleExtensions.BFS,
         description: `You raise alpacas, and you want to find your closest LinkedIn connection that's in the market for a handsome young alpaca. We'll use Rust and Breadth First Search to figure it out. 🦙`,
@@ -44,7 +44,7 @@ const getArticleData = (
         title: "Complex Numbers",
         thumbnail:
           "https://images.pexels.com/photos/4931375/pexels-photo-4931375.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        date: "Febuary 2nd, 2022",
+        date: "Febuary 27th, 2022",
         extension: ArticleExtensions.COMPLEX_NUMBERS,
         jsx: includeJsx && <ComplexNumbers />,
         description: `Complex numbers are simple. Let's explore them with Rust. 🌌`,
