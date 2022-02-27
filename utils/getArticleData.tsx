@@ -17,7 +17,7 @@ const getArticleData = (
         date: "Febuary 2nd, 2022",
         jsx: includeJsx && <DnaSearch />,
         extension: ArticleExtensions.DNA,
-        description: `Shaking off the Rust is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process. In this installment, we’re going to dig into complex numbers.`,
+        description: `Use Rust to count nucleotide frequencies, search DNA for codons, and much more. Real cool stuff. 🤙`,
       };
     case ArticleExtensions.NAIVE_BAYES:
       return {
@@ -27,7 +27,7 @@ const getArticleData = (
         date: "January 1st, 2022",
         jsx: includeJsx && <NaiveBayes />,
         extension: ArticleExtensions.NAIVE_BAYES,
-        description: `Shaking off the Rust is a series of exercises with the Rust programing language.`,
+        description: `Using Rust and machine learning, we'll prevent our inbox from getting clogged with spam such as "Free Bitcoin viagra XXX christmas deals". 🎄`,
       };
     case ArticleExtensions.BFS:
       return {
@@ -37,7 +37,7 @@ const getArticleData = (
         date: "Febuary 2nd, 2022",
         jsx: includeJsx && <BreadthFirstSearch />,
         extension: ArticleExtensions.BFS,
-        description: `Shaking off the Rust is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things.`,
+        description: `You raise alpacas, and you want to find your closest LinkedIn connection that's in the market for a handsome young alpaca. We'll use Rust and Breadth First Search to figure it out. 🦙`,
       };
     case ArticleExtensions.COMPLEX_NUMBERS:
       return {
@@ -47,7 +47,7 @@ const getArticleData = (
         date: "Febuary 2nd, 2022",
         extension: ArticleExtensions.COMPLEX_NUMBERS,
         jsx: includeJsx && <ComplexNumbers />,
-        description: `Shaking off the Rust is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process. In this installment, we’re going to dig into complex numbers.`,
+        description: `Complex numbers are simple. Let's explore them with Rust. 🌌`,
       };
     case "mandelbrot":
       return {
@@ -56,12 +56,9 @@ const getArticleData = (
           "https://images.pexels.com/photos/5278835/pexels-photo-5278835.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         date: "Febuary 2nd, 2022",
         jsx: includeJsx && <DnaSearch />,
-        description: `Shaking off the Rust is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process. In this installment, we’re going to dig into complex numbers.`,
+        description: `Count nucleotide frequencies, search DNA for codons, and much more. Real fun stuff, yo.`,
       };
-
     default:
-      //TODO: lol c'mon
-      console.log("here");
   }
 };
 
