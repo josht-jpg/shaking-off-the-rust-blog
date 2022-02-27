@@ -36,7 +36,7 @@ const InputDetails: React.FC<InputDetailsProps> = ({
         color: "black",
       }}
     >
-      <h3 style={{ textAlign: "center", marginBottom: "0" }}>Input Details</h3>
+      <h3 style={{ textAlign: "center", marginBottom: "0" }}>Edge Details</h3>
       <hr style={{ width: "50%" }} />
 
       <form>
