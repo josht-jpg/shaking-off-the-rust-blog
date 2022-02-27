@@ -320,7 +320,7 @@ const DnaSearch = () => (
       </p>
       <p id="fb73f79e-5999-4219-9238-9421a641b4ad">
         There’s a similar method to <code>unwrap</code> that we could use here -
-        the <code>expect</code> method. <code>expect</code> is similar to{" "}
+        the <code>expect</code> method. <code>expect</code> is like{" "}
         <code>unwrap</code>, but allows us to specify an error message if the{" "}
         <code>Option</code> it is operating on holds <code>None</code> [
         <a
@@ -1966,6 +1966,8 @@ const DnaSearch = () => (
     </p>
     <p id="abcdd191-1315-4c9d-bd27-efe2a49192b4"></p>
     <p id="54ba145c-b0f3-4dcf-8dc3-0b671db7fe1d"></p>
+    <h3>References</h3>
+    <hr />
     <p id="f3494113-aafa-4a44-a509-60891819b71d">
       [1]{" "}
       <a
