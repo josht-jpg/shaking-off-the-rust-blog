@@ -820,7 +820,7 @@ const BreadthFirstSearch = () => {
         </p>
         <pre id="4e8631b1-9a51-4dde-b73d-e807774b8aac" className="code">
           <code>
-            // lib.rs {"\n"}
+            {"//"} lib.rs {"\n"}
             {"\n"}use std::collections::VecDeque;{"\n"}
             {"\n"}struct Queue&lt;T&gt; {"{"}
             {"\n"}
@@ -852,7 +852,8 @@ const BreadthFirstSearch = () => {
             {"\n"}
             {"        "}self.items{"\n"}
             {"            "}.pop_front(){"\n"}
-            {"            "}.expect("Cannot dequeue from empty queue."){"\n"}
+            {"            "}.expect({'"'}Cannot dequeue from empty queue.{'"'})
+            {"\n"}
             {"    "}
             {"}"}
             {"\n"}
@@ -2554,7 +2555,7 @@ const BreadthFirstSearch = () => {
         </p>
         <pre id="14db5333-f342-4f08-a61c-70c2447934bc" className="code">
           <code>
-            // lib.rs{"\n"}
+            {"// "} lib.rs{"\n"}
             {"\n"}
             {"/*...*/"}
             {"\n"}
