@@ -824,7 +824,7 @@ const BreadthFirstSearch = () => {
             {"\n"}use std::collections::VecDeque;{"\n"}
             {"\n"}struct Queue&lt;T&gt; {"{"}
             {"\n"}
-            {"    "}pub items: Vec&lt;T&gt;,{"\n"}
+            {"    "}pub items: VecDeque&lt;T&gt;,{"\n"}
             {"}"}
             {"\n"}
             {"\n"}impl&lt;T&gt; Queue&lt;T&gt; {"{"}
