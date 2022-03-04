@@ -820,7 +820,8 @@ const BreadthFirstSearch = () => {
         </p>
         <pre id="4e8631b1-9a51-4dde-b73d-e807774b8aac" className="code">
           <code>
-            {"//"} lib.rs {"\n"}
+            // lib.rs {"\n"}
+            {"\n"}use std::collections::VecDeque;{"\n"}
             {"\n"}struct Queue&lt;T&gt; {"{"}
             {"\n"}
             {"    "}pub items: Vec&lt;T&gt;,{"\n"}
@@ -828,10 +829,13 @@ const BreadthFirstSearch = () => {
             {"\n"}
             {"\n"}impl&lt;T&gt; Queue&lt;T&gt; {"{"}
             {"\n"}
-            {"\t"}
-            {"\t"}pub fn new() -&gt; Queue&lt;T&gt; {"{"}
+            {"    "}pub fn new() -&gt; Queue&lt;T&gt; {"{"}
             {"\n"}
-            {"        "}Queue {"{"} items: Vec::new() {"}"}
+            {"        "}Queue {"{"}
+            {"\n"}
+            {"            "}items: VecDeque::new(),{"\n"}
+            {"        "}
+            {"}"}
             {"\n"}
             {"    "}
             {"}"}
@@ -839,14 +843,16 @@ const BreadthFirstSearch = () => {
             {"\n"}
             {"    "}pub fn enqueue(&amp;mut self, v: T) {"{"}
             {"\n"}
-            {"        "}self.items.push(v){"\n"}
+            {"        "}self.items.push_back(v){"\n"}
             {"    "}
             {"}"}
             {"\n"}
             {"\n"}
             {"    "}pub fn dequeue(&amp;mut self) -&gt; T {"{"}
             {"\n"}
-            {"        "}self.items.remove(0){"\n"}
+            {"        "}self.items{"\n"}
+            {"            "}.pop_front(){"\n"}
+            {"            "}.expect("Cannot dequeue from empty queue."){"\n"}
             {"    "}
             {"}"}
             {"\n"}
@@ -886,6 +892,95 @@ const BreadthFirstSearch = () => {
           </a>
           . Generics are an essential component of a Rust programmer{`'`}s
           toolkit.
+        </p>
+        <p id="f6b7f5d6-4fa3-48a5-8574-819f6bae5f95">
+          <code>VecDeque</code> is a “double-ended queue implemented with a
+          growable ring buffer” [
+          <a href="https://doc.rust-lang.org/std/collections/struct.VecDeque.html">
+            9
+          </a>
+          ]. This provides a{" "}
+          <style
+            dangerouslySetInnerHTML={{
+              __html:
+                "@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')",
+            }}
+          />
+          <span
+            data-token-index={0}
+            contentEditable="false"
+            className="notion-text-equation-token"
+            style={{
+              userSelect: "all",
+              WebkitUserSelect: "all",
+              MozUserSelect: "all",
+            }}
+          >
+            <span />
+            <span>
+              <span className="katex">
+                <span className="katex-mathml">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <semantics>
+                      <mrow>
+                        <mi>O</mi>
+                        <mo stretchy="false">(</mo>
+                        <mn>1</mn>
+                        <mo stretchy="false">)</mo>
+                      </mrow>
+                      <annotation encoding="application/x-tex">O(1)</annotation>
+                    </semantics>
+                  </math>
+                </span>
+                <span className="katex-html" aria-hidden="true">
+                  <span className="base">
+                    <span
+                      className="strut"
+                      style={{ height: "1em", verticalAlign: "-0.25em" }}
+                    />
+                    <span
+                      className="mord mathnormal"
+                      style={{ marginRight: "0.02778em" }}
+                    >
+                      O
+                    </span>
+                    <span className="mopen">(</span>
+                    <span className="mord">1</span>
+                    <span className="mclose">)</span>
+                  </span>
+                </span>
+              </span>
+            </span>
+            <span>﻿</span>
+          </span>{" "}
+          enqueue/dequeue time (thank you to Reddit user svetlin_zarev for
+          suggesting <code>VecDeque</code>).
+        </p>
+        <p id="738cd78b-f614-455f-8e73-9ce1cf03ba09">
+          The <code>pop_front</code> method returns an <code>Option</code>{" "}
+          containing the first element of the <code>VecDeque</code>, or{" "}
+          <code>None</code> if the <code>VecDeque</code> is empty.{" "}
+        </p>
+        <p id="1437024a-0d54-4d01-98d5-6e6129afb52e">
+          In the Rust standard library, the <code>Option</code>{" "}
+          <code>enum</code> represents a value that may or may not exist - an
+          optional value. An instance of an <code>Option</code> is either{" "}
+          <code>None</code> or <code>Some</code>. If it is <code>Some</code>,
+          then it contains a value [
+          <a href="https://doc.rust-lang.org/std/option/enum.Option.html#variant.None">
+            6
+          </a>
+          ].{" "}
+        </p>
+        <p id="bfa37b8b-cdd6-444d-b059-fa5038f04203">
+          <code>expect</code> is an important method. If the <code>Option</code>{" "}
+          it is operating on is <code>None</code>, expect panics with a custom
+          error message. Otherwise, the contained <code>Some</code> value is
+          returned [
+          <a href="https://doc.rust-lang.org/nightly/std/option/enum.Option.html#method.expect">
+            10
+          </a>
+          ].
         </p>
         <p id="1f8e8012-a2c0-4702-a4b7-8ac917bdf8b9">
           The rest of our queue implementation seems self-explanatory to me, but
@@ -2459,12 +2554,12 @@ const BreadthFirstSearch = () => {
         </p>
         <pre id="14db5333-f342-4f08-a61c-70c2447934bc" className="code">
           <code>
-            {"// "}lib.rs{"\n"}
+            // lib.rs{"\n"}
             {"\n"}
             {"/*...*/"}
             {"\n"}
             {"\n"}fn bfs(graph: Graph, start_node: u32, end_node: u32) -&gt;
-            Vec&lt;Option&lt;u32&gt;&gt; {"{"}
+            Option&lt;Vec&lt;Option&lt;u32&gt;&gt;&gt; {"{"}
             {"\n"}
             {"    "}let mut queue = Queue::new();{"\n"}
             {"    "}queue.enqueue(start_node);{"\n"}
@@ -2518,8 +2613,8 @@ const BreadthFirstSearch = () => {
             {"\n"}
             {"    "}return match path[0] {"{"}
             {"\n"}
-            {"        "}Some(x) if x == start_node =&gt; path,{"\n"}
-            {"        "}_ =&gt; vec![],{"\n"}
+            {"        "}Some(x) if x == start_node =&gt; Some(path),{"\n"}
+            {"        "}_ =&gt; None,{"\n"}
             {"    "}
             {"}"};{"\n"}
             {"}"}
@@ -2556,24 +2651,6 @@ const BreadthFirstSearch = () => {
                 graph.len()];
               </code>{" "}
               - initializes a <code>Vector</code> of <code>None</code> values.{" "}
-              <p id="3af31b88-bdff-4292-93f8-7c572dfaf041">
-                In the Rust standard library, <code>None</code> is a variant of
-                the <code>Option</code> <code>enum</code>. The{" "}
-                <code>Option</code> <code>enum</code> represents a value that
-                may or may not exist - an optional value. An instance of an{" "}
-                <code>Option</code> is either <code>None</code> or{" "}
-                <code>Some</code>. If it is <code>Some</code>, then it contains
-                a value [
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://doc.rust-lang.org/std/option/enum.Option.html#variant.None"
-                >
-                  6
-                </a>
-                ]. We can see an example of <code>Some</code> a few lines down:{" "}
-                <code>prev[*v as usize] = Some(current_node);</code>.{" "}
-              </p>
             </li>
           </ul>
           <ul
@@ -2609,13 +2686,7 @@ const BreadthFirstSearch = () => {
               <code>usize</code> is a primitive type for pointer-sized unsigned
               integers. Its size is the number of bytes it takes to reference
               any location in memory [
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://doc.rust-lang.org/std/primitive.usize.html"
-              >
-                8
-              </a>
+              <a href="https://doc.rust-lang.org/std/primitive.usize.html">8</a>
               ]. In Rust, vectors must be indexed by numbers of type{" "}
               <code>usize</code>. Thus, we perform the type conversion to{" "}
               <code>usize</code>.
@@ -2642,12 +2713,10 @@ const BreadthFirstSearch = () => {
             <li style={{ listStyleType: "disc" }}>
               <pre id="156c48a6-4ab0-41f6-a394-995d384a3f32" className="code">
                 <code>
-                  {"\t"}
-                  {"\t"}return match path[0] {"{"}
+                  return match path[0] {"{"}
                   {"\n"}
-                  {"        "}Some(p) if p == start_node =&gt; path,{"\n"}
-                  {"        "}_ =&gt; vec![],{"\n"}
-                  {"    "}
+                  {"\t"}Some(x) if x == start_node =&gt; Some(path),{"\n"}
+                  {"\t"}_ =&gt; None,{"\n"}
                   {"}"};
                 </code>
               </pre>
@@ -2657,9 +2726,10 @@ const BreadthFirstSearch = () => {
                 <code>match</code> expression checks if the first element in{" "}
                 <code>path</code> is the <code>start_node</code> we provided. If
                 so, the function will return the path. If the first element is
-                either <code>None</code> or not <code>start_node</code>, meaning
-                there is no path from <code>start_node</code> to{" "}
-                <code>end_node</code>, the function returns an empty vector.
+                either <code>None</code> or not <code>start_node</code> -
+                meaning there is no path from <code>start_node</code> to{" "}
+                <code>end_node</code> - then the function returns an empty
+                vector.
               </p>
             </li>
           </ul>
@@ -2917,6 +2987,24 @@ const BreadthFirstSearch = () => {
             href="https://doc.rust-lang.org/std/primitive.usize.html"
           >
             [8] Rust Documentation on usize.
+          </a>
+        </p>
+        <p id="68b89cf9-d20a-47db-b2f0-f0ea0241ae29">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://doc.rust-lang.org/std/collections/struct.VecDeque.html"
+          >
+            [9] Rust Documentation on VecDeque.
+          </a>
+        </p>
+        <p id="68b89cf9-d20a-47db-b2f0-f0ea0241ae29">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://doc.rust-lang.org/nightly/std/option/enum.Option.html#method.expect"
+          >
+            [9] Rust Documentation on expect.
           </a>
         </p>
         <p id="23258063-8a47-4127-9652-4b6cdd70a346"></p>

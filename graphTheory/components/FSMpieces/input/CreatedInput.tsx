@@ -136,7 +136,7 @@ const CreatedInput: React.FC<CreatedInputProps> = ({ id, example }) => {
     {
       value: name,
       setAttribute: setName,
-      label: <LatexLabel labelType={"Input"} />,
+      label: <LatexLabel labelType={"Edge"} />,
     },
 
     { value: color, setAttribute: setColor, label: "Line Color" },

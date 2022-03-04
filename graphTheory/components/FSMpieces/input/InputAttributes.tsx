@@ -60,7 +60,7 @@ const InputAttributes: React.FC<InputAttributesProps> = ({
     {
       value: name,
       setAttribute: setName,
-      label: <LatexLabel labelType={"Input"} />,
+      label: <LatexLabel labelType={"Edge"} />,
     },
     { value: weight, setAttribute: setWeight, label: "Weight" },
     { value: color, setAttribute: setColor, label: "Line Color" },
