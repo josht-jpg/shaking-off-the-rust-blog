@@ -2768,7 +2768,7 @@ const BreadthFirstSearch = () => {
             {"        "}];{"\n"}
             {"\n"}
             {"        "}assert_eq!({"\n"}
-            {"            "}bfs(G, 0, 7),{"\n"}
+            {"            "}bfs(G, 0, 7).unwrap(),{"\n"}
             {"            "}vec![Some(0), Some(1), Some(3), Some(5), Some(6),
             Some(7)]{"\n"}
             {"        "}){"\n"}
@@ -2790,7 +2790,7 @@ const BreadthFirstSearch = () => {
             {"            "}vec![6],{"\n"}
             {"        "}];{"\n"}
             {"\n"}
-            {"        "}assert_eq!(bfs(G, 0, 7), vec![]){"\n"}
+            {"        "}assert_eq!(bfs(G, 0, 7), None){"\n"}
             {"    "}
             {"}"}
             {"\n"}
