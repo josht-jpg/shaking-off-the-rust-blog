@@ -8,7 +8,6 @@ const ArticlePreview = ({ article, width, marginBottom }) => {
   const [isHover, setIsHover] = useState(false);
 
   const getMarginBottom = () => (marginBottom ? marginBottom : "3.75rem");
-  const thumbnailShadow = () => `${isHover ? MAIN_ORANGE : "gray"} 0 0 6px`;
 
   return (
     <Link href={`/articles/${article.extension}`}>

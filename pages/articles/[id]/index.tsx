@@ -12,6 +12,7 @@ export enum ArticleExtensions {
   NAIVE_BAYES = "naive-bayes",
   BFS = "breadth-first-search",
   COMPLEX_NUMBERS = "complex-numbers",
+  MANDELBROT = "mandelbrot",
 }
 
 interface IProps {
@@ -44,6 +45,7 @@ export async function getStaticPaths() {
     ArticleExtensions.NAIVE_BAYES,
     ArticleExtensions.COMPLEX_NUMBERS,
     ArticleExtensions.BFS,
+    ArticleExtensions.MANDELBROT,
   ].map((a) => ({
     params: { id: a },
   }));

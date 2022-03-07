@@ -2,7 +2,14 @@ import BreadthFirstSearch from "../components/articles/BreadthFirstSearch";
 import ComplexNumbers from "../components/articles/ComplexNumbers";
 import DnaSearch from "../components/articles/DnaSearch";
 import NaiveBayes from "../components/articles/NaiveBayes";
+import Mandelbrot from "../components/articles/Mandelbrot";
 import { ArticleExtensions } from "../pages/articles/[id]";
+
+enum DIFFICULTY_LEVELS {
+  BEGINNER = "Beginner",
+  INTERMEDIATE = "Intermediate",
+  ADVANCED = "Advanced",
+}
 
 const getArticleData = (
   articleExtension: string,
@@ -18,6 +25,7 @@ const getArticleData = (
         jsx: includeJsx && <DnaSearch />,
         extension: ArticleExtensions.DNA,
         description: `Use Rust to count nucleotide frequencies, search DNA for codons, and much more. Real cool stuff. 🤙`,
+        difficulty: DIFFICULTY_LEVELS.INTERMEDIATE,
       };
     case ArticleExtensions.NAIVE_BAYES:
       return {
@@ -28,6 +36,7 @@ const getArticleData = (
         jsx: includeJsx && <NaiveBayes />,
         extension: ArticleExtensions.NAIVE_BAYES,
         description: `Using Rust and machine learning, we'll prevent our inbox from getting clogged with spam such as "Free Bitcoin viagra XXX christmas deals". 🎄`,
+        difficulty: DIFFICULTY_LEVELS.ADVANCED,
       };
     case ArticleExtensions.BFS:
       return {
@@ -38,6 +47,7 @@ const getArticleData = (
         jsx: includeJsx && <BreadthFirstSearch />,
         extension: ArticleExtensions.BFS,
         description: `You raise alpacas, and you want to find your closest LinkedIn connection that's in the market for a handsome young alpaca. We'll use Rust and Breadth First Search to figure it out. 🦙`,
+        difficulty: DIFFICULTY_LEVELS.INTERMEDIATE,
       };
     case ArticleExtensions.COMPLEX_NUMBERS:
       return {
@@ -48,15 +58,18 @@ const getArticleData = (
         extension: ArticleExtensions.COMPLEX_NUMBERS,
         jsx: includeJsx && <ComplexNumbers />,
         description: `Complex numbers are simple. Let's explore them with Rust. 🌌`,
+        difficulty: DIFFICULTY_LEVELS.BEGINNER,
       };
-    case "mandelbrot":
+    case ArticleExtensions.MANDELBROT:
       return {
-        title: "Mandelbrot Set",
+        title: "The Mandelbrot Set",
         thumbnail:
-          "https://images.pexels.com/photos/5278835/pexels-photo-5278835.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        date: "Febuary 2nd, 2022",
-        jsx: includeJsx && <DnaSearch />,
-        description: `Count nucleotide frequencies, search DNA for codons, and much more. Real fun stuff, yo.`,
+          "https://cdn-images-1.medium.com/max/800/1*kmcOTJCwZZ2QrjFnl-WhJw.jpeg",
+        date: "March 6th, 2022",
+        extension: ArticleExtensions.MANDELBROT,
+        jsx: includeJsx && <Mandelbrot />,
+        description: `Cheaper than acid. 🔮`,
+        difficulty: DIFFICULTY_LEVELS.BEGINNER,
       };
     default:
   }

@@ -6,6 +6,7 @@ import getArticleData from "../utils/getArticleData";
 export const articles = [
   "breadth-first-search",
   "dna-analysis",
+  "mandelbrot",
   "complex-numbers",
   "naive-bayes",
 ];
