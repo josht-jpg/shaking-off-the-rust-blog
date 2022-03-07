@@ -7,7 +7,7 @@ import styles from "./ArticlePreview.module.scss";
 const ArticlePreview = ({ article, width, marginBottom }) => {
   const [isHover, setIsHover] = useState(false);
 
-  const getMarginBottom = () => (marginBottom ? marginBottom : "3.75rem");
+  const getMarginBottom = () => (!!marginBottom ? marginBottom : "3.75rem");
 
   return (
     <Link href={`/articles/${article.extension}`}>
@@ -30,6 +30,9 @@ const ArticlePreview = ({ article, width, marginBottom }) => {
             {article.title}
           </h3>
           <p style={{ marginTop: "7px" }}>{article.description}</p>
+          <p
+            style={{ marginTop: "7px" }}
+          >{`Difficulty: ${article.difficulty}`}</p>
           <p style={{ marginBottom: "0px" }}>
             Read{" "}
             <BsArrowRightShort

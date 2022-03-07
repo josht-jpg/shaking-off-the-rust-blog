@@ -17,6 +17,14 @@ const ArticleContainer = ({ article }) => {
             <FaHourglassHalf className={styles.readTimeIcon} />
             {article.readTime}
       </h3>*/}
+          <div
+            style={{
+              marginTop: "1rem",
+              fontWeight: "bold",
+              opacity: "0.8",
+              fontSize: "1.2rem",
+            }}
+          >{`Difficulty: ${article.difficulty}`}</div>
           <div className={`${styles.articleContent} content`}>
             {article.jsx}
           </div>
