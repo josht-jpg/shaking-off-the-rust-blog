@@ -6,6 +6,7 @@ import {
   GraphAnalysisTypeContext,
   GraphAnalysisTypes,
 } from "../../../context/GraphAnalysisTypeProvider";
+import useIncrementViews from "../../../hooks/useIncrementViews";
 
 export enum ArticleExtensions {
   DNA = "dna-analysis",
@@ -30,6 +31,7 @@ const ArticlePage: React.FC<IProps> = ({ article }) => {
       break;
   }
 
+  useIncrementViews(article);
   return (
     <MainSection>
       <ArticleContainer article={getArticleData(article)} />
@@ -46,8 +48,8 @@ export async function getStaticPaths() {
     ArticleExtensions.COMPLEX_NUMBERS,
     ArticleExtensions.BFS,
     ArticleExtensions.MANDELBROT,
-  ].map((a) => ({
-    params: { id: a },
+  ].map((extension) => ({
+    params: { id: extension },
   }));
 
   return {
