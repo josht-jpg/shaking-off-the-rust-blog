@@ -2189,8 +2189,8 @@ const Mandelbrot = () => {
           >
             3
           </a>
-          ]. References are represented by the ampersand <code>&amp;</code>.
-          References are an integral part of Rust. If you are unfamiliar with
+          ]. References are created by the ampersand operator <code>&amp;</code>
+          . References are an integral part of Rust. If you are unfamiliar with
           them, I recommend reading{" "}
           <a
             target="_blank"
