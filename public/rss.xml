@@ -15,7 +15,7 @@
 <![CDATA[ The Mandelbrot Set ]]>
 </title>
 <description>
-<![CDATA[ Cheaper then acid. ]]>
+<![CDATA[ Cheaper then acid. <img src="https://cdn-images-1.medium.com/max/800/1*kmcOTJCwZZ2QrjFnl-WhJw.jpeg" alt="Mandelbrot Set"> ]]>
 </description>
 <link>https://www.sotr.blog/articles/mandelbrot</link>
 <guid isPermaLink="false">https://www.sotr.blog/articles/mandelbrot/</guid>
@@ -23,7 +23,7 @@
 <![CDATA[ Josh Taylor ]]>
 </dc:creator>
 <pubDate>Sun, 06 Mar 2022 14:00:00 GMT</pubDate>
-<content:encoded> <p>Shaking off the Rust is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process. In this installment, we’re going to create our own Mandelbrot set.</p> <div style="margin-top: 50px; font-style: italic;"> <strong><a href="https://www.sotr.blog/articles/mandelbrot/">S</a>.</strong> </div> <br /> <br /></content:encoded>
+<content:encoded> <p>Shaking off the Rust is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process. In this installment, we’re going to create our own Mandelbrot set.</p> <div style="margin-top: 50px; font-style: italic;"> <strong><a href="https://www.sotr.blog/articles/mandelbrot/">Keep Reading</a>.</strong> </div> <br /> <br /></content:encoded>
 </item>
 <item>
 <title>
@@ -38,7 +38,7 @@
 <![CDATA[ Josh Taylor ]]>
 </dc:creator>
 <pubDate>Sun, 27 Feb 2022 14:00:00 GMT</pubDate>
-<content:encoded> <p>Shaking off the Rust is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process. In this installment, we're going to dig into complex numbers.</p> <div style="margin-top: 50px; font-style: italic;"> <strong><a href="https://www.sotr.blog/articles/complex-numbers/">S</a>.</strong> </div> <br /> <br /></content:encoded>
+<content:encoded> <p>Shaking off the Rust is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process. In this installment, we're going to dig into complex numbers.</p> <div style="margin-top: 50px; font-style: italic;"> <strong><a href="https://www.sotr.blog/articles/complex-numbers/">Keep Reading</a>.</strong> </div> <br /> <br /></content:encoded>
 </item>
 <item>
 <title>
@@ -53,7 +53,7 @@
 <![CDATA[ Josh Taylor ]]>
 </dc:creator>
 <pubDate>Sun, 20 Feb 2022 14:00:00 GMT</pubDate>
-<content:encoded> <p>Shaking off the Rust is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process. In this installment, we're going to perform breadth-first search.</p> <div style="margin-top: 50px; font-style: italic;"> <strong><a href="https://www.sotr.blog/articles/breadth-first-search/">S</a>.</strong> </div> <br /> <br /></content:encoded>
+<content:encoded> <p>Shaking off the Rust is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process. In this installment, we're going to perform breadth-first search.</p> <div style="margin-top: 50px; font-style: italic;"> <strong><a href="https://www.sotr.blog/articles/breadth-first-search/">Keep Reading</a>.</strong> </div> <br /> <br /></content:encoded>
 </item>
 <item>
 <title>
@@ -68,7 +68,7 @@
 <![CDATA[ Josh Taylor ]]>
 </dc:creator>
 <pubDate>Sun, 20 Feb 2022 14:00:00 GMT</pubDate>
-<content:encoded> <p>Shaking off the Rust is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process. In this installment, we’re doing a bit of bioinformatics.</p> <div style="margin-top: 50px; font-style: italic;"> <strong><a href="https://www.sotr.blog/articles/dna-analysis/">S</a>.</strong> </div> <br /> <br /></content:encoded>
+<content:encoded> <p>Shaking off the Rust is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process. In this installment, we’re doing a bit of bioinformatics.</p> <div style="margin-top: 50px; font-style: italic;"> <strong><a href="https://www.sotr.blog/articles/dna-analysis/">Keep Reading</a>.</strong> </div> <br /> <br /></content:encoded>
 </item>
 <item>
 <title>
@@ -83,7 +83,7 @@
 <![CDATA[ Josh Taylor ]]>
 </dc:creator>
 <pubDate>Sun, 20 Feb 2022 14:00:00 GMT</pubDate>
-<content:encoded> <p>Shaking off the Rust is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process. In this installment, we’ll implement the Naive Bayes classifier.</p> <div style="margin-top: 50px; font-style: italic;"> <strong><a href="https://www.sotr.blog/articles/naive-bayes/">S</a>.</strong> </div> <br /> <br /></content:encoded>
+<content:encoded> <p>Shaking off the Rust is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process. In this installment, we’ll implement the Naive Bayes classifier.</p> <div style="margin-top: 50px; font-style: italic;"> <strong><a href="https://www.sotr.blog/articles/naive-bayes/">Keep Reading</a>.</strong> </div> <br /> <br /></content:encoded>
 </item>
 </channel>
 </rss>
