@@ -84,7 +84,7 @@ const Header = () => {
         >
           <HiRss
             className={styles.icon}
-            style={{ color: !isLightMode && "white" }}
+            style={{ color: isLightMode ? "black" : "white" }}
           />
         </a>
 
