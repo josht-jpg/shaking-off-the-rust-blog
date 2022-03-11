@@ -30,7 +30,7 @@
 <![CDATA[ Complex Numbers ]]>
 </title>
 <description>
-<![CDATA[ Complex numbers are simple. Let's explore them with Rust. <img src="https://images.pexels.com/photos/4931375/pexels-photo-4931375.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Psychedelic colors"> ]]> ]]>
+<![CDATA[ Complex numbers are simple. Let's explore them with Rust. <img src="https://images.pexels.com/photos/4931375/pexels-photo-4931375.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Psychedelic colors"> ]]>
 </description>
 <link>https://www.sotr.blog/articles/complex-numbers</link>
 <guid isPermaLink="false">https://www.sotr.blog/articles/complex-numbers/</guid>
@@ -45,7 +45,7 @@
 <![CDATA[ Breadth First Search ]]>
 </title>
 <description>
-<![CDATA[ You raise alpacas, and you want to find your closest LinkedIn connection that's in the market for a handsome young alpaca. We'll use Rust and Breadth First Search to figure it out. <img src="https://cdn-images-1.medium.com/max/800/1*nyziGfeh2hk2cOa3FEl5xQ.png" alt="Graph Theory"> ]]> ]]>
+<![CDATA[ You raise alpacas, and you want to find your closest LinkedIn connection that's in the market for a handsome young alpaca. We'll use Rust and Breadth First Search to figure it out. <img src="https://cdn-images-1.medium.com/max/800/1*nyziGfeh2hk2cOa3FEl5xQ.png" alt="Graph Theory"> ]]>
 </description>
 <link>https://www.sotr.blog/articles/breadth-first-search</link>
 <guid isPermaLink="false">https://www.sotr.blog/articles/breadth-first-search/</guid>
@@ -60,7 +60,7 @@
 <![CDATA[ DNA Analysis ]]>
 </title>
 <description>
-<![CDATA[ Use Rust to count nucleotide frequencies, search DNA for codons, and much more. Real cool stuff. <img src="https://images.pexels.com/photos/5721679/pexels-photo-5721679.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="DNA Analysis"> ]]> ]]>
+<![CDATA[ Use Rust to count nucleotide frequencies, search DNA for codons, and much more. Real cool stuff. <img src="https://images.pexels.com/photos/5721679/pexels-photo-5721679.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="DNA Analysis"> ]]> 
 </description>
 <link>https://www.sotr.blog/articles/dna-analysis</link>
 <guid isPermaLink="false">https://www.sotr.blog/articles/dna-analysis/</guid>
@@ -75,7 +75,7 @@
 <![CDATA[ Naive Bayes ]]>
 </title>
 <description>
-<![CDATA[ Using Rust and machine learning, we'll prevent our inbox from getting clogged with spam such as "Free Bitcoin viagra XXX christmas deals". <img src="https://images.pexels.com/photos/878167/pexels-photo-878167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Rust"> ]]> ]]>
+<![CDATA[ Using Rust and machine learning, we'll prevent our inbox from getting clogged with spam such as "Free Bitcoin viagra XXX christmas deals". <img src="https://images.pexels.com/photos/878167/pexels-photo-878167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Rust"> ]]>
 </description>
 <link>https://www.sotr.blog/articles/naive-bayes</link>
 <guid isPermaLink="false">https://www.sotr.blog/articles/naive-bayes/</guid>
