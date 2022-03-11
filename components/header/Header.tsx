@@ -3,14 +3,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import { FiSun } from "react-icons/fi";
+import { HiRss } from "react-icons/hi";
 import { HiOutlineMoon } from "react-icons/hi";
-import { MAIN_ORANGE } from "../../constants/styleConstants";
 import { IsLightModeContext } from "../../context/IsLightModeProvider";
 import {
   DARK_MODE_BACKGROUND,
   LIGHT_MODE_BACKGROUND,
 } from "../../graphTheory/constants/styleConstants";
-
 import styles from "./Header.module.scss";
 
 const Header = () => {
@@ -73,6 +72,21 @@ const Header = () => {
             </h3>
           </div>
             ))*/}
+
+        <a
+          href={"/rss.xml"}
+          rel="noreferrer"
+          style={{
+            marginRight: "1.25rem",
+            marginTop: "5px",
+            cursor: "pointer",
+          }}
+        >
+          <HiRss
+            className={styles.icon}
+            style={{ color: !isLightMode && "white" }}
+          />
+        </a>
 
         <button
           style={{
