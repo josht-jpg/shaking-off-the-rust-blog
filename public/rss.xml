@@ -8,8 +8,24 @@
 </description>
 <link>https://www.sotr.blog/</link>
 <generator>RSS for Node</generator>
-<lastBuildDate>Fri, 04 Mar 2022 12:02:59 GMT</lastBuildDate>
+<lastBuildDate>Mon, 14 Mar 2022 12:02:59 GMT</lastBuildDate>
 <atom:link href="https://www.sort.blog/rss.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>
+<![CDATA[ Pi Day Quickie: Estimating Digits of Pi ]]>
+</title>
+<description>
+<![CDATA[ Celebrate Pi day like a true Rustacean! <img src="https://images.pexels.com/photos/2035729/pexels-photo-2035729.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Pie"> ]]>
+</description>
+<link>https://www.sotr.blog/articles/pi-day</link>
+<guid isPermaLink="false">https://www.sotr.blog/articles/pi-day/</guid>
+<dc:creator>
+<![CDATA[ Josh Taylor ]]>
+</dc:creator>
+<pubDate>Mon, 14 Mar 2022 14:00:00 GMT</pubDate>
+<content:encoded> <p>Shaking off the Rust is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process. In this short
+        and special installment, we’re going to estimate some digits of π.</p> <div style="margin-top: 50px; font-style: italic;"> <strong><a href="https://www.sotr.blog/articles/pi-day/">Keep Reading</a>.</strong> </div> <br /> <br /></content:encoded>
+</item>
 <item>
 <title>
 <![CDATA[ The Mandelbrot Set ]]>
