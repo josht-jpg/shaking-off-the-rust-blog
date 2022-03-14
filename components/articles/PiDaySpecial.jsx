@@ -2063,7 +2063,7 @@ const PiDaySpecial = () => {
               </code>
             </pre>
             <p id="ce8da431-21f2-46f0-ba10-ca4f96f4f62e">
-              Rust, unlike C, is an <em>expression language </em>[
+              Unlike C, Rust is an <em>expression language </em>[
               <a
                 target="_blank"
                 rel="noreferrer"
