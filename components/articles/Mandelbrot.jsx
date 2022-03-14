@@ -2671,18 +2671,12 @@ const Mandelbrot = () => {
         You should see a file called <code>mandelbrot.png</code> in your{" "}
         <code>/mandelbrot</code> directory, and it should look lovely.
       </p>
-      <figure id="36956529-c622-46aa-bfe9-dba7f1c421cb" className="image">
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://cdn-images-1.medium.com/max/800/1*cMv6pKdAceKZYKWrJc7MCw.png"
-        >
-          <img
-            className={styles.image}
-            src="https://cdn-images-1.medium.com/max/800/1*cMv6pKdAceKZYKWrJc7MCw.png"
-          />
-        </a>
-      </figure>
+
+      <img
+        className={styles.image}
+        src="https://cdn-images-1.medium.com/max/800/1*cMv6pKdAceKZYKWrJc7MCw.png"
+      />
+
       <p id="645ad4e8-432a-4309-adee-f785c425c151">
         Feel free to email me if you have any issues:{" "}
         <a target="_blank" rel="noreferrer" href={`mailto: ${EMAIL_ADDRESS}`}>

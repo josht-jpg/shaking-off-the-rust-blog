@@ -5,6 +5,7 @@ import getArticleData from "../utils/getArticleData";
 
 export const articles = [
   "breadth-first-search",
+  "pi-day",
   "dna-analysis",
   "mandelbrot",
   "complex-numbers",

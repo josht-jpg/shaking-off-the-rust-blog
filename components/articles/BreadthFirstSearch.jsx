@@ -97,18 +97,12 @@ const BreadthFirstSearch = () => {
           and an edge will represent a connection between two people. That could
           look like this:
         </p>
-        <figure id="57080998-c6c8-44ab-ab2a-10d487196b80" className="image">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://cdn-images-1.medium.com/max/800/1*ylHE5u8l5eOSk9M8mjr0NA.png"
-          >
-            <img
-              style={{ width: "980px", marginLeft: "-39px" }}
-              src="https://cdn-images-1.medium.com/max/800/1*ylHE5u8l5eOSk9M8mjr0NA.png"
-            />
-          </a>
-        </figure>
+
+        <img
+          className={styles.image}
+          src="https://cdn-images-1.medium.com/max/800/1*ylHE5u8l5eOSk9M8mjr0NA.png"
+        />
+
         <p id="6cd43688-4be4-4d7d-881a-bb616e02e8df">
           Suppose that Megan wants to buy an alpaca. We{`'`}ll see how
           breadth-first search can help us discover Megan, and the connections

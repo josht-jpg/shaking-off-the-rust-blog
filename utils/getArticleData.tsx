@@ -3,12 +3,14 @@ import ComplexNumbers from "../components/articles/ComplexNumbers";
 import DnaSearch from "../components/articles/DnaSearch";
 import NaiveBayes from "../components/articles/NaiveBayes";
 import Mandelbrot from "../components/articles/Mandelbrot";
+import PiDaySpecial from "../components/articles/PiDaySpecial";
 import { ArticleExtensions } from "../pages/articles/[id]";
 
 enum DIFFICULTY_LEVELS {
   BEGINNER = "Beginner",
   INTERMEDIATE = "Intermediate",
   ADVANCED = "Advanced",
+  BEGINNER_INTERMEDIATE = "Somewhere between beginner and intermediate",
 }
 
 const getArticleData = (
@@ -70,6 +72,17 @@ const getArticleData = (
         jsx: includeJsx && <Mandelbrot />,
         description: `Cheaper than acid. 🔮`,
         difficulty: DIFFICULTY_LEVELS.BEGINNER,
+      };
+    case ArticleExtensions.PI_DAY:
+      return {
+        title: "Pi Day Quickie: Estimating Digits of Pi",
+        thumbnail:
+          "https://images.pexels.com/photos/2035729/pexels-photo-2035729.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "March 14th, 2022",
+        extension: ArticleExtensions.PI_DAY,
+        jsx: includeJsx && <PiDaySpecial />,
+        description: `Celebrate Pi day like a true Rustacean! 🥧`,
+        difficulty: DIFFICULTY_LEVELS.BEGINNER_INTERMEDIATE,
       };
     default:
   }

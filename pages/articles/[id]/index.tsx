@@ -14,6 +14,7 @@ export enum ArticleExtensions {
   BFS = "breadth-first-search",
   COMPLEX_NUMBERS = "complex-numbers",
   MANDELBROT = "mandelbrot",
+  PI_DAY = "pi-day",
 }
 
 interface IProps {
@@ -48,6 +49,7 @@ export async function getStaticPaths() {
     ArticleExtensions.COMPLEX_NUMBERS,
     ArticleExtensions.BFS,
     ArticleExtensions.MANDELBROT,
+    ArticleExtensions.PI_DAY,
   ].map((extension) => ({
     params: { id: extension },
   }));
