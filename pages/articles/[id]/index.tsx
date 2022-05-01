@@ -15,6 +15,7 @@ export enum ArticleExtensions {
   COMPLEX_NUMBERS = "complex-numbers",
   MANDELBROT = "mandelbrot",
   PI_DAY = "pi-day",
+  KNN = "knn",
 }
 
 interface IProps {

@@ -4,6 +4,7 @@ import DnaSearch from "../components/articles/DnaSearch";
 import NaiveBayes from "../components/articles/NaiveBayes";
 import Mandelbrot from "../components/articles/Mandelbrot";
 import PiDaySpecial from "../components/articles/PiDaySpecial";
+import KNN from "../components/articles/knn/KNN";
 import { ArticleExtensions } from "../pages/articles/[id]";
 
 enum DIFFICULTY_LEVELS {
@@ -83,6 +84,17 @@ const getArticleData = (
         jsx: includeJsx && <PiDaySpecial />,
         description: `Celebrate Pi day like a true Rustacean! 🥧`,
         difficulty: DIFFICULTY_LEVELS.BEGINNER_INTERMEDIATE,
+      };
+    case ArticleExtensions.KNN:
+      return {
+        title: "K Nearust Neighbors",
+        thumbnail:
+          "https://www.helloneighbor.io/assets/img/won-t-you-be-my-neighbor.jpg",
+        date: "March 14th, 2022",
+        extension: ArticleExtensions.KNN,
+        jsx: includeJsx && <KNN />,
+        description: `Won't you be my neighbor? 🏘️`,
+        difficulty: DIFFICULTY_LEVELS.INTERMEDIATE,
       };
     default:
   }
