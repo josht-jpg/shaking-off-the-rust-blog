@@ -77,8 +77,8 @@ const KNN = () => {
         </em>{" "}
         is a series of exercises with the Rust programing language. The purpose
         of the series is to improve both my and my dear reader’s abilities with
-        Rust by building things. Plus, by actually building stuff, we'll learn
-        about an array of technological concepts in the process. In this
+        Rust by building things. Plus, by actually building stuff, we{`'`}ll
+        learn about an array of technological concepts in the process. In this
         installment, we’re going to implement a classic machine learning
         algorithm.
       </p>
@@ -88,7 +88,7 @@ const KNN = () => {
         id="d7f99502-2333-4b70-9362-62692f0da3a0"
         style={{ fontWeight: "bold" }}
       >
-        After reading this installment, you'll have experience with:
+        After reading this installment, you{`'`}ll have experience with:
         <ul id="197ba483-c44f-4861-a551-440967bab851" className="bulleted-list">
           <li style={{ listStyleType: "disc" }}>
             Rust’s <code>if let</code> syntax
@@ -232,7 +232,7 @@ const KNN = () => {
         >
           1
         </a>
-        ]. Suppose we have a labeled dataset, which we'll denote{" "}
+        ]. Suppose we have a labeled dataset, which we{`'`}ll denote{" "}
         <span
           data-token-index={0}
           contentEditable="false"
@@ -274,7 +274,7 @@ const KNN = () => {
           </span>
           <span>﻿</span>
         </span>
-        , and an unlabeled data point, which we'll denote{" "}
+        , and an unlabeled data point, which we{`'`}ll denote{" "}
         <span
           data-token-index={0}
           contentEditable="false"
@@ -1648,11 +1648,14 @@ M1001 80h400000v40h-400000z"
       </p>
       <pre id="7f9e4557-f2e9-48f9-9dc9-b2c976f1dd4f" className="code">
         <code>
-          // Cargo.toml{"\n"}
-          {"\n"}/*...*/{"\n"}
-          {"\n"}[dev-dependencies]{"\n"}rand = "0.8.4"{"\n"}reqwest = "0.11.10"
+          {`//`} Cargo.toml{"\n"}
           {"\n"}
-          tokio-test = "*"
+          {`/*...*/`}
+          {"\n"}
+          {"\n"}[dev-dependencies]{"\n"}rand = {`"`}0.8.4{`"`}
+          {"\n"}reqwest = {`"`}0.11.10{`"`}
+          {"\n"}
+          tokio-test = {`"`}*{`"`}
         </code>
       </pre>
       <p id="a40e6960-54f8-4290-8927-b1c7f75b6fe8">
@@ -1691,7 +1694,7 @@ M1001 80h400000v40h-400000z"
       </p>
       <pre id="9a53d025-25c8-4688-8201-c50f014c531d" className="code">
         <code>
-          // lib.rs{"\n"}
+          {`//`} lib.rs{"\n"}
           {"\n"}use std::{"{"}
           {"\n"}
           {"    "}collections::HashMap,{"\n"}
@@ -1772,7 +1775,7 @@ M1001 80h400000v40h-400000z"
       </p>
       <pre id="a6f69837-18a7-4a3f-93dd-445b29897ebf" className="code">
         <code>
-          // lib.rs{"\n"}
+          {`//`} lib.rs{"\n"}
           {"\n"}#[derive(Clone)]{" "}
           <a
             onClick={() => scrollTo("codeBlockBBulletA")}
@@ -1785,7 +1788,7 @@ M1001 80h400000v40h-400000z"
             {" "}
             ➀
           </a>
-          {"\n"}struct LabeledPoint&lt;'a&gt; {"{"}{" "}
+          {"\n"}struct LabeledPoint&lt;{`'`}a&gt; {"{"}{" "}
           <a
             onClick={() => scrollTo("codeBlockBBulletB")}
             style={{
@@ -1797,7 +1800,7 @@ M1001 80h400000v40h-400000z"
             ➁
           </a>
           {"\n"}
-          {"\t"}label: &amp;'a str,{" "}
+          {"\t"}label: &amp;{`'`}a str,{" "}
           <a
             onClick={() => scrollTo("codeBlockBBulletC")}
             style={{
@@ -1883,7 +1886,7 @@ M1001 80h400000v40h-400000z"
           <p id="19b0ec71-c025-4c39-9d2e-d0b2eff27b0a">
             <strong ref={codeBlockBBulletB}>➁</strong> - We declare that our
             struct is generic over the <em>lifetime</em> parameter{" "}
-            <code>'a</code>. In Rust, a lifetime is the scope for which a
+            <code>{`'`}a</code>. In Rust, a lifetime is the scope for which a
             reference is valid [
             <a
               target="_blank"
@@ -1937,7 +1940,7 @@ M1001 80h400000v40h-400000z"
             ]. <code>label</code> is a string slice, and string slices are
             references. Thus, we must add a lifetime annotation to{" "}
             <code>label</code>, which we do by putting <code>'a</code> after{" "}
-            <code>&amp;</code> in <code>label: &amp;'a str</code>. Awesome.
+            <code>&amp;</code> in <code>label: &amp;{`'`}a str</code>. Awesome.
           </p>
         </div>
       </ol>
@@ -2180,7 +2183,7 @@ M1001 80h400000v40h-400000z"
       </p>
       <pre id="c9fe7ed4-b2fc-48c5-964d-5787e64a6e3e" className="code">
         <code>
-          impl LinearAlg&lt;f64&gt; for Vec&lt;f64&gt; {"{"} /*...*/ {"}"}
+          impl LinearAlg&lt;f64&gt; for Vec&lt;f64&gt; {"{"} {`/*...*/`} {"}"}
         </code>
       </pre>
       <p id="93114c75-d2de-4dc3-8e21-d9f5d5eeef01">
@@ -3853,8 +3856,10 @@ M1001 80h400000v40h-400000z"
           </p>
           <pre id="51d7b1bf-64ce-4f11-9298-f905ea5ae525" className="code">
             <code>
-              // lib.rs{"\n"}
-              {"\n"}/*...*/{"\n"}
+              {`//`} lib.rs{"\n"}
+              {"\n"}
+              {`/*...*/`}
+              {"\n"}
               {"\n"}#[cfg(test)]{"\n"}mod tests {"{"}
               {"\n"}
               {"    "}use super::*;{"\n"}
@@ -6798,7 +6803,7 @@ M1001 80h400000v40h-400000z"
           {"    "}type GenericResult&lt;T&gt; = Result&lt;T, Box&lt;dyn
           std::error::Error&gt;&gt;;{"\n"}
           {"\n"}
-          {"    "}fn process_iris_data&lt;'a&gt;(body: &amp;str) -&gt;
+          {"    "}fn process_iris_data&lt;{`'`}a&gt;(body: &amp;str) -&gt;
           GenericResult&lt;Vec&lt;LabeledPoint&gt;&gt; {"{"}
           {"\n"}
           {"        "}body.split("\n"){"\n"}
@@ -6806,10 +6811,10 @@ M1001 80h400000v40h-400000z"
           {"            "}.map(|data_point| -&gt;
           GenericResult&lt;LabeledPoint&gt; {"{"}
           {"\n"}
-          {"                "}let columns =
-          data_point.split(",").collect::&lt;Vec&lt;&amp;str&gt;&gt;();{"\n"}
-          {"                "}let (label, point) =
-          columns.split_last().ok_or("Cannot split last")?;{"\n"}
+          {"                "}let columns = data_point.split({`"`},{`"`}
+          ).collect::&lt;Vec&lt;&amp;str&gt;&gt;();{"\n"}
+          {"                "}let (label, point) = columns.split_last().ok_or(
+          {`"`}Cannot split last{`"`})?;{"\n"}
           {"                "}let point = point{"\n"}
           {"                    "}.iter(){"\n"}
           {"                    "}.map(|feature| feature.parse::&lt;f64&gt;())
@@ -6845,7 +6850,9 @@ M1001 80h400000v40h-400000z"
           mod tests {"{"}
           {"\n"}
           {"\n"}
-          {"\t"}/*...*/{"\n"}
+          {"\t"}
+          {`/*...*/`}
+          {"\n"}
           {"\n"}
           {"\t"}use rand::{"{"}seq::SliceRandom, thread_rng{"}"};{"\n"}
           {"\n"}
@@ -7085,7 +7092,9 @@ M1001 80h400000v40h-400000z"
           {"\n"}#[cfg(test)]{"\n"}mod tests {"{"}
           {"\n"}
           {"\t"}
-          {"\t"}/*...*/{"\n"}
+          {"\t"}
+          {`/*...*/`}
+          {"\n"}
           {"\n"}
           {"\t"}
           {"\t"}fn count_correct_classifications({"\n"}
@@ -7354,8 +7363,8 @@ M1001 80h400000v40h-400000z"
           {"\n"}
           {"        "}dist_a{"\n"}
           {"            "}.partial_cmp(&amp;dist_b){"\n"}
-          {"            "}.expect("Cannot compare floating point numbers,
-          encoutered a NAN"){" "}
+          {"            "}.expect({`"`}Cannot compare floating point numbers,
+          encoutered a NAN{`"`}){" "}
           <a
             onClick={() => scrollTo("codeBlockFBulletB")}
             style={{
