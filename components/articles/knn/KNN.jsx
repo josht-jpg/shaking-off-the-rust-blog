@@ -1939,7 +1939,7 @@ M1001 80h400000v40h-400000z"
             </a>
             ]. <code>label</code> is a string slice, and string slices are
             references. Thus, we must add a lifetime annotation to{" "}
-            <code>label</code>, which we do by putting <code>'a</code> after{" "}
+            <code>label</code>, which we do by putting <code>{`'`}a</code> after{" "}
             <code>&amp;</code> in <code>label: &amp;{`'`}a str</code>. Awesome.
           </p>
         </div>
@@ -5601,7 +5601,9 @@ M1001 80h400000v40h-400000z"
             <code>
               #[test]{"\n"}fn linear_alg() {"{"}
               {"\n"}
-              {"\t"}/*...*/{"\n"}
+              {"\t"}
+              {`/*...*/`}
+              {"\n"}
               {"\t"}assert_eq!(v.subtract(&amp;w), vec![0.5, 3., -6.]);{"\n"}
               {"}"}
             </code>
@@ -6150,7 +6152,9 @@ M1001 80h400000v40h-400000z"
             <code>
               #[test]{"\n"}fn linear_alg() {"{"}
               {"\n"}
-              {"\t"}/*...*/{"\n"}
+              {"\t"}
+              {`/*...*/`}
+              {"\n"}
               {"\t"}assert_eq!(v.sum_of_squares(), 35.);{"\n"}
               {"}"}
             </code>
@@ -6769,7 +6773,9 @@ M1001 80h400000v40h-400000z"
           {"    "}use super::*;{"\n"}
           {"\n"}
           {"\t"}
-          {"\t"}/*...*/{"\n"}
+          {"\t"}
+          {`/*...*/`}
+          {"\n"}
           {"\n"}
           {"    "}macro_rules! await_fn {"{"}
           {"\n"}
@@ -6789,8 +6795,8 @@ M1001 80h400000v40h-400000z"
           {"\n"}
           {"        "}let body = reqwest::get({"\n"}
           {"            "}
-          "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data",
-          {"\n"}
+          {`"https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"`}
+          ,{"\n"}
           {"        "}){"\n"}
           {"        "}.await?{"\n"}
           {"        "}.text(){"\n"}
@@ -6806,7 +6812,7 @@ M1001 80h400000v40h-400000z"
           {"    "}fn process_iris_data&lt;{`'`}a&gt;(body: &amp;str) -&gt;
           GenericResult&lt;Vec&lt;LabeledPoint&gt;&gt; {"{"}
           {"\n"}
-          {"        "}body.split("\n"){"\n"}
+          {"        "}body.split({`"`}\n{`"`}){"\n"}
           {"            "}.filter(|data_point| data_point.len() &gt; 0){"\n"}
           {"            "}.map(|data_point| -&gt;
           GenericResult&lt;LabeledPoint&gt; {"{"}
