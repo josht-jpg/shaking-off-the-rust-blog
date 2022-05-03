@@ -90,7 +90,7 @@ const getArticleData = (
         title: "K Nearust Neighbors",
         thumbnail:
           "https://www.helloneighbor.io/assets/img/won-t-you-be-my-neighbor.jpg",
-        date: "March 14th, 2022",
+        date: "May 1st, 2022",
         extension: ArticleExtensions.KNN,
         jsx: includeJsx && <KNN />,
         description: `Won't you be my neighbor? 🏘️`,
