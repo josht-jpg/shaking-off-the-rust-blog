@@ -7658,7 +7658,7 @@ M1001 80h400000v40h-400000z"
               </a>
             </code>{" "}
             with <code>&amp;str</code> keys and <code>u32</code> values. The
-            keys are the distinct elements in the <code>labels</code> slice. The
+            keys are the distinct elements of the <code>labels</code> slice. The
             values are the number of times each label shows up in{" "}
             <code>labels</code>.
           </p>
