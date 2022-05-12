@@ -12,6 +12,29 @@
 <atom:link href="https://www.sort.blog/rss.xml" rel="self" type="application/rss+xml"/>
 <item>
 <title>
+<![CDATA[ K Nearust Neighbors ]]>
+</title>
+<description>
+<![CDATA[ Won't you be my neighbor? <img src="https://www.helloneighbor.io/assets/img/won-t-you-be-my-neighbor.jpg" alt="Won't you be my neighbor?"> ]]>
+</description>
+<link>https://www.sotr.blog/articles/knn</link>
+<guid isPermaLink="false">https://www.sotr.blog/articles/knn/</guid>
+<dc:creator>
+<![CDATA[ Josh Taylor ]]>
+</dc:creator>
+<pubDate>Sun, 1 May 2022 14:00:00 GMT</pubDate>
+<content:encoded> <p><em>
+          <strong>Shaking off the Rust</strong>
+        </em>
+        is a series of exercises with the Rust programing language. The purpose
+        of the series is to improve both my and my dear reader’s abilities with
+        Rust by building things. Plus, by actually building stuff, we'll
+        learn about an array of technological concepts in the process. In this
+        installment, we’re going to implement a classic machine learning
+        algorithm.</p> <div style="margin-top: 50px; font-style: italic;"> <strong><a href="https://www.sotr.blog/articles/knn/">Keep Reading</a>.</strong> </div> <br /> <br /></content:encoded>
+</item>
+<item>
+<title>
 <![CDATA[ Pi Day Quickie: Estimating Digits of Pi ]]>
 </title>
 <description>
