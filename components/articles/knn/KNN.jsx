@@ -66,6 +66,12 @@ const KNN = () => {
 
   return (
     <div className="page-body">
+      <style
+        dangerouslySetInnerHTML={{
+          __html:
+            "@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')",
+        }}
+      />
       <p id="1806eeed-409d-4251-901c-16bd3c985513">
         <em>
           <strong>Shaking off the Rust</strong>
