@@ -62,11 +62,6 @@ const KNN = () => {
       yOffset;
 
     window.scrollTo({ top: y, behavior: "smooth" });
-
-    /* scrollRefs[ref].current.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });*/
   };
 
   return (
