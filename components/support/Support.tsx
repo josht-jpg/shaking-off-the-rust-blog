@@ -8,9 +8,9 @@ const Support = () => {
 
       <p>
         Creating and running <i>Shaking off the Rust</i> is one of the most
-        fulfilling things I do. But it's exhausting. By supporting me, even if
-        it's just a dollar, you'll allow me to put more time into building this
-        series. I really appreciate any support.
+        fulfilling things I do. But it{`'`}s exhausting. By supporting me, even
+        if it{`'`}s just a dollar, you{`'`}ll allow me to put more time into
+        building this series. I really appreciate any support.
       </p>
       <p>
         The only way to support me right now is by{" "}
@@ -22,7 +22,7 @@ const Support = () => {
         >
           sponsoring me on Github
         </a>
-        . I'll probably also set up Patreon and Donorbox pages soon.
+        . I{`'`}ll probably also set up Patreon and Donorbox pages soon.
       </p>
       <p>Thank you so much!</p>
     </div>
