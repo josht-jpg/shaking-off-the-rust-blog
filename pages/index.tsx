@@ -1,6 +1,7 @@
 import ArticlesPage from "../components/articlesPage/ArticlesPage";
 import MainSection from "../components/mainSection/MainSection";
 import SubscribeForm from "../components/subscribeForm/SubscribeForm";
+import Support from "../components/support/Support";
 import getArticleData from "../utils/getArticleData";
 
 export const articles = [
@@ -19,6 +20,10 @@ export default function Home() {
       <ArticlesPage
         articles={articles.map((article) => getArticleData(article, false))}
       />
+      <br />
+      <br />
+      <Support />
+
       <SubscribeForm />
     </MainSection>
   );

@@ -1,4 +1,5 @@
 import SubscribeForm from "../subscribeForm/SubscribeForm";
+import Support from "../support/Support";
 import styles from "./ArticleContainer.module.scss";
 
 const ArticleContainer = ({ article }) => {
@@ -13,10 +14,6 @@ const ArticleContainer = ({ article }) => {
             src={article.thumbnail}
             alt={`Thumbnail for ${article.title}`}
           />
-          {/* <h3 className={styles.readTime}>
-            <FaHourglassHalf className={styles.readTimeIcon} />
-            {article.readTime}
-      </h3>*/}
           <div
             style={{
               marginTop: "1rem",
@@ -30,6 +27,7 @@ const ArticleContainer = ({ article }) => {
           </div>
           <div style={{ width: "100%" }}>
             <hr />
+            <Support />
             <SubscribeForm />
           </div>
         </>

@@ -19,8 +19,9 @@ const ArticlesPage = ({ articles }) => {
           />
         </div>
         <p style={{ fontSize: "1.11rem", fontWeight: "bold" }}>
-          <i>{"Shaking off the Rust "}</i>
-          {` is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process.`}
+          {`Hey, welcome to `}
+          <i>{"Shaking off the Rust"}</i>
+          {`. This blog is a series of exercises with the Rust programing language. The purpose of the series is to improve both my and my dear reader’s abilities with Rust by building things. Plus, by actually building stuff, we'll learn about an array of technological concepts in the process.`}
         </p>
 
         <h1>Posts</h1>

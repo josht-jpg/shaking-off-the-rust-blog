@@ -1,6 +1,7 @@
 import ArticlesPage from "../components/articlesPage/ArticlesPage";
 import MainSection from "../components/mainSection/MainSection";
 import SubscribeForm from "../components/subscribeForm/SubscribeForm";
+import Support from "../components/support/Support";
 import getArticleData from "../utils/getArticleData";
 
 export const articles = [
@@ -20,6 +21,7 @@ export default function Articles() {
         <ArticlesPage
           articles={articles.map((article) => getArticleData(article, false))}
         />
+        <Support />
         <SubscribeForm />
       </MainSection>
     </>
