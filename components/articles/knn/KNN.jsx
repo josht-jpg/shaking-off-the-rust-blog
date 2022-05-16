@@ -6810,7 +6810,7 @@ M1001 80h400000v40h-400000z"
           {"    "}type GenericResult&lt;T&gt; = Result&lt;T, Box&lt;dyn
           std::error::Error&gt;&gt;;{"\n"}
           {"\n"}
-          {"    "}fn process_iris_data&lt;{`'`}a&gt;(body: &amp;str) -&gt;
+          {"    "}fn process_iris_data(body: &amp;str) -&gt;
           GenericResult&lt;Vec&lt;LabeledPoint&gt;&gt; {"{"}
           {"\n"}
           {"        "}body.split({`"`}\n{`"`}){"\n"}
