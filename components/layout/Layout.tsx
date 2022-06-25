@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
 
   return (
     <div
-      className={styles.layout}
+      className={`${styles.layout} ${!isLightMode ? "dark" : ""}`}
       style={{ color: isLightMode ? "black" : "white" }}
     >
       {children}

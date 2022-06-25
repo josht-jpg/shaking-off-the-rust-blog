@@ -16,6 +16,7 @@ export enum ArticleExtensions {
   MANDELBROT = "mandelbrot",
   PI_DAY = "pi-day",
   KNN = "knn",
+  CLI_GAME = "cli-game",
 }
 
 interface IProps {

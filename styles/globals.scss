@@ -80,6 +80,10 @@ code {
   tab-size: 2;
 }
 
+.dark > code {
+  background: rgba(135, 131, 120, 0.5);
+}
+
 .code {
   padding: 1.5em 1em;
   overflow: auto;

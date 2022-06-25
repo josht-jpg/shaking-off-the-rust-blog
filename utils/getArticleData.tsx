@@ -5,6 +5,7 @@ import NaiveBayes from "../components/articles/NaiveBayes";
 import Mandelbrot from "../components/articles/Mandelbrot";
 import PiDaySpecial from "../components/articles/PiDaySpecial";
 import KNN from "../components/articles/knn/KNN";
+import CliGame from "../components/articles/CliGame/CliGame";
 import { ArticleExtensions } from "../pages/articles/[id]";
 
 enum DIFFICULTY_LEVELS {
@@ -94,6 +95,18 @@ const getArticleData = (
         extension: ArticleExtensions.KNN,
         jsx: includeJsx && <KNN />,
         description: `Won't you be my neighbor? 🏘️`,
+        difficulty: DIFFICULTY_LEVELS.INTERMEDIATE,
+      };
+    case ArticleExtensions.CLI_GAME:
+      return {
+        title: "Who Wants to Be a Command-line Millionaire?",
+        thumbnail:
+          "https://cdn.akamai.steamstatic.com/steam/apps/1356240/header.jpg?t=1654847606",
+        date: "June 25th, 2022",
+        extension: ArticleExtensions.CLI_GAME,
+        jsx: includeJsx && <CliGame />,
+        description:
+          "Create a Rustacean edition of Who Wants to Be a Millionaire? 💰",
         difficulty: DIFFICULTY_LEVELS.INTERMEDIATE,
       };
     default:
