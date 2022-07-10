@@ -71,15 +71,15 @@ const CliGame = () => {
           <strong>Shaking off the Rust</strong>
         </em>{" "}
         is a series of exercises with the Rust programing language. The purpose
-        of the series is to improve both my and my dear reader’s abilities with
-        Rust by building things. Plus, by actually building stuff, we'll learn
-        about an array of technological concepts in the process. In this
-        installment, we’ll practice making command-line applications by creating
-        a Rustacean edition of <em>Who Wants to Be a Millionaire?</em>
+        of the series is to improve both my and my dear reader{"’"}s abilities
+        with Rust by building things. Plus, by actually building stuff, we{`'`}
+        ll learn about an array of technological concepts in the process. In
+        this installment, we’ll practice making command-line applications by
+        creating a Rustacean edition of <em>Who Wants to Be a Millionaire?</em>
       </p>
       <p id="44c87702-e31d-4f66-9e55-55d16535379b"></p>
       <p id="984aa53f-5792-4ea3-be79-c25115432e4d">
-        After reading this installment, you'll have experience with:
+        After reading this installment, you{`'`}ll have experience with:
       </p>
       <ul id="340b5f80-fc29-4d06-8714-e54312b2da51" className="bulleted-list">
         <li style={{ listStyleType: "disc" }}>
@@ -108,7 +108,7 @@ const CliGame = () => {
       </ul>
       <p id="3bf50738-34b3-4517-8b54-f818359c4650"></p>
       <p id="aa844b59-c156-4447-ab13-d1ef5d4c8914">
-        This installment's Github repo:{" "}
+        This installment{`'`}s Github repo:{" "}
         <a
           target="_blank"
           rel="noreferrer"
@@ -202,9 +202,13 @@ const CliGame = () => {
       </p>
       <pre id="4a1614a6-6757-455d-be0c-bd49e6b314fe" className="code">
         <code>
-          // Cargo.toml{"\n"}
-          {"\n"}/*...*/{"\n"}
-          {"\n"}[dependencies]{"\n"}clap = "3"{"\n"}rand = "0.8.5"{"\n"}
+          {"// "} Cargo.toml{"\n"}
+          {"\n"}
+          {"/*...*/"}
+          {"\n"}
+          {"\n"}[dependencies]{"\n"}clap = {`"`}3{`"`}
+          {"\n"}rand = {`"`}0.8.5{`"`}
+          {"\n"}
         </code>
       </pre>
       <p id="de33abbe-1340-4130-b251-769f12ed892e">
@@ -260,7 +264,7 @@ const CliGame = () => {
       </p>
       <pre id="d02c31d8-4073-4d47-bcaf-5f99e5155dda" className="code">
         <code>
-          // lib.rs{"\n"}
+          {`// `} lib.rs{"\n"}
           {"\n"}pub struct Settings {"{"}
           {"\n"}
           {"    "}include_easy: bool,{"\n"}
@@ -275,13 +279,15 @@ const CliGame = () => {
       </p>
       <pre id="f6aa2485-501f-4617-8db2-087c64fd6971" className="code">
         <code>
-          // lib.rs{"\n"}
+          {`// `} lib.rs{"\n"}
           {"\n"}use clap::{"{"}Arg, Command{"}"}; {"\n"}
-          {"\n"}/*...*/{"\n"}
+          {"\n"}
+          {`/*...*/`}
+          {"\n"}
           {"\n"}pub fn get_game_settings() -&gt; Settings {"{"}
           {"\n"}
-          {"    "}let matches = Command::new("Who Wants to Be a Millionaire?
-          (Rustacean edition)"){" "}
+          {"    "}let matches = Command::new({`"`}Who Wants to Be a Millionaire?
+          (Rustacean edition){`"`}){" "}
           <a
             onClick={() => scrollTo("codeBlockABulletA")}
             style={{
@@ -293,10 +299,11 @@ const CliGame = () => {
             ➀
           </a>
           {"\n"}
-          {"        "}.version("0.1.0"){"\n"}
-          {"        "}.author("Joshua Taylor, joshtaylor361@gmail.com"){"\n"}
-          {"        "}.about("Test your Rust knowledge in the command-line!")
+          {"        "}.version({`"`}0.1.0{`"`}){"\n"}
+          {"        "}.author({`"`}Joshua Taylor, joshtaylor361@gmail.com{`"`})
           {"\n"}
+          {"        "}.about({`"`}Test your Rust knowledge in the command-line!
+          {`"`}){"\n"}
           {"        "}.arg({" "}
           <a
             onClick={() => scrollTo("codeBlockABulletB")}
@@ -309,7 +316,7 @@ const CliGame = () => {
             ➁
           </a>
           {"\n"}
-          {"            "}Arg::new("easy"){" "}
+          {"            "}Arg::new({`"`}easy{`"`}){" "}
           <a
             onClick={() => scrollTo("codeBlockABulletC")}
             style={{
@@ -321,7 +328,7 @@ const CliGame = () => {
             ➂
           </a>
           {"\n"}
-          {"                "}.short('e'){" "}
+          {"                "}.short({`'`}e{`'`}){" "}
           <a
             onClick={() => scrollTo("codeBlockABulletD")}
             style={{
@@ -333,7 +340,7 @@ const CliGame = () => {
             ➃
           </a>
           {"\n"}
-          {"                "}.long("easy"){" "}
+          {"                "}.long({`"`}easy{`"`}){" "}
           <a
             onClick={() => scrollTo("codeBlockABulletE")}
             style={{
@@ -345,8 +352,8 @@ const CliGame = () => {
             ➄
           </a>
           {"\n"}
-          {"                "}.help("Flags that you would like to include easy
-          answers in your quiz"),{" "}
+          {"                "}.help({`"`}Flags that you would like to include
+          easy answers in your quiz{`"`}),{" "}
           <a
             onClick={() => scrollTo("codeBlockABulletF")}
             style={{
@@ -360,24 +367,25 @@ const CliGame = () => {
           {"\n"}
           {"        "}){"\n"}
           {"        "}.arg({"\n"}
-          {"            "}Arg::new("medium"){"\n"}
-          {"                "}.short('m'){"\n"}
-          {"                "}.long("medium"){"\n"}
+          {"            "}Arg::new({`"`}medium{`"`}){"\n"}
+          {"                "}.short({`'`}m{`'`}){"\n"}
+          {"                "}.long({`"`}medium{`"`}){"\n"}
           {"                "}.help({"\n"}
-          {"                    "}"Flags that you would like to include medium
-          difficulty answers in your quiz",{"\n"}
+          {"                    "}
+          {`"`}Flags that you would like to include medium difficulty answers in
+          your quiz{`"`},{"\n"}
           {"                "}),{"\n"}
           {"        "}){"\n"}
           {"        "}.arg({"\n"}
-          {"            "}Arg::new("hard"){"\n"}
-          {"                "}.short('h'){"\n"}
-          {"                "}.long("hard"){"\n"}
-          {"                "}.help("Flags that you would like to include hard
-          answers in your quiz"),{"\n"}
+          {"            "}Arg::new({`"`}hard{`"`}){"\n"}
+          {"                "}.short({`'`}h{`'`}){"\n"}
+          {"                "}.long({`"`}hard{`"`}){"\n"}
+          {"                "}.help({`"`}Flags that you would like to include
+          hard answers in your quiz{`"`}),{"\n"}
           {"        "}){"\n"}
           {"        "}.get_matches();{"\n"}
           {"\n"}
-          {"    "}let include_easy = matches.is_present("easy");{" "}
+          {"    "}let include_easy = matches.is_present({`"`}easy{`"`});{" "}
           <a
             onClick={() => scrollTo("codeBlockABulletG")}
             style={{
@@ -389,8 +397,9 @@ const CliGame = () => {
             ➆
           </a>
           {"\n"}
-          {"    "}let include_medium = matches.is_present("medium");{"\n"}
-          {"    "}let include_hard = matches.is_present("hard");{"\n"}
+          {"    "}let include_medium = matches.is_present({`"`}medium{`"`});
+          {"\n"}
+          {"    "}let include_hard = matches.is_present({`"`}hard{`"`});{"\n"}
           {"\n"}
           {"    "}let include_all_difficulties = [include_easy, include_medium,
           include_hard]{"\n"}
@@ -579,108 +588,128 @@ const CliGame = () => {
       </p>
       <pre id="b460aac1-fb9a-4ff7-8d2f-68172400ac08" className="code">
         <code>
-          // questions.rs{"\n"}
+          {"// "} questions.rs{"\n"}
           {"\n"}pub struct Question {"{"}
           {"\n"}
-          {"    "}pub prompt: &amp;'static str,{"\n"}
-          {"    "}pub incorrect_answers: [&amp;'static str; 3],{"\n"}
-          {"    "}pub corrent_answer: &amp;'static str,{"\n"}
+          {"    "}pub prompt: &amp;{`'`}static str,{"\n"}
+          {"    "}pub incorrect_answers: [&amp;{`'`}static str; 3],{"\n"}
+          {"    "}pub corrent_answer: &amp;{`'`}static str,{"\n"}
           {"}"}
           {"\n"}
           {"\n"}const NUM_QUESTIONS_PER_SET: usize = 3;{"\n"}type
-          QuestionSet&lt;'a&gt; = [Question; NUM_QUESTIONS_PER_SET];{"\n"}
+          QuestionSet&lt;{`'`}a&gt; = [Question; NUM_QUESTIONS_PER_SET];{"\n"}
           {"\n"}pub const EASY_QUESTIONS: QuestionSet = [{"\n"}
           {"    "}Question {"{"}
           {"\n"}
-          {"        "}prompt: "What type is this: str?",{"\n"}
-          {"        "}incorrect_answers: ["Stir fry", "String", "Software Test
-          Report"],{"\n"}
-          {"        "}corrent_answer: "String slice",{"\n"}
+          {"        "}prompt: {`"`}What type is this: str?{`"`},{"\n"}
+          {"        "}incorrect_answers: [{`"`}Stir fry{`"`}, {`"`}String{`"`},{" "}
+          {`"`}Software Test Report{`"`}],{"\n"}
+          {"        "}corrent_answer: {`"`}String slice{`"`},{"\n"}
           {"    "}
           {"}"},{"\n"}
           {"    "}Question {"{"}
           {"\n"}
-          {"        "}prompt: "What is a trait?",{"\n"}
+          {"        "}prompt: {`"`}What is a trait?{`"`},{"\n"}
           {"        "}incorrect_answers: [{"\n"}
-          {"            "}"A data type that helps structure code by packaging
-          related values together",{"\n"}
-          {"            "}"A feature that allows you to enumerate all of a
-          type's variants",{"\n"}
-          {"            "}"Stir Fry",{"\n"}
+          {"            "}
+          {`"`}A data type that helps structure code by packaging related values
+          together{`"`},{"\n"}
+          {"            "}
+          {`"`}A feature that allows you to enumerate all of a type{`'`}s
+          variant
+          {`"`},{"\n"}
+          {"            "}
+          {`"`}Stir Fry{`"`},{"\n"}
           {"        "}],{"\n"}
-          {"        "}corrent_answer: "A set of method signatures that can be
-          implemented by multiple types",{"\n"}
+          {"        "}corrent_answer: {`"`}A set of method signatures that can
+          be implemented by multiple types{`"`},{"\n"}
           {"    "}
           {"}"},{"\n"}
           {"    "}Question {"{"}
           {"\n"}
-          {"        "}prompt: "What are the varients of Rust's Result type?",
-          {"\n"}
+          {"        "}prompt: {`"`}What are the varients of Rust{`'`}s Result
+          type?
+          {`"`},{"\n"}
           {"        "}incorrect_answers: [{"\n"}
-          {"            "}"Some(T), None",{"\n"}
-          {"            "}"Some(T), Err(E)",{"\n"}
-          {"            "}"LooksGoodMate(T), HeadsUpCheifWeGotIssues(E)",{"\n"}
+          {"            "}
+          {`"`}Some(T), None{`"`},{"\n"}
+          {"            "}
+          {`"`}Some(T), Err(E){`"`},{"\n"}
+          {"            "}
+          {`"`}LooksGoodMate(T), HeadsUpCheifWeGotIssues(E){`"`},{"\n"}
           {"        "}],{"\n"}
-          {"        "}corrent_answer: "Ok(T), Err(E)",{"\n"}
+          {"        "}corrent_answer: {`"`}Ok(T), Err(E){`"`},{"\n"}
           {"    "}
           {"}"},{"\n"}];{"\n"}
           {"\n"}pub const MEDIUM_QUESTIONS: QuestionSet = [{"\n"}
           {"    "}Question {"{"}
           {"\n"}
-          {"        "}prompt: "Which of the following types does not implement
-          the Copy trait",{"\n"}
-          {"        "}incorrect_answers: ["i32", "char", "bool"],{"\n"}
-          {"        "}corrent_answer: "Box",{"\n"}
+          {"        "}prompt: {`"`}Which of the following types does not
+          implement the Copy trait{`"`},{"\n"}
+          {"        "}incorrect_answers: [{`"`}i32{`"`}, {`"`}char{`"`}, {`"`}
+          bool{`"`}],{"\n"}
+          {"        "}corrent_answer: {`"`}Box{`"`},{"\n"}
           {"    "}
           {"}"},{"\n"}
           {"    "}Question {"{"}
           {"\n"}
-          {"        "}prompt: "When would we use Rust's Box type?",{"\n"}
+          {"        "}prompt: {`"`}When would we use Rust{`'`}s Box type?{`"`},
+          {"\n"}
           {"        "}incorrect_answers: [{"\n"}
-          {"            "}"When we want to interact with and store data on the
-          stack",{"\n"}
-          {"            "}"When we want to access or modify a mutable static
-          variable",{"\n"}
-          {"            "}"When we want to enable multiple ownership",{"\n"}
+          {"            "}
+          {`"`}When we want to interact with and store data on the stack{`"`},
+          {"\n"}
+          {"            "}
+          {`"`}When we want to access or modify a mutable static variable{`"`},
+          {"\n"}
+          {"            "}
+          {`"`}When we want to enable multiple ownership{`"`},{"\n"}
           {"        "}],{"\n"}
-          {"        "}corrent_answer: "When we want to interact with and store
-          data on the heap",{"\n"}
+          {"        "}corrent_answer: {`"`}When we want to interact with and
+          store data on the heap{`"`},{"\n"}
           {"    "}
           {"}"},{"\n"}
           {"    "}Question {"{"}
           {"\n"}
-          {"        "}prompt: "When is a value dropped?",{"\n"}
+          {"        "}prompt: {`"`}When is a value dropped?{`"`},{"\n"}
           {"        "}incorrect_answers: [{"\n"}
-          {"            "}"When the program ends",{"\n"}
-          {"            "}"When the function it's declared in finishes
-          execution",{"\n"}
-          {"            "}"And let all the fly skimmies feel the beat Hmmmmmmm,
-          Drrrrrop!",{"\n"}
+          {"            "}
+          {`"`}When the program ends{`"`},{"\n"}
+          {"            "}
+          {`"`}When the function it{`'`}s declared in finishes execution{`"`},
+          {"\n"}
+          {"            "}
+          {`"`}And let all the fly skimmies feel the beat Hmmmmmmm, Drrrrrop!
+          {`"`},{"\n"}
           {"        "}],{"\n"}
-          {"        "}corrent_answer: "When the variable that holds it goes out
-          of scope",{"\n"}
+          {"        "}corrent_answer: {`"`}When the variable that holds it goes
+          out of scope{`"`},{"\n"}
           {"    "}
           {"}"},{"\n"}];{"\n"}
           {"\n"}pub const HARD_QUESTIONS: QuestionSet = [{"\n"}
           {"\t"}
           {"\t"}Question {"{"}
           {"\n"}
-          {"        "}prompt: "When can a type T be Sync?",{"\n"}
+          {"        "}prompt: {`"`}When can a type T be Sync?{`"`},{"\n"}
           {"\t"}
           {"      "}incorrect_answers: [{"\n"}
-          {"          "}"When T can be transferred across thread boundaries",{" "}
+          {"          "}
+          {`"`}When T can be transferred across thread boundaries{`"`}, {"\n"}
+          {"          "}
+          {`"`}When T is a plumbing fixture where one can wash their hands or
+          clean kitchenware{`"`}, {"\n"}
+          {"          "}
+          {`"`}When T is safe to be sent to another thread{`"`}
           {"\n"}
-          {"          "}"When T is a plumbing fixture where one can wash their
-          hands or clean kitchenware", {"\n"}
-          {"          "}"When T is safe to be sent to another thread"{"\n"}
           {"        "}],{"\n"}
-          {"        "}corrent_answer: "T can be Sync if and only if &amp;T is
-          Send",{"\n"}
+          {"        "}corrent_answer: {`"`}T can be Sync if and only if &amp;T
+          is Send{`"`},{"\n"}
           {"    "}
           {"}"},{"\n"}
           {"    "}Question {"{"}
           {"\n"}
-          {"        "}prompt: "What is the difference between these two loops?
+          {"        "}prompt: {`"`}What is the difference between these two
+          loops?
           {"\n"}a) for e in some_vec {"{"}
           {"\n"}
           {"     "}...{"\n"}
@@ -689,28 +718,34 @@ const CliGame = () => {
           {"\n"}b) for e in some_vec.iter() {"{"}
           {"\n"}
           {"    "}...{"\n"}
-          {"}"}",{"\n"}
-          {"        "}incorrect_answers: ["They are equivolent", "Loop (a) will
-          not work, loop (b) will work", "Loop (b) will not work, loop (a) will
-          work"],{"\n"}
-          {"        "}corrent_answer: "loop (a) consumes some_vec, and loop (b)
-          borrows some_vec",{"\n"}
+          {"}"}
+          {`"`},{"\n"}
+          {"        "}incorrect_answers: [{`"`}They are equivolent{`"`}, {`"`}
+          Loop (a) will not work, loop (b) will work{`"`}, {`"`}Loop (b) will
+          not work, loop (a) will work{`"`}],{"\n"}
+          {"        "}corrent_answer: {`"`}loop (a) consumes some_vec, and loop
+          (b) borrows some_vec{`"`},{"\n"}
           {"    "}
           {"}"},{"\n"}
           {"    "}Question {"{"}
           {"\n"}
-          {"        "}prompt: "What is the difference between Rc and Arc?",
-          {"\n"}
+          {"        "}prompt: {`"`}What is the difference between Rc and Arc?
+          {`"`},{"\n"}
           {"        "}incorrect_answers: [{"\n"}
-          {"            "}"Arc is used for multiple ownership. Rc is also used
-          for multiple ownership, but is threadsafe.", {"\n"}
-          {"            "}"Rc is used for interior immutability. Arc is also
-          used for interior immutability, but is threadsafe", {"\n"}
-          {"            "}"Rc stands for \"Reference Counted\", and Arc stands
-          for \"Async Reference Counted\""{"\n"}
+          {"            "}
+          {`"`}Arc is used for multiple ownership. Rc is also used for multiple
+          ownership, but is threadsafe.{`"`}, {"\n"}
+          {"            "}
+          {`"`}Rc is used for interior immutability. Arc is also used for
+          interior immutability, but is threadsafe{`"`}, {"\n"}
+          {"            "}
+          {`"`}Rc stands for \{`"`}Reference Counted\{`"`}, and Arc stands for \
+          {`"`}Async Reference Counted\{`""`}
+          {"\n"}
           {"        "}],{"\n"}
-          {"        "}corrent_answer: "Rc is used for multiple ownership. Arc is
-          also used for multiple ownership, but is threadsafe.",{"\n"}
+          {"        "}corrent_answer: {`"`}Rc is used for multiple ownership.
+          Arc is also used for multiple ownership, but is threadsafe.{`"`},
+          {"\n"}
           {"    "}
           {"}"},{"\n"}];
         </code>
@@ -723,7 +758,7 @@ const CliGame = () => {
       </p>
       <pre id="46cb9c72-a8b0-4a78-844c-4256725a77b8" className="code">
         <code>
-          // lib.rs{"\n"}
+          {"// "} lib.rs{"\n"}
           {"\n"}mod questions;{"\n"}use questions::*;{"\n"}
           {"\n"}fn get_questions(settings: Settings) -&gt; Vec&lt;Question&gt;{" "}
           {"{"}
@@ -766,11 +801,13 @@ const CliGame = () => {
           pub fn run_game(settings: Settings) -&gt; Result&lt;(), io::Error&gt;{" "}
           {"{"}
           {"\n"}
-          {"    "}println!("\nWho Wants to Be a Millionaire?\nLet's start!\n");
+          {"    "}println!({'"'}\nWho Wants to Be a Millionaire?\nLet{"'"}s
+          start!\n{'"'});
           {"\n"}
           {"\n"}
-          {"    "}println!("\nCongratulations, you won Who Wants to Be a
-          Millionaire! (Rustacean edition)\n");{"\n"}
+          {"    "}println!({`"`}
+          {`"`}\nCongratulations, you won Who Wants to Be a Millionaire!
+          (Rustacean edition)\n{`"`});{"\n"}
           {"    "}Ok(()){"\n"}
           {"}"}
         </code>
@@ -787,14 +824,16 @@ const CliGame = () => {
           pub fn run_game(settings: Settings) -&gt; Result&lt;(), io::Error&gt;{" "}
           {"{"}
           {"\n"}
-          {"    "}println!("\nWho Wants to Be a Millionaire?\nLet's start!\n");
+          {"    "}println!({`"`}\nWho Wants to Be a Millionaire?\nLet{`'`}s
+          start!\n
+          {`"`});
           {"\n"}
           {"\n"}
           {"\t"}
           {"\t"}let questions = get_questions(settings);{"\n"}
           {"\n"}
-          {"    "}println!("\nCongratulations, You won Who Wants to Be a
-          Millionaire! (Rustacean edition)\n");{"\n"}
+          {"    "}println!({`"`}\nCongratulations, You won Who Wants to Be a
+          Millionaire! (Rustacean edition)\n{`"`});{"\n"}
           {"    "}Ok(()){"\n"}
           {"}"}
         </code>
@@ -805,7 +844,7 @@ const CliGame = () => {
       </p>
       <pre id="050a1bfb-ebfb-4e81-a011-5a8b1f731c6d" className="code">
         <code>
-          What are the variants of Rust's Result type?{"\n"}
+          What are the variants of Rust{`'`}s Result type?{"\n"}
           {"\n"}1){"      "}Some(T), None{"\n"}
           {"\n"}2){"      "}Some(T), Err(E){"\n"}
           {"\n"}3){"      "}Ok(T), Err(E){"\n"}
@@ -823,15 +862,19 @@ const CliGame = () => {
           {"\n"}pub fn run_game(settings: Settings) -&gt; Result&lt;(),
           io::Error&gt; {"{"}
           {"\n"}
-          {"    "}println!("\nWho Wants to Be a Millionaire?\nLet's start!\n");
+          {"    "}println!({`"`}\nWho Wants to Be a Millionaire?\nLet{`'`}s
+          start!\n
+          {`"`});
           {"\n"}
           {"\n"}
           {"    "}let questions = get_questions(settings);{"\n"}
           {"\n"}
           {"    "}for (i, question) in questions.iter().enumerate() {"{"}
           {"\n"}
-          {"        "}println!("{"{"}
-          {"}"}", question.prompt);{"\n"}
+          {"        "}println!({`"`}
+          {"{"}
+          {"}"}
+          {`"`}, question.prompt);{"\n"}
           {"\n"}
           {"        "}let correct_answer_index: u8 =
           thread_rng().gen_range(0..4);{" "}
@@ -853,8 +896,8 @@ const CliGame = () => {
           {"}"}
           {"\n"}
           {"\n"}
-          {"    "}println!("\nCongratulations, You won Who Wants to Be a
-          Millionaire! (Rustacean edition)\n");{"\n"}
+          {"    "}println!({`"`}\nCongratulations, You won Who Wants to Be a
+          Millionaire! (Rustacean edition)\n{`"`});{"\n"}
           {"    "}Ok(()){"\n"}
           {"}"}
           {"\n"}
@@ -878,9 +921,11 @@ const CliGame = () => {
           {"    "}for i in 0..4 {"{"}
           {"\n"}
           {"        "}println!({"\n"}
-          {"            "}"\n{"{"}
+          {"            "}
+          {`"`}\n{"{"}
           {"}"})\t{"{"}
-          {"}"}",{"\n"}
+          {"}"}
+          {`"`},{"\n"}
           {"            "}i + 1,{"\n"}
           {"            "}if i == correct_answer_index {"{"}
           {"\n"}
@@ -919,13 +964,15 @@ const CliGame = () => {
       </p>
       <pre id="5b7ea13c-6b77-4daf-a55b-39cb60c24836" className="code">
         <code>
-          // lib.rs{"\n"}
+          {"// "} lib.rs{"\n"}
           {"\n"}use std::io;{"\n"}
           {"\n"}pub fn run_game(settings: Settings) -&gt; Result&lt;(),
           io::Error&gt; {"{"}
           {"\n"}
           {"\t"}
-          {"\t"}/*...*/{"\n"}
+          {"\t"}
+          {"/*...*/"}
+          {"\n"}
           {"    "}
           {"\n"}
           {"\t"}
@@ -935,7 +982,9 @@ const CliGame = () => {
           {"\t"}
           {"\t"}
           {"\t"}
-          {"\t"}/*...*/{"\n"}
+          {"\t"}
+          {"/*...*/"}
+          {"\n"}
           {"\n"}
           {"        "}let num_questions_left = questions.len() - i - 1;{"\n"}
           {"        "}get_answer(correct_answer_index, num_questions_left)?;
@@ -945,7 +994,9 @@ const CliGame = () => {
           {"\n"}
           {"\n"}
           {"\t"}
-          {"\t"}/*...*/{"\n"}
+          {"\t"}
+          {"/*...*/"}
+          {"\n"}
           {"\n"}
           {"}"}
           {"\n"}
@@ -1024,8 +1075,8 @@ const CliGame = () => {
           {"\n"}
           {"            "}_ =&gt; {"{"}
           {"\n"}
-          {"                "}println!("Sorry, I wasn't able to understand that.
-          Could you repeat your answer?");{"\n"}
+          {"                "}println!({'"'}Sorry, I wasn{`'`}t able to
+          understand that. Could you repeat your answer?{'"'});{"\n"}
           {"                "}input.clear();{" "}
           <a
             onClick={() => scrollTo("codeBlockCBulletF")}
@@ -1062,9 +1113,10 @@ const CliGame = () => {
           {"        "}if num_questions_left &gt; 0 {"{"}
           {"\n"}
           {"            "}println!({"\n"}
-          {"                "}"\nCorrect, well done! {"{"}
+          {"                "}
+          {`"`}\nCorrect, well done! {"{"}
           {"}"} more {"{"}
-          {"}"} to go.\n",{"\n"}
+          {"}"} to go.\n{`"`},{"\n"}
           {"                "}num_questions_left,{"\n"}
           {"                "}if num_questions_left == 1 {"{ "}
           <a
@@ -1078,11 +1130,15 @@ const CliGame = () => {
             ➆
           </a>
           {"\n"}
-          {"                    "}"question"{"\n"}
+          {"                    "}
+          {`"`}question{`"`}
+          {"\n"}
           {"                "}
           {"}"} else {"{"}
           {"\n"}
-          {"                    "}"questions"{"\n"}
+          {"                    "}
+          {`"`}questions{`"`}
+          {"\n"}
           {"                "}
           {"}"}
           {"\n"}
@@ -1093,7 +1149,7 @@ const CliGame = () => {
           {"    "}
           {"}"} else {"{"}
           {"\n"}
-          {"        "}println!("\nIncorrect! Try again anytime.");{"\n"}
+          {"        "}println!({`"`}\nIncorrect! Try again anytime.{`"`});{"\n"}
           {"        "}std::process::exit(0){" "}
           <a
             onClick={() => scrollTo("codeBlockCBulletH")}
@@ -1209,8 +1265,8 @@ const CliGame = () => {
         </p>
         <pre id="7f5cb5ba-f9ff-4f2b-ab38-194759d2ad2c" className="code">
           <code>
-            let mut s = String::from("Hey there");{"\n"}s.clear();{"\n"}
-            assert_eq!(s, String::from(""))
+            let mut s = String::from({`"`}Hey there{`"`});{"\n"}s.clear();{"\n"}
+            assert_eq!(s, String::from({`""`}))
           </code>
         </pre>
         <p id="7407d494-39a1-48a8-883c-1697f2e5d3d4">
@@ -1262,7 +1318,7 @@ const CliGame = () => {
       </p>
       <pre id="dcfb22d6-b2e7-4724-91ac-5b0ec2346f9d" className="code">
         <code>
-          // main.rs{"\n"}
+          {"// "} main.rs{"\n"}
           {"\n"}use rustis_philbin::{"{"}get_game_settings, run_game{"}"};{"\n"}
           {"\n"}fn main() {"{"}
           {"\n"}
@@ -1278,8 +1334,10 @@ const CliGame = () => {
             ➀
           </a>
           {"\n"}
-          {"        "}eprintln!("{"{"}
-          {"}"}", e);{" "}
+          {"        "}eprintln!({`"`}
+          {"{"}
+          {"}"}
+          {`"`}, e);{" "}
           <a
             onClick={() => scrollTo("codeBlockDBulletB")}
             style={{
